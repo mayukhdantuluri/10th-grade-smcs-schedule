@@ -43,7 +43,7 @@ body {
 }
 
 .glow-title {
-    font-size: 4.5rem;
+    font-size: 3.2rem;
     font-weight: 900;
     color: #ffffff;
     text-shadow: 
@@ -56,7 +56,7 @@ body {
 }
 
 .glow-subtitle {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: #ffffff;
     margin-top: 5px;
@@ -67,37 +67,70 @@ body {
         0 0 30px #bf0000;
 }
 
-/* Red Bar Right-to-Left Continuous Marquee */
-.marquee-bar {
-    background-color: #d00000;
-    color: #ffffff;
-    overflow: hidden;
-    white-space: nowrap;
-    border-radius: 2px;
+/* ===========================================================================
+   Xbox Style Achievement Pop-up Banner Styling
+   =========================================================================== */
+.xbox-banner-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 54px;
     margin-bottom: 30px;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
-.marquee-track {
-    display: inline-block;
-    padding-left: 100%;
-    animation: marquee 22s linear infinite;
+.xbox-banner {
+    display: flex;
+    align-items: center;
+    background-color: #b80d19; /* Xbox Red */
+    height: 50px;
+    width: 50px; /* Initial circle state */
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(184, 13, 25, 0.7);
+    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-radius 0.6s ease;
 }
 
-.marquee-track span {
-    font-size: 1.1rem;
+/* Expanded State */
+.xbox-banner.expanded {
+    width: 100%;
+    max-width: 850px;
+    padding-right: 20px;
+}
+
+.xbox-icon-box {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #b80d19;
+    flex-shrink: 0;
+}
+
+.xbox-logo-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.xbox-text-box {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    padding-left: 12px;
     font-weight: 700;
-    padding: 8px 0;
-    display: inline-block;
+    font-size: 1.05rem;
+    color: #ffffff;
 }
 
-@keyframes marquee {
-    0% {
-        transform: translate3d(0, 0, 0);
-    }
-    100% {
-        transform: translate3d(-100%, 0, 0);
-    }
+/* Fade in text when expanded */
+.xbox-banner.show-text .xbox-text-box {
+    opacity: 1;
 }
 
 /* Main Layout Grid */
@@ -127,8 +160,8 @@ body {
 
 /* Student Members List Formatting */
 .members-list {
-    list-style: none; /* Remove default browser numbers */
-    counter-reset: member-counter; /* Custom counter */
+    list-style: none; 
+    counter-reset: member-counter; 
     padding-left: 0;
     font-size: 0.92rem;
     line-height: 1.5;
@@ -138,17 +171,17 @@ body {
     counter-increment: member-counter;
     display: flex;
     align-items: baseline;
-    font-weight: 400; /* UNBOLDED NAMES */
+    font-weight: 400; /* Unbolded names */
     margin-bottom: 2px;
 }
 
-/* Custom Numbering Fix: Forces numbers to right-align in a 28px box so all names start at the exact same horizontal position */
+/* Fixed alignment box for single-digit & double-digit list numbers */
 .members-list li::before {
     content: counter(member-counter) ".";
     width: 28px;
     text-align: right;
     margin-right: 8px;
-    font-weight: 400; /* UNBOLDED NUMBERS */
+    font-weight: 400;
     flex-shrink: 0;
     color: #ffffff;
 }
