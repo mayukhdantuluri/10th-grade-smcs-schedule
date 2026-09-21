@@ -1,18 +1,27 @@
 // ===========================================================================
-// CONFIGURATION
+// CONFIGURATION: Easily edit class titles and details separately
 // ===========================================================================
 
-// Array of announcements to loop through in the Xbox popup bar
 const ANNOUNCEMENTS = [
-    "Adv. Science 3: ESS - Finish the pre-lab part of the packet given on 2026-09-17 by start of class on 2026-09-22.",
-    "Adv. Science 4: Biology - Finish the Calorimetry Pre-Lab Questions on a document on your Google Drive, have it ready by start of class 2026-09-22.",
-    "Algorithms & Data Structures - There is a Not-a-Quiz on 1.11 and 1.12 in class on 2026-09-22."
+    {
+        title: "Adv. Science 3: ESS",
+        detail: "- Finish the pre-lab part of the packet given on 2026-09-17 by start of class on 2026-09-22."
+    },
+    {
+        title: "Adv. Science 4: Biology",
+        detail: "- Finish the Calorimetry Pre-Lab Questions on a document on your Google Drive, have it ready by 2026-09-22"
+    },
+    {
+        title: "Algorithms & Data Structures",
+        detail: "- There is a Not-a-Quiz on 1.11 and 1.12 in class on 2026-09-22."
+    }
 ];
 
 const IS_HOLIDAY = false; 
 const HOLIDAY_REASON = "School Holiday"; 
 
 const SPECIFIC_HOLIDAYS = [
+    
     "2026-09-21",
     "2026-11-26",
     "2026-12-25",
@@ -31,25 +40,47 @@ function cycleXboxBanner() {
 
     if (!banner || !textElement || ANNOUNCEMENTS.length === 0) return;
 
-    textElement.textContent = ANNOUNCEMENTS[currentAnnouncementIndex];
+    const currentItem = ANNOUNCEMENTS[currentAnnouncementIndex];
 
-    // 1. Expand bar
-    banner.classList.add("expanded");
+    // Inject structured HTML so only title is bolded
+    textElement.innerHTML = `<span class="xbox-title">${currentItem.title}</span><span class="xbox-detail">${currentItem.detail}</span>`;
 
-    // 2. Fade in text
+    // 1. Calculate dynamic target width based on text length
+    banner.style.transition = 'none';
+    banner.style.width = 'auto';
+    banner.style.maxWidth = '92vw'; // Prevents overflowing small screens
+    
+    const targetWidth = banner.getBoundingClientRect().width;
+
+    // Reset back to collapsed 50px state
+    banner.style.width = '50px';
+    
+    // Force layout update before starting animation
+    void banner.offsetWidth;
+
+    // Re-enable smooth 0.75-second transition
+    banner.style.transition = 'width 0.75s cubic-bezier(0.25, 1, 0.5, 1)';
+
+    // Step 1: Smoothly expand bar over 0.75 seconds
+    requestAnimationFrame(() => {
+        banner.style.width = `${targetWidth}px`;
+    });
+
+    // Step 2: Fade in text halfway through expansion
     setTimeout(() => {
         banner.classList.add("show-text");
     }, 400);
 
-    // 3. Hold on screen for 5 seconds, then fade out text
+    // Step 3: Display message for 5.5 seconds
     setTimeout(() => {
+        // Fade out text first
         banner.classList.remove("show-text");
 
-        // 4. Collapse bar
+        // Step 4: Smoothly shrink bar back to square/circle over 0.75 seconds
         setTimeout(() => {
-            banner.classList.remove("expanded");
+            banner.style.width = '50px';
 
-            // 5. Next announcement iteration
+            // Step 5: Wait for collapse transition (750ms) to finish, then trigger next message
             setTimeout(() => {
                 currentAnnouncementIndex = (currentAnnouncementIndex + 1) % ANNOUNCEMENTS.length;
                 cycleXboxBanner();
@@ -57,7 +88,7 @@ function cycleXboxBanner() {
 
         }, 300);
 
-    }, 5000);
+    }, 5500);
 }
 
 // ===========================================================================
