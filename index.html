@@ -27,10 +27,15 @@
             <h2 class="glow-subtitle">10th Grade Block Schedule</h2>
         </header>
 
-        <!-- Red Sliding Marquee Bar (Editable in script.js) -->
-        <div class="marquee-bar">
-            <div class="marquee-track" id="marqueeTrack">
-                <span id="marqueeText">Loading announcement...</span>
+        <!-- Xbox Style Achievement Pop-up Banner -->
+        <div class="xbox-banner-wrapper">
+            <div id="xboxBanner" class="xbox-banner">
+                <div class="xbox-icon-box">
+                    <img src="smcs-logo.png" alt="SMCS Logo" class="xbox-logo-img">
+                </div>
+                <div class="xbox-text-box">
+                    <span id="xboxText"></span>
+                </div>
             </div>
         </div>
 
@@ -83,15 +88,13 @@
                     <div id="dayDisplay" class="day-roboto">Day of Week</div>
                 </div>
 
-                <!-- Weekend / Holiday Banner (Shown automatically by JS when applicable) -->
+                <!-- Weekend / Holiday Banner -->
                 <div id="noSchoolBanner" class="no-school-banner" style="display: none;">
                     <h2>NO SCHOOL TODAY</h2>
                     <p id="noSchoolReason">Enjoy your break!</p>
                 </div>
 
-                <!-- ======================================================== -->
-                <!-- EDIT DAILY BLOCK SCHEDULE HERE IN HTML                   -->
-                <!-- ======================================================== -->
+                <!-- Daily Block Schedule -->
                 <div id="scheduleContainer" class="schedule-container">
                     
                     <div class="schedule-grid">
@@ -145,7 +148,6 @@
                     </div>
 
                 </div>
-                <!-- ======================================================== -->
 
             </section>
 
