@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHS SMCS 2029 - 10th Grade Block Schedule</title>
+    
+    <!-- Google Fonts: Roboto & Roboto Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Layer (homepage-background.png at 70% opacity over black) -->
+    <div class="bg-layer"></div>
+
+    <!-- Main Container -->
+    <div class="page-container">
+        
+        <!-- Glowing Red Header -->
+        <header class="main-header">
+            <h1 class="glow-title">PHS SMCS 2029</h1>
+            <h2 class="glow-subtitle">10th Grade Block Schedule</h2>
+        </header>
+
+        <!-- Red Sliding Marquee Bar (Editable in script.js) -->
+        <div class="marquee-bar">
+            <div class="marquee-track" id="marqueeTrack">
+                <span id="marqueeText">Loading announcement...</span>
+            </div>
+        </div>
+
+        <!-- Content Grid -->
+        <main class="content-grid">
+
+            <!-- LEFT COLUMN: Block X Members -->
+            <section class="card members-card">
+                <h3>Block X Members</h3>
+                <ol class="members-list">
+                    <li>Calvin Aquino</li>
+                    <li>Vedant Arrola</li>
+                    <li>Ness Bentil</li>
+                    <li>Lin Heng Chen</li>
+                    <li>Mayukh Dantuluri</li>
+                    <li>Shruti Deshpande</li>
+                    <li>Arjun Devaguptapu</li>
+                    <li>Lucas Galescu</li>
+                    <li>Rian Ganesh</li>
+                    <li>Ray He</li>
+                    <li>Shawn Hettiarachchi</li>
+                    <li>Patrick Hyland</li>
+                    <li>Soaren Leff</li>
+                    <li>Zuhair Loya</li>
+                    <li>Rowel Mondal</li>
+                    <li>Jaden Mosley</li>
+                    <li>Dez Murdock</li>
+                    <li>Mahadevan Nair</li>
+                    <li>Kidus Peter</li>
+                    <li>Divya Prabhu</li>
+                    <li>Jiya Rao</li>
+                    <li>Srilaasya Samineni</li>
+                    <li>Sandeep Thimmasamudram</li>
+                    <li>Aneesh Thota</li>
+                    <li>Hoda Timaji</li>
+                    <li>Maithili Uniyal</li>
+                    <li>Kaya Vallejos Duarte</li>
+                    <li>Caleb Yo</li>
+                </ol>
+            </section>
+
+            <!-- CENTER COLUMN: Date & Daily Schedule -->
+            <section class="card schedule-card">
+                
+                <!-- Auto-updating Date Header -->
+                <div class="date-header">
+                    <!-- Date MUST be in Roboto Mono -->
+                    <div id="dateDisplay" class="date-mono">yyyy-mm-dd</div>
+                    <!-- Day of week in Roboto -->
+                    <div id="dayDisplay" class="day-roboto">Day of Week</div>
+                </div>
+
+                <!-- Weekend / Holiday Banner (Shown automatically by JS when applicable) -->
+                <div id="noSchoolBanner" class="no-school-banner" style="display: none;">
+                    <h2>NO SCHOOL TODAY</h2>
+                    <p id="noSchoolReason">Enjoy your break!</p>
+                </div>
+
+                <!-- ======================================================== -->
+                <!-- EDIT DAILY BLOCK SCHEDULE HERE IN HTML                   -->
+                <!-- ======================================================== -->
+                <div id="scheduleContainer" class="schedule-container">
+                    
+                    <div class="schedule-grid">
+                        <div class="col-header">Block X</div>
+                        <div class="col-header">Period</div>
+                        <div class="col-header">Block Y</div>
+
+                        <!-- Period 1 -->
+                        <div class="class-cell">
+                            <span class="class-title">Adv. Science 4: Biology</span>
+                            <span class="class-room">2614 Yu</span>
+                        </div>
+                        <div class="period-num">1</div>
+                        <div class="class-cell">
+                            <span class="class-title">Foundations of Technology</span>
+                            <span class="class-room">1620 Lees</span>
+                        </div>
+
+                        <!-- Period 2 -->
+                        <div class="class-cell">
+                            <span class="class-title">Adv. Science 3: ESS</span>
+                            <span class="class-room">1708 Kingman</span>
+                        </div>
+                        <div class="period-num">2</div>
+                        <div class="class-cell">
+                            <span class="class-title">Algorithms & Data Structures</span>
+                            <span class="class-room">1702 Hallisey</span>
+                        </div>
+
+                        <!-- Period 3 -->
+                        <div class="class-cell">
+                            <span class="class-title">Algorithms & Data Structures</span>
+                            <span class="class-room">1702 Hallisey</span>
+                        </div>
+                        <div class="period-num">3</div>
+                        <div class="class-cell">
+                            <span class="class-title">Adv. Science 3: ESS</span>
+                            <span class="class-room">1708 Kingman</span>
+                        </div>
+
+                        <!-- Period 4 -->
+                        <div class="class-cell">
+                            <span class="class-title">Foundations of Technology</span>
+                            <span class="class-room">1620 Lees</span>
+                        </div>
+                        <div class="period-num">4</div>
+                        <div class="class-cell">
+                            <span class="class-title">Adv. Science 4: Biology</span>
+                            <span class="class-room">2614 Yu</span>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- ======================================================== -->
+
+            </section>
+
+            <!-- RIGHT COLUMN: Block Y Members -->
+            <section class="card members-card">
+                <h3>Block Y Members</h3>
+                <ol class="members-list">
+                    <li>Sanjana Amara</li>
+                    <li>Chandana Aradhya</li>
+                    <li>Eliel Arellano</li>
+                    <li>Miriam Baron</li>
+                    <li>Cynthia Biruk</li>
+                    <li>Justin Cheung</li>
+                    <li>Aaruj Datar</li>
+                    <li>William Ding</li>
+                    <li>Austin Egodahewage</li>
+                    <li>Sachin Gupte</li>
+                    <li>Ryan Highfill</li>
+                    <li>Edward Hou</li>
+                    <li>Charam Kamana</li>
+                    <li>Aarna Khanna</li>
+                    <li>Summit Lu</li>
+                    <li>Brindha Mahadevan</li>
+                    <li>Sifali Maskey</li>
+                    <li>Ananya Mulukutla</li>
+                    <li>Pranay Panakal</li>
+                    <li>Shrika Pilli</li>
+                    <li>Yeona Plotkin</li>
+                    <li>Anika Rajeev</li>
+                    <li>Emma Shi</li>
+                    <li>Keershika Suji Sudhakar Jeyasri</li>
+                    <li>Riti Thakkar</li>
+                    <li>Caden Wang</li>
+                    <li>Chrystina Wang</li>
+                    <li>Arin Yeo</li>
+                    <li>Jingwei Zhao</li>
+                </ol>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
