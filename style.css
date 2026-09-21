@@ -15,7 +15,7 @@ body {
     overflow-x: hidden;
 }
 
-/* homepage-background.png at 70% visibility on black background */
+/* Background image at 0.667 opacity on black base */
 .bg-layer {
     position: fixed;
     top: 0;
@@ -43,7 +43,7 @@ body {
 }
 
 .glow-title {
-    font-size: 4.5rem;
+    font-size: 4.5rem; /* Updated to 4.5rem */
     font-weight: 900;
     color: #ffffff;
     text-shadow: 
@@ -56,7 +56,7 @@ body {
 }
 
 .glow-subtitle {
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Updated to 2.5rem */
     font-weight: 700;
     color: #ffffff;
     margin-top: 5px;
@@ -83,7 +83,7 @@ body {
     align-items: center;
     background-color: #b80d19; /* Xbox Red */
     height: 50px;
-    width: 50px; /* Initial circle state */
+    width: 50px; /* Initial collapsed state */
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 4px 18px rgba(184, 13, 25, 0.7);
@@ -175,7 +175,7 @@ body {
     margin-bottom: 2px;
 }
 
-/* Fixed alignment box for single-digit & double-digit list numbers */
+/* Fixed alignment box for list numbers */
 .members-list li::before {
     content: counter(member-counter) ".";
     width: 28px;
@@ -264,17 +264,17 @@ body {
     color: #dddddd;
 }
 
-/* Responsive adjustments for mobile/tablets */
+/* Responsive adjustments */
 @media (max-width: 1024px) {
     .content-grid {
         grid-template-columns: 1fr;
     }
     
     .glow-title {
-        font-size: 2.4rem;
+        font-size: 3rem;
     }
     
     .glow-subtitle {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
 }
