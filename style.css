@@ -15,7 +15,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Background image at 0.667 opacity on black base */
+/* Background layer at 0.667 opacity */
 .bg-layer {
     position: fixed;
     top: 0;
@@ -43,7 +43,7 @@ body {
 }
 
 .glow-title {
-    font-size: 4.5rem; /* Updated to 4.5rem */
+    font-size: 4.5rem;
     font-weight: 900;
     color: #ffffff;
     text-shadow: 
@@ -56,7 +56,7 @@ body {
 }
 
 .glow-subtitle {
-    font-size: 2.5rem; /* Updated to 2.5rem */
+    font-size: 2.5rem;
     font-weight: 700;
     color: #ffffff;
     margin-top: 5px;
@@ -74,7 +74,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 54px;
+    min-height: 54px;
     margin-bottom: 30px;
 }
 
@@ -87,15 +87,8 @@ body {
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 4px 18px rgba(184, 13, 25, 0.7);
-    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-                border-radius 0.6s ease;
-}
-
-/* Expanded State */
-.xbox-banner.expanded {
-    width: 100%;
-    max-width: 850px;
-    padding-right: 20px;
+    /* Smooth 0.75s transition curve for expanding & shrinking */
+    transition: width 0.75s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .xbox-icon-box {
@@ -116,21 +109,35 @@ body {
     object-fit: contain;
 }
 
+/* Text box with middle alignment */
 .xbox-text-box {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     opacity: 0;
     transition: opacity 0.35s ease;
-    padding-left: 12px;
-    font-weight: 700;
+    padding-left: 10px;
+    padding-right: 22px;
     font-size: 1.05rem;
     color: #ffffff;
+    display: flex;
+    align-items: center; /* Middle aligned vertically */
 }
 
 /* Fade in text when expanded */
 .xbox-banner.show-text .xbox-text-box {
     opacity: 1;
+}
+
+/* Only class title is bolded */
+.xbox-title {
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+/* Details remain regular font weight */
+.xbox-detail {
+    font-weight: 400;
 }
 
 /* Main Layout Grid */
