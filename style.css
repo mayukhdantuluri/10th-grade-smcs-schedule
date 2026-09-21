@@ -15,7 +15,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Requirement 6: homepage-background.png at 70% visibility on black background */
+/* homepage-background.png at 70% visibility on black background */
 .bg-layer {
     position: fixed;
     top: 0;
@@ -67,7 +67,7 @@ body {
         0 0 30px #bf0000;
 }
 
-/* Requirement 1: Red Bar Right-to-Left Continuous Marquee */
+/* Red Bar Right-to-Left Continuous Marquee */
 .marquee-bar {
     background-color: #d00000;
     color: #ffffff;
@@ -117,7 +117,7 @@ body {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9);
 }
 
-/* Student Members Columns */
+/* Student Members Columns Header */
 .members-card h3 {
     text-align: center;
     font-size: 1.3rem;
@@ -125,15 +125,32 @@ body {
     margin-bottom: 15px;
 }
 
+/* Student Members List Formatting */
 .members-list {
-    list-style-position: inside;
+    list-style: none; /* Remove default browser numbers */
+    counter-reset: member-counter; /* Custom counter */
+    padding-left: 0;
     font-size: 0.92rem;
     line-height: 1.5;
 }
 
 .members-list li {
-    font-weight: 500;
+    counter-increment: member-counter;
+    display: flex;
+    align-items: baseline;
+    font-weight: 400; /* UNBOLDED NAMES */
     margin-bottom: 2px;
+}
+
+/* Custom Numbering Fix: Forces numbers to right-align in a 28px box so all names start at the exact same horizontal position */
+.members-list li::before {
+    content: counter(member-counter) ".";
+    width: 28px;
+    text-align: right;
+    margin-right: 8px;
+    font-weight: 400; /* UNBOLDED NUMBERS */
+    flex-shrink: 0;
+    color: #ffffff;
 }
 
 /* Schedule Card (Center) */
@@ -146,7 +163,7 @@ body {
     margin-bottom: 30px;
 }
 
-/* Requirement 3: ONLY date in Roboto Mono */
+/* ONLY date in Roboto Mono */
 .date-mono {
     font-family: 'Roboto Mono', monospace;
     font-size: 2.5rem;
