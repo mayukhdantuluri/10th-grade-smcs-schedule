@@ -141,8 +141,8 @@ body {
    =========================================================================== */
 .content-grid {
     display: grid;
-    /* Side columns updated from 280px to 420px (50% wider) */
-    grid-template-columns: 420px 1fr 420px; 
+    /* Side columns updated */
+    grid-template-columns: 360px 1fr 360px; 
     gap: 20px;
     /* Changed from 'start' to 'stretch' so both side cards reach equal bottom length */
     align-items: stretch; 
