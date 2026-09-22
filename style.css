@@ -15,7 +15,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Background layer at 0.667 opacity */
+/* Background layer at 0.4 opacity */
 .bg-layer {
     position: fixed;
     top: 0;
@@ -26,7 +26,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.667;
+    opacity: 0.4;
     z-index: -1;
 }
 
