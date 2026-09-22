@@ -9,7 +9,7 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Adv. Science 3: ESS",
-        detail: "- If you bombed the BGC Quiz from 2026-09-17, the reassessment is on 2026-09-22."
+        detail: "- If you bombed the BGC Quiz from 2026-09-17, the reassessment is today."
     },
     {
         title: "Adv. Science 4: Biology",
