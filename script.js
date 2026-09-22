@@ -13,7 +13,7 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Adv. Science 4: Biology",
-        detail: "- Finish the Calorimetry Pre-Lab Questions on a document on your Google Drive, have it ready by 2026-09-22."
+        detail: "- Finish the Calorimetry Pre-Lab Questions on a document on your Google Drive, have it ready by 2026-09-22. We actually do the lab today."
     },
     {
         title: "Adv. Science 4: Biology",
