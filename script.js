@@ -5,19 +5,11 @@
 const ANNOUNCEMENTS = [
     {
         title: "Adv. Science 3: ESS",
-        detail: "- Finish the pre-lab part of the packet given on 2026-09-17 by start of class on 2026-09-22."
-    },
-    {
-        title: "Adv. Science 3: ESS",
-        detail: "- If you bombed the BGC Quiz from 2026-09-17, the reassessment is today."
+        detail: "- Do not worry about finishing up the Infiltration Lab packet for homework."
     },
     {
         title: "Adv. Science 4: Biology",
-        detail: "- Finish the Calorimetry Pre-Lab Questions on a document on your Google Drive, have it ready by 2026-09-22. We actually do the lab today."
-    },
-    {
-        title: "Adv. Science 4: Biology",
-        detail: "- Mr. Yu is still yet to grade the 27-point quiz from 2026-09-10, but he said the reassessment might be this week."
+        detail: "- Mr. Yu has graded the Quiz from 2026-09-10. Reassessment will be on 2026-09-25."
     },
     {
         title: "Algorithms & Data Structures",
