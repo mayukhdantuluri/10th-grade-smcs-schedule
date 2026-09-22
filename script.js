@@ -13,11 +13,11 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Algorithms & Data Structures",
-        detail: "- There is a Not-a-Quiz on 1.11 and 1.12 in class on 2026-09-23 (Tomorrow)."
+        detail: "- There is a Not-a-Quiz on 1.11 and 1.12 in class."
     },
     {
         title: "Foundations of Technology",
-        detail: "- We will continue the Sensor Detectives Assignment in class on 2026-09-23."
+        detail: "- We will continue the Sensor Detectives Assignment in class."
     }
 ];
 
