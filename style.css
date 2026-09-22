@@ -30,8 +30,9 @@ body {
     z-index: -1;
 }
 
+/* Container expanded to accommodate wider side panels */
 .page-container {
-    max-width: 1300px;
+    max-width: 1550px;
     margin: 0 auto;
     padding: 20px 15px 40px;
 }
@@ -83,11 +84,10 @@ body {
     align-items: center;
     background-color: #b80d19; /* Xbox Red */
     height: 50px;
-    width: 50px; /* Initial collapsed state */
+    width: 50px;
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 4px 18px rgba(184, 13, 25, 0.7);
-    /* Smooth 0.75s transition curve for expanding & shrinking */
     transition: width 0.75s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -109,7 +109,6 @@ body {
     object-fit: contain;
 }
 
-/* Text box with middle alignment */
 .xbox-text-box {
     white-space: nowrap;
     overflow: hidden;
@@ -121,31 +120,32 @@ body {
     font-size: 1.05rem;
     color: #ffffff;
     display: flex;
-    align-items: center; /* Middle aligned vertically */
+    align-items: center;
 }
 
-/* Fade in text when expanded */
 .xbox-banner.show-text .xbox-text-box {
     opacity: 1;
 }
 
-/* Only class title is bolded */
 .xbox-title {
     font-weight: 700;
     margin-right: 5px;
 }
 
-/* Details remain regular font weight */
 .xbox-detail {
     font-weight: 400;
 }
 
-/* Main Layout Grid */
+/* ===========================================================================
+   Main Layout Grid
+   =========================================================================== */
 .content-grid {
     display: grid;
-    grid-template-columns: 280px 1fr 280px;
+    /* Side columns updated from 280px to 420px (50% wider) */
+    grid-template-columns: 420px 1fr 420px; 
     gap: 20px;
-    align-items: start;
+    /* Changed from 'start' to 'stretch' so both side cards reach equal bottom length */
+    align-items: stretch; 
 }
 
 /* Shared Card Styling */
@@ -178,7 +178,7 @@ body {
     counter-increment: member-counter;
     display: flex;
     align-items: baseline;
-    font-weight: 400; /* Unbolded names */
+    font-weight: 400;
     margin-bottom: 2px;
 }
 
@@ -272,7 +272,7 @@ body {
 }
 
 /* Responsive adjustments */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .content-grid {
         grid-template-columns: 1fr;
     }
