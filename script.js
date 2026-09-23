@@ -17,7 +17,11 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Foundations of Technology",
-        detail: "- We will continue the Sensor Detectives Assignment in class."
+        detail: "- In class today, finish the second sensor to research."
+    },
+    {
+        title: "Foundations of Technology",
+        detail: "- Mr. Lees will not be here tomorrow. In class today, he will give you the third sensor to research to do while he is gone tomorrow."
     }
 ];
 
