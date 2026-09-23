@@ -18,6 +18,10 @@ const ANNOUNCEMENTS = [
     {
         title: "Foundations of Technology",
         detail: "- We will continue the Sensor Detectives Assignment in class."
+    },
+    {
+        title: "General School News",
+        detail: "- Picture Day is next week on Tuesday & Wednesday."
     }
 ];
 
