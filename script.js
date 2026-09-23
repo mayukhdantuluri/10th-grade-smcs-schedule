@@ -4,12 +4,12 @@
 
 const ANNOUNCEMENTS = [
     {
-        title: "Adv. Science 4: Biology",
-        detail: "- Mr. Yu has graded the Quiz from 2026-09-10. Reassessments are to be done by tomorrow."
+        title: "General SMCS News",
+        detail: "- Mr. Kingman said our field trip to Seneca Creek might be on 2026-10-23."
     },
     {
-        title: "Algorithms & Data Structures",
-        detail: "- There is a Not-a-Quiz on 1.11 and 1.12 in class."
+        title: "Adv. Science 4: Biology",
+        detail: "- Mr. Yu has graded the Quiz from 2026-09-10. Reassessments are to be done by tomorrow."
     },
     {
         title: "Foundations of Technology",
