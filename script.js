@@ -4,10 +4,6 @@
 
 const ANNOUNCEMENTS = [
     {
-        title: "Adv. Science 3: ESS",
-        detail: "- Do not worry about finishing up the Infiltration Lab packet for homework."
-    },
-    {
         title: "Adv. Science 4: Biology",
         detail: "- Mr. Yu has graded the Quiz from 2026-09-10. Reassessments are to be done by tomorrow."
     },
