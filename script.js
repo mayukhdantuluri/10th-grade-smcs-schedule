@@ -4,8 +4,8 @@
 
 const ANNOUNCEMENTS = [
     {
-        title: "General SMCS News",
-        detail: "- Mr. Kingman said our field trip to Seneca Creek might be on 2026-10-23."
+        title: "SMCS News",
+        detail: "- Mr. Kingman said our field trip to Seneca Creek might be on 2026-10-23. The rabid beavers have been dealt with."
     },
     {
         title: "Adv. Science 4: Biology",
