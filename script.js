@@ -9,7 +9,7 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Adv. Science 4: Biology",
-        detail: "- Mr. Yu has graded the Quiz from 2026-09-10. Reassessments are to be done by tomorrow."
+        detail: "- Mr. Yu has graded the Quiz from 2026-09-10. Reassessments are to be done at lunch tomorrow, Friday, Monday, or Tuesday."
     },
     {
         title: "Foundations of Technology",
