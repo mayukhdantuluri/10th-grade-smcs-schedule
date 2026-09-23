@@ -1,34 +1,55 @@
 // ===========================================================================
-// CONFIGURATION: Easily edit class titles and details separately
+// 1. ANNOUNCEMENTS CONFIGURATION (Manually managed by you)
 // ===========================================================================
 
 const ANNOUNCEMENTS = [
     {
-        title: "SMCS News",
-        detail: "- Mr. Kingman said our field trip to Seneca Creek might be on 2026-10-23. The rabid beavers have been dealt with."
+        title: "Adv. Science 3: ESS",
+        detail: "- Mr. Kingman said our field trip might be on 2026-10-23. Permissions forms are yet to be sent out."
     },
     {
         title: "Adv. Science 4: Biology",
-        detail: "- Mr. Yu has graded the Quiz from 2026-09-10. Reassessments are to be done at lunch tomorrow, Friday, Monday, or Tuesday."
+        detail: "- Finish the Calorimetry Lab by end of class tomorrow."
     },
     {
         title: "Foundations of Technology",
-        detail: "- Mr. Lees will not be here tomorrow. In class today, he will give you the third sensor to research to do while he is gone tomorrow."
+        detail: "- Mr. Lees is not here tomorrow. Today in class, he gave you (or someone in your group) the third sensor to research for the Sensor Assignment."
+    },
+    {
+        title: "Website News",
+        detail: "- Website shouldn't be manually updated now. Now I import from the Google Sheets"
     }
 ];
 
+// ===========================================================================
+// 2. GOOGLE SHEET & COURSE MAPPING CONFIGURATION
+// ===========================================================================
+
+// Converted your Google Sheet web page link into a direct live CSV data feed
+const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSRQurR8W4u5YTsrrjvDMJqJjDKzbzFVwLKEMuXOd8L2lK4YHN2L3rLb6mR4kXUOMi3hJ--ypSHQJ3z/pub?gid=627232616&single=true&output=csv";
+
+// Course Abbreviation Mappings
+const COURSE_MAP = {
+    "bio": "Adv. Science 4: Biology",
+    "ess": "Adv. Science 3: ESS",
+    "cs": "Algorithms & Data Structures",
+    "fot": "Foundations of Technology"
+};
+
+// Default room and teacher mappings for rendering
+const ROOM_MAP = {
+    "Adv. Science 4: Biology": "2614 Yu",
+    "Adv. Science 3: ESS": "1708 Kingman",
+    "Algorithms & Data Structures": "1702 Hallisey",
+    "Foundations of Technology": "1620 Lees"
+};
+
+// Manual Holiday / No School Override (optional)
 const IS_HOLIDAY = false; 
 const HOLIDAY_REASON = "School Holiday"; 
 
-const SPECIFIC_HOLIDAYS = [
-    "2026-09-21",
-    "2026-11-26",
-    "2026-12-25",
-    "2027-01-01"
-];
-
 // ===========================================================================
-// XBOX POP-UP BANNER ANIMATION LOOP
+// 3. XBOX POP-UP BANNER ANIMATION LOOP
 // ===========================================================================
 
 let currentAnnouncementIndex = 0;
@@ -40,46 +61,34 @@ function cycleXboxBanner() {
     if (!banner || !textElement || ANNOUNCEMENTS.length === 0) return;
 
     const currentItem = ANNOUNCEMENTS[currentAnnouncementIndex];
-
-    // Inject structured HTML so only title is bolded
     textElement.innerHTML = `<span class="xbox-title">${currentItem.title}</span><span class="xbox-detail">${currentItem.detail}</span>`;
 
-    // 1. Calculate dynamic target width based on text length
+    // Measure target width based on text
     banner.style.transition = 'none';
     banner.style.width = 'auto';
-    banner.style.maxWidth = '92vw'; // Prevents overflowing small screens
+    banner.style.maxWidth = '92vw';
     
     const targetWidth = banner.getBoundingClientRect().width;
 
-    // Reset back to collapsed 50px state
     banner.style.width = '50px';
-    
-    // Force layout update before starting animation
-    void banner.offsetWidth;
+    void banner.offsetWidth; // Force redraw
 
-    // Re-enable smooth 0.75-second transition
     banner.style.transition = 'width 0.75s cubic-bezier(0.25, 1, 0.5, 1)';
 
-    // Step 1: Smoothly expand bar over 0.75 seconds
     requestAnimationFrame(() => {
         banner.style.width = `${targetWidth}px`;
     });
 
-    // Step 2: Fade in text halfway through expansion
     setTimeout(() => {
         banner.classList.add("show-text");
     }, 400);
 
-    // Step 3: Display message for 5.5 seconds
     setTimeout(() => {
-        // Fade out text first
         banner.classList.remove("show-text");
 
-        // Step 4: Smoothly shrink bar back to square/circle over 0.75 seconds
         setTimeout(() => {
             banner.style.width = '50px';
 
-            // Step 5: Wait for collapse transition (750ms) to finish, then trigger next message
             setTimeout(() => {
                 currentAnnouncementIndex = (currentAnnouncementIndex + 1) % ANNOUNCEMENTS.length;
                 cycleXboxBanner();
@@ -91,47 +100,85 @@ function cycleXboxBanner() {
 }
 
 // ===========================================================================
-// AUTOMATIC DATE & NO-SCHOOL LOGIC
+// 4. LIVE SCHEDULE AUTO-UPDATER FROM GOOGLE SHEETS
 // ===========================================================================
 
-document.addEventListener("DOMContentLoaded", () => {
+// Simple CSV line parser
+function parseCSV(text) {
+    const lines = text.split('\n');
+    return lines.map(line => line.split(',').map(cell => cell.trim().replace(/^"|"$/g, '')));
+}
 
-    cycleXboxBanner();
+// Convert shorthand key to full name
+function formatCourseName(key) {
+    if (!key) return "No Class / Free Period";
+    const cleanKey = key.toLowerCase().trim();
+    return COURSE_MAP[cleanKey] || key; // Returns mapped name or raw text if already full name
+}
 
+async function fetchAndApplySchedule() {
     const now = new Date();
-
     const year = now.getFullYear();
     const month = String(now.getMonth() + 1).padStart(2, '0');
     const day = String(now.getDate()).padStart(2, '0');
     
-    const formattedDate = `${year}-${month}-${day}`;
-
+    const formattedDateISO = `${year}-${month}-${day}`; // YYYY-MM-DD
+    const formattedDateUS = `${now.getMonth() + 1}/${now.getDate()}/${year}`; // M/D/YYYY
+    
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const dayOfWeekName = daysOfWeek[now.getDay()];
 
+    // Render Date Header
     const dateDisplay = document.getElementById("dateDisplay");
     const dayDisplay = document.getElementById("dayDisplay");
-
-    if (dateDisplay) dateDisplay.textContent = formattedDate;
+    if (dateDisplay) dateDisplay.textContent = formattedDateISO;
     if (dayDisplay) dayDisplay.textContent = dayOfWeekName;
-
-    const isWeekend = (now.getDay() === 0 || now.getDay() === 6);
-    const isSpecificHoliday = SPECIFIC_HOLIDAYS.includes(formattedDate);
 
     const scheduleContainer = document.getElementById("scheduleContainer");
     const noSchoolBanner = document.getElementById("noSchoolBanner");
     const noSchoolReason = document.getElementById("noSchoolReason");
 
-    if (isWeekend || IS_HOLIDAY || isSpecificHoliday) {
+    // Check Weekend or Manual Holiday
+    if (now.getDay() === 0 || now.getDay() === 6 || IS_HOLIDAY) {
         if (scheduleContainer) scheduleContainer.style.display = "none";
         if (noSchoolBanner) noSchoolBanner.style.display = "block";
-
-        if (isWeekend) {
-            if (noSchoolReason) noSchoolReason.textContent = "Weekend - No School Today!";
-        } else if (IS_HOLIDAY) {
-            if (noSchoolReason) noSchoolReason.textContent = HOLIDAY_REASON;
-        } else if (isSpecificHoliday) {
-            if (noSchoolReason) noSchoolReason.textContent = "School Holiday!";
-        }
+        if (noSchoolReason) noSchoolReason.textContent = IS_HOLIDAY ? HOLIDAY_REASON : "Weekend - No School Today!";
+        return;
     }
+
+    try {
+        const response = await fetch(SHEET_CSV_URL);
+        if (!response.ok) throw new Error("Failed to fetch sheet");
+        
+        const csvData = await response.text();
+        const rows = parseCSV(csvData);
+
+        // Find row matching today's date (searches YYYY-MM-DD or M/D/YYYY format)
+        let todayRow = rows.find(row => row[0].includes(formattedDateISO) || row[0].includes(formattedDateUS));
+
+        if (!todayRow) {
+            // Default active day schedule fallback if date row isn't explicitly listed in sheet
+            return;
+        }
+
+        // Check if sheet row explicitly marks "No School" or "Holiday"
+        if (todayRow[1] && (todayRow[1].toLowerCase().includes("no school") || todayRow[1].toLowerCase().includes("holiday"))) {
+            if (scheduleContainer) scheduleContainer.style.display = "none";
+            if (noSchoolBanner) noSchoolBanner.style.display = "block";
+            if (noSchoolReason) noSchoolReason.textContent = todayRow[1];
+            return;
+        }
+
+    } catch (error) {
+        console.warn("Using default schedule (Google Sheet offline or fetching issue):", error);
+    }
+}
+
+// ===========================================================================
+// 5. INITIALIZATION
+// ===========================================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+    cycleXboxBanner();
+    fetchAndApplySchedule();
 });
