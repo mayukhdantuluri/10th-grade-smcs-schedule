@@ -12,6 +12,10 @@ const ANNOUNCEMENTS = [
         detail: "- Finish the Calorimetry Lab by end of class today."
     },
     {
+        title: "Adv. Science 4: Biology",
+        detail: "- If you didn't do good during the original quiz from 2026-09-10, reassessments are to be done in lunch either today, tomorrow, Monday, or Tuesday."
+    },
+    {
         title: "Foundations of Technology",
         detail: "- Mr. Lees is not here today. Yesterday in class, he gave you (or someone in your group) the third (final) sensor to research for the Sensor Assignment."
     }
