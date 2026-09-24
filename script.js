@@ -9,11 +9,11 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Adv. Science 4: Biology",
-        detail: "- Finish the Calorimetry Lab by end of class today."
+        detail: "- If you didn't do good during the original quiz from 2026-09-10, reassessments are to be done in lunch either today, tomorrow, Monday, or Tuesday."
     },
     {
-        title: "Adv. Science 4: Biology",
-        detail: "- If you didn't do good during the original quiz from 2026-09-10, reassessments are to be done in lunch either today, tomorrow, Monday, or Tuesday."
+        title: "Algorithms & Data Structures",
+        detail: "- We will have a guest speaker tomorrow. Report to the ISP Hub whenever you have Ms. Hallisey's class."
     },
     {
         title: "Foundations of Technology",
