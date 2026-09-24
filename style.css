@@ -30,7 +30,7 @@ body {
     z-index: -1;
 }
 
-/* Container expanded to accommodate wider side panels */
+/* Container */
 .page-container {
     max-width: 1550px;
     margin: 0 auto;
@@ -141,10 +141,8 @@ body {
    =========================================================================== */
 .content-grid {
     display: grid;
-    /* Side columns updated */
-    grid-template-columns: 360px 1fr 360px; 
+    grid-template-columns: 420px 1fr 420px; 
     gap: 20px;
-    /* Changed from 'start' to 'stretch' so both side cards reach equal bottom length */
     align-items: stretch; 
 }
 
@@ -203,20 +201,30 @@ body {
     margin-bottom: 30px;
 }
 
-/* ONLY date in Roboto Mono */
+/* Date in Roboto Mono */
 .date-mono {
     font-family: 'Roboto Mono', monospace;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: -1px;
+}
+
+/* 24-Hour Live Clock in Roboto Mono */
+.time-mono {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffeeee; /* Accent color matching glowing theme */
+    margin-top: 4px;
+    letter-spacing: -0.5px;
 }
 
 /* Day of Week in standard Roboto */
 .day-roboto {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #cccccc;
-    margin-top: 4px;
+    margin-top: 6px;
 }
 
 /* Schedule Grid Inside Center Card */
