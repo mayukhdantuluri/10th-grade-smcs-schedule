@@ -9,11 +9,11 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Adv. Science 4: Biology",
-        detail: "- Finish the Calorimetry Lab by end of class tomorrow."
+        detail: "- Finish the Calorimetry Lab by end of class today."
     },
     {
         title: "Foundations of Technology",
-        detail: "- Mr. Lees is not here tomorrow. Today in class, he gave you (or someone in your group) the third sensor to research for the Sensor Assignment."
+        detail: "- Mr. Lees is not here today. Yesterday in class, he gave you (or someone in your group) the third (final) sensor to research for the Sensor Assignment."
     }
 ];
 
