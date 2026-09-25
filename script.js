@@ -12,6 +12,10 @@ const ANNOUNCEMENTS = [
         detail: "- Mr. Kingman said our field trip might be on 2026-10-23. Permissions forms are yet to be sent out."
     },
     {
+        title: "Adv. Science 3: ESS",
+        detail: "- Finish the Excel Contour Work by class on Monday."
+    },
+    {
         title: "Adv. Science 4: Biology",
         detail: "- If you didn't do good during the original quiz from 2026-09-10, reassessments are to be done in lunch either today, Monday, or Tuesday."
     },
