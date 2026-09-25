@@ -17,7 +17,7 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Adv. Science 4: Biology",
-        detail: "- If you didn't do good during the original quiz from 2026-09-10, reassessments are to be done in lunch either today, Monday, or Tuesday."
+        detail: "- If you didn't do good during the original quiz from 2026-09-10, reassessments are to be done in lunch either Monday or Tuesday."
     },
     {
         title: "Algorithms & Data Structures",
