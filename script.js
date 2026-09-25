@@ -4,16 +4,12 @@
 
 const ANNOUNCEMENTS = [
     {
-        title: "Website Info",
-        detail: "- Don't worry about the 00:00:00. That's just a feature that wasn't fixed yet."
-    },
-    {
         title: "Adv. Science 3: ESS",
         detail: "- Mr. Kingman said our field trip might be on 2026-10-23. Permissions forms are yet to be sent out."
     },
     {
         title: "Adv. Science 3: ESS",
-        detail: "- Finish the Excel Contour Work by class on Monday."
+        detail: "- Finish the Excel Contour Work by class on Monday. All 5 lines should be done and use 0.1 mile increments for each."
     },
     {
         title: "Adv. Science 4: Biology",
