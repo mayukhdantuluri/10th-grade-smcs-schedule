@@ -21,7 +21,7 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Algorithms & Data Structures",
-        detail: "- We will have a guest speaker today. Report to the ISP Hub whenever you have Ms. Hallisey's class."
+        detail: "- On Monday, there is a Not-a-Quiz on 1.13 and 1.14."
     }
 ];
 
