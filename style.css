@@ -193,15 +193,12 @@ body {
 
 /* Schedule Card (Center) */
 .schedule-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     text-align: center;
     padding: 25px 20px;
 }
 
 .date-header {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 /* Date in Roboto Mono */
@@ -220,10 +217,12 @@ body {
     margin-top: 4px;
 }
 
-/* Schedule Card (Center) */
-.schedule-card {
-    text-align: center;
-    padding: 25px 20px;
+/* Schedule Grid Inside Center Card (3 Columns) */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 18px 10px;
+    align-items: center;
 }
 
 .col-header {
@@ -257,9 +256,9 @@ body {
 /* 24-Hour Live Clock (Positioned right below Period 4) */
 .time-mono {
     font-family: 'Roboto Mono', monospace;
-    font-size: 4rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    color: #ffaaaa;
+    color: #ff3333;
     margin-top: 25px;
     letter-spacing: -0.5px;
     text-shadow: 0 0 10px rgba(255, 51, 51, 0.4);
