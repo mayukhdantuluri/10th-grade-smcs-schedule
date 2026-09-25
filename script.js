@@ -4,6 +4,10 @@
 
 const ANNOUNCEMENTS = [
     {
+        title: "Website Info",
+        detail: "- Don't worry about the 00:00:00. That's just a feature that wasn't fixed yet."
+    },
+    {
         title: "Adv. Science 3: ESS",
         detail: "- Mr. Kingman said our field trip might be on 2026-10-23. Permissions forms are yet to be sent out."
     },
@@ -13,11 +17,7 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Algorithms & Data Structures",
-        detail: "- We will have a guest speaker tomorrow. Report to the ISP Hub whenever you have Ms. Hallisey's class."
-    },
-    {
-        title: "Foundations of Technology",
-        detail: "- Mr. Lees is not here today. Yesterday in class, he gave you (or someone in your group) the third (final) sensor to research for the Sensor Assignment."
+        detail: "- We will have a guest speaker today. Report to the ISP Hub whenever you have Ms. Hallisey's class."
     }
 ];
 
