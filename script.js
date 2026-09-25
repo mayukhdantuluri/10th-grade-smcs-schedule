@@ -25,7 +25,12 @@ const IS_HOLIDAY = false;
 const HOLIDAY_REASON = "School Holiday"; 
 
 const SPECIFIC_HOLIDAYS = [
+    "2026-10-16",
+    "2026-11-02",
+    "2026-11-03",
     "2026-11-26",
+    "2026-11-27",
+    "2026-12-24",
     "2026-12-25",
     "2027-01-01"
 ];
