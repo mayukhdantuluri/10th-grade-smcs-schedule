@@ -141,7 +141,7 @@ body {
    =========================================================================== */
 .content-grid {
     display: grid;
-    grid-template-columns: 350px 1fr 350px; 
+    grid-template-columns: 420px 1fr 420px; 
     gap: 20px;
     align-items: stretch; 
 }
@@ -193,12 +193,15 @@ body {
 
 /* Schedule Card (Center) */
 .schedule-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
     padding: 25px 20px;
 }
 
 .date-header {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 /* Date in Roboto Mono */
@@ -209,22 +212,12 @@ body {
     letter-spacing: -1px;
 }
 
-/* 24-Hour Live Clock in Roboto Mono */
-.time-mono {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #ffeeee; /* Accent color matching glowing theme */
-    margin-top: 4px;
-    letter-spacing: -0.5px;
-}
-
 /* Day of Week in standard Roboto */
 .day-roboto {
     font-family: 'Roboto', sans-serif;
     font-size: 1.3rem;
     color: #cccccc;
-    margin-top: 6px;
+    margin-top: 4px;
 }
 
 /* Schedule Grid Inside Center Card */
@@ -261,6 +254,18 @@ body {
     font-size: 0.82rem;
     color: #cccccc;
     margin-top: 3px;
+}
+
+/* 24-Hour Live Clock (Bottom of Center Card) */
+.time-mono {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ff3333;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+    text-shadow: 0 0 10px rgba(255, 51, 51, 0.4);
 }
 
 /* No School Banner */
