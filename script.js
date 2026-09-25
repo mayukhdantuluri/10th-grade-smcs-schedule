@@ -141,11 +141,9 @@ function cycleXboxBanner() {
 // 5. INITIALIZATION
 // ===========================================================================
 
-// Run immediately to eliminate delay before DOM loads
 updateClock();
 updateDate();
 
-// Run on DOM load and set interval timers
 document.addEventListener("DOMContentLoaded", () => {
     updateClock();
     updateDate();
