@@ -141,7 +141,7 @@ body {
    =========================================================================== */
 .content-grid {
     display: grid;
-    grid-template-columns: 360px 1fr 360px; 
+    grid-template-columns: 380px 1fr 380px; 
     gap: 20px;
     align-items: stretch; 
 }
