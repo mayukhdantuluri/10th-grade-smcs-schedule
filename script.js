@@ -52,7 +52,7 @@ function updateClock() {
 }
 
 // ===========================================================================
-// 3. DATE UPDATER
+// 3. DATE UPDATER & WEEKEND TOGGLE
 // ===========================================================================
 
 function updateDate() {
@@ -71,7 +71,7 @@ function updateDate() {
     if (dateDisplay) dateDisplay.textContent = formattedDateISO;
     if (dayDisplay) dayDisplay.textContent = dayOfWeekName;
 
-    // Weekend Check
+    // Weekend Check: hide schedule grid, show banner, keep time visible
     const scheduleContainer = document.getElementById("scheduleContainer");
     const noSchoolBanner = document.getElementById("noSchoolBanner");
     const noSchoolReason = document.getElementById("noSchoolReason");
@@ -80,6 +80,9 @@ function updateDate() {
         if (scheduleContainer) scheduleContainer.style.display = "none";
         if (noSchoolBanner) noSchoolBanner.style.display = "block";
         if (noSchoolReason) noSchoolReason.textContent = "Weekend - No School Today!";
+    } else {
+        if (scheduleContainer) scheduleContainer.style.display = "block";
+        if (noSchoolBanner) noSchoolBanner.style.display = "none";
     }
 }
 
