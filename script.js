@@ -8,16 +8,12 @@ const ANNOUNCEMENTS = [
         detail: "- Mr. Kingman said our field trip to Seneca Creek might be on 2026-10-23. Permissions forms are yet to be sent out."
     },
     {
-        title: "Adv. Science 3: ESS",
-        detail: "- Finish the Excel Contour Work by start of class today. All 5 lines should be done and use 0.1 mile increments for each."
-    },
-    {
         title: "Adv. Science 4: Biology",
         detail: "- If you didn't do good during the original quiz from 2026-09-10, reassessments are to be done in lunch either today or tomorrow."
     },
     {
         title: "Algorithms & Data Structures",
-        detail: "- There is a Not-a-Quiz on 1.13 and 1.14."
+        detail: "- Ms. Hallisey is out tomorrow. Finish the Computer Team Fundraiser code by end of class tomorrow with the substitute."
     }
 ];
 
