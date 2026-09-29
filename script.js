@@ -4,12 +4,12 @@
 
 const ANNOUNCEMENTS = [
     {
-        title: "SMCS HQ",
-        detail: "- Mr. Kingman said our field trip to Seneca Creek might be on 2026-10-23. Permissions forms are yet to be sent out."
+        title: "",
+        detail: "Our field trip to Seneca Creek is on 2026-10-23 from 7:45 AM to 2:15 PM. Permission forms have been given out."
     },
     {
         title: "Adv. Science 4: Biology",
-        detail: "- If you didn't do good during the original quiz from 2026-09-10, today in lunch is the LAST reassessment opportunity."
+        detail: "- Mr. Yu is out today. Finish the Membrane Structure Worksheet by start of class tomorrow."
     },
     {
         title: "Algorithms & Data Structures",
