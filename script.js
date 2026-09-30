@@ -6,7 +6,11 @@ const ANNOUNCEMENTS = [
     {
         title: "",
         detail: "Our field trip to Seneca Creek is on 2026-10-23 from 7:45 AM to 2:15 PM. Permission forms have been given out. The cost is 38.25 USD."
-    }
+    },
+    {
+        title: "Adv. Science 4: Biology",
+        detail: "If you bombed the quiz from 2026-09-10, the final reassessment opportunities are today in Falcon Time & at Lunch."
+    },
 ];
 
 const IS_HOLIDAY = false; 
