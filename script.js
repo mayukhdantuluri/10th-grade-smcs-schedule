@@ -9,7 +9,7 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Adv. Science 4: Biology",
-        detail: "If you bombed the quiz from 2026-09-10, the final reassessment opportunities are today in Falcon Time & at Lunch."
+        detail: "- If you bombed the quiz from 2026-09-10, the final reassessment opportunities are today in Falcon Time & at Lunch."
     },
 ];
 
