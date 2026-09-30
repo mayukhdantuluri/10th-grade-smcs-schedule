@@ -12,6 +12,14 @@ const ANNOUNCEMENTS = [
         detail: "- We will probably have a few minutes in class tomorrow to finish the Bubble Lab."
     },
     {
+        title: "Algorithms & Data Structures",
+        detail: "- Finish all notes for Unit 1 by start of class on 2026-10-05, including 1.15."
+    },
+    {
+        title: "Foundations of Technology",
+        detail: "- The Discover Engineering assignment is due by start of class on 2026-10-05."
+    },
+    {
         title: "Foundations of Technology",
         detail: "- Once you get a working Roomba, upload the code to the Canvas assignment & submit. Some groups will receive photoresistors tomorrow."
     },
