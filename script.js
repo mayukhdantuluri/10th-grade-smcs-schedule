@@ -6,14 +6,6 @@ const ANNOUNCEMENTS = [
     {
         title: "",
         detail: "Our field trip to Seneca Creek is on 2026-10-23 from 7:45 AM to 2:15 PM. Permission forms have been given out."
-    },
-    {
-        title: "Adv. Science 4: Biology",
-        detail: "- Mr. Yu is out today. Finish the Membrane Structure Worksheet by start of class tomorrow."
-    },
-    {
-        title: "Algorithms & Data Structures",
-        detail: "- Ms. Hallisey is out today. Finish the Computer Team Fundraiser code by end of class today with the substitute."
     }
 ];
 
