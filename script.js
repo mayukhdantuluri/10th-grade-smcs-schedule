@@ -9,7 +9,11 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Adv. Science 4: Biology",
-        detail: "- If you bombed the quiz from 2026-09-10, the final reassessment opportunities are today in Falcon Time & at Lunch."
+        detail: "- We will probably have a few minutes in class tomorrow to finish the Bubble Lab."
+    },
+    {
+        title: "Foundations of Technology",
+        detail: "- Once you get a working Roomba, upload the code to the Canvas assignment & submit. Some groups will receive photoresistors tomorrow."
     },
 ];
 
