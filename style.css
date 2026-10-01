@@ -15,19 +15,17 @@ body {
     overflow-x: hidden;
 }
 
-/* Background layer at 0.4 opacity */
-.bg-layer {
+/* Background Video Layer at 0.4 opacity */
+.bg-video {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('homepage-background.mp4');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    object-fit: cover;
     opacity: 0.4;
     z-index: -1;
+    pointer-events: none;
 }
 
 /* Container */
@@ -141,7 +139,7 @@ body {
    =========================================================================== */
 .content-grid {
     display: grid;
-    grid-template-columns: 333px 1fr 333px; 
+    grid-template-columns: 420px 1fr 420px; 
     gap: 20px;
     align-items: stretch; 
 }
@@ -259,7 +257,7 @@ body {
     font-size: 5rem;
     font-weight: 700;
     color: #ffffff;
-    margin-top: 40px;
+    margin-top: 25px;
     letter-spacing: -0.5px;
     text-shadow: 0 0 10px rgba(255, 51, 51, 0.4);
 }
