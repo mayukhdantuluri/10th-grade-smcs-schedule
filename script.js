@@ -5,7 +5,7 @@
 const ANNOUNCEMENTS = [
     {
         title: "",
-        detail: "Our field trip to Seneca Creek is on 2026-10-23 from 7:45 AM to 2:15 PM. Permission forms have been given out. The cost is 38.25 USD."
+        detail: "Permission forms for our field trip to Seneca Creek have been given out. Fill them out & return them by 2026-10-09, and pay the 38.25 USD cost."
     },
     {
         title: "Adv. Science 4: Biology",
