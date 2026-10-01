@@ -139,7 +139,7 @@ body {
    =========================================================================== */
 .content-grid {
     display: grid;
-    grid-template-columns: 420px 1fr 420px; 
+    grid-template-columns: 330px 1fr 330px; 
     gap: 20px;
     align-items: stretch; 
 }
