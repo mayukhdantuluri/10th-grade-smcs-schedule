@@ -12,8 +12,8 @@ const ANNOUNCEMENTS = [
         detail: "- Finish the Running Water & Groundwater packet by start of class tomorrow."
     },
     {
-        title: "Adv. Science 4: Biology",
-        detail: "- We will probably have a few minutes in class today to finish the Bubble Lab."
+        title: "Algorithms & Data Structures",
+        detail: "- Ms. Hallisey is out tomorrow."
     },
     {
         title: "Algorithms & Data Structures",
