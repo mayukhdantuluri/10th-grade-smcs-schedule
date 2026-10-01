@@ -1,5 +1,5 @@
 // ===========================================================================
-// 1. ANNOUNCEMENTS CONFIGURATION (Manually managed by you)
+// 1. ANNOUNCEMENTS CONFIGURATION (Manually managed by the website owner)
 // ===========================================================================
 
 const ANNOUNCEMENTS = [
