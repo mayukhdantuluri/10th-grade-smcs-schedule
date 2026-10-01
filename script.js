@@ -13,7 +13,7 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Algorithms & Data Structures",
-        detail: "- Ms. Hallisey is out tomorrow."
+        detail: "- Ms. Hallisey is out tomorrow. She wants the students to practice Strings on CodingBat."
     },
     {
         title: "Algorithms & Data Structures",
