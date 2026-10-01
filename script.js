@@ -17,7 +17,11 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Algorithms & Data Structures",
-        detail: "- Finish all notes for Unit 1 by start of class on 2026-10-05, including 1.15."
+        detail: "- The 1.15 Not-a-Quiz will be in class on 2026-10-06."
+    },
+    {
+        title: "Algorithms & Data Structures",
+        detail: "- The Unit 1 Quiz will be in class on 2026-10-13. It might be two different days (One for MCQs, one for FRQs) or a double period to finish both."
     },
     {
         title: "Foundations of Technology",
