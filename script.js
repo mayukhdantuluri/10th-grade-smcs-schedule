@@ -9,7 +9,7 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Adv. Science 4: Biology",
-        detail: "- We will probably have a few minutes in class tomorrow to finish the Bubble Lab."
+        detail: "- We will probably have a few minutes in class today to finish the Bubble Lab."
     },
     {
         title: "Algorithms & Data Structures",
@@ -21,7 +21,7 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Foundations of Technology",
-        detail: "- Once you get a working Roomba, upload the code to the Canvas assignment & submit. Some groups will receive photoresistors tomorrow."
+        detail: "- Once you get a working Roomba, upload the code to the Canvas assignment & submit. Some groups will probably receive photoresistors today."
     },
 ];
 
