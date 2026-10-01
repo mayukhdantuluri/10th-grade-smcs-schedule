@@ -21,7 +21,11 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Foundations of Technology",
-        detail: "- Once you get a working Roomba, upload the code to the Canvas assignment & submit. Some groups will probably receive photoresistors today."
+        detail: "- Once you get a working Roomba, have ONE group member upload the code to the Canvas assignment & submit."
+    },
+    {
+        title: "Foundations of Technology",
+        detail: "- Finish the photoresistor research in your notebook and answer the two questions to be answered. Then, show to Mr. Lees for credit."
     },
 ];
 
