@@ -9,7 +9,7 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Adv. Science 3: ESS",
-        detail: "- Finish the Running Water & Groundwater packet by start of class today."
+        detail: "- Finish the Running Water & Groundwater packet by end of class today."
     },
     {
         title: "Algorithms & Data Structures",
