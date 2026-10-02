@@ -5,7 +5,7 @@
 const ANNOUNCEMENTS = [
     {
         title: "",
-        detail: "Permission forms for our field trip to Seneca Creek have been given out. Fill them out & return them by 2026-10-09, and pay the 38.25 USD cost."
+        detail: "Permission forms for Seneca Creek have been given out. Fill them out & return them by 2026-10-09, and pay the 38.25 USD cost on SchoolCash Online OR cash."
     },
     {
         title: "Adv. Science 3: ESS",
