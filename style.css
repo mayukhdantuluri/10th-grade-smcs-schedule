@@ -142,7 +142,7 @@ body {
     grid-template-columns: 330px 1fr 330px; 
     gap: 20px;
     align-items: stretch; 
-    opacity: 0.75;
+    opacity: 0.8;
 }
 
 /* Shared Card Styling */
