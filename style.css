@@ -152,7 +152,6 @@ body {
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9);
-    opacity: 0.65;
 }
 
 /* Student Members Columns Header */
@@ -223,7 +222,6 @@ body {
     grid-template-columns: 1fr 60px 1fr;
     gap: 18px 10px;
     align-items: center;
-    opacity: 0.65;
 }
 
 .col-header {
