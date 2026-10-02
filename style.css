@@ -23,7 +23,7 @@ body {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    opacity: 0.4;
+    opacity: 0.55;
     z-index: -1;
     pointer-events: none;
 }
@@ -142,6 +142,7 @@ body {
     grid-template-columns: 330px 1fr 330px; 
     gap: 20px;
     align-items: stretch; 
+    opacity: 0.65;
 }
 
 /* Shared Card Styling */
@@ -151,6 +152,7 @@ body {
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9);
+    opacity: 0.65;
 }
 
 /* Student Members Columns Header */
@@ -221,6 +223,7 @@ body {
     grid-template-columns: 1fr 60px 1fr;
     gap: 18px 10px;
     align-items: center;
+    opacity: 0.65;
 }
 
 .col-header {
