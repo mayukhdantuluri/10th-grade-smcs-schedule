@@ -9,11 +9,11 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Adv. Science 3: ESS",
-        detail: "- Finish the Running Water & Groundwater packet by start of class tomorrow."
+        detail: "- Finish the Running Water & Groundwater packet by start of class today."
     },
     {
         title: "Algorithms & Data Structures",
-        detail: "- Ms. Hallisey is out tomorrow. She wants the students to practice Strings on CodingBat."
+        detail: "- Ms. Hallisey is out today. She wants the students to practice Strings on CodingBat."
     },
     {
         title: "Algorithms & Data Structures",
