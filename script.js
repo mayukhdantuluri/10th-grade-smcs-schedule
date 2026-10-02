@@ -8,14 +8,6 @@ const ANNOUNCEMENTS = [
         detail: "Permission forms for Seneca Creek have been given out. Fill them out & return them by 2026-10-09, and pay the 38.25 USD cost on SchoolCash Online OR cash."
     },
     {
-        title: "Adv. Science 3: ESS",
-        detail: "- Finish the Running Water & Groundwater packet by end of class today."
-    },
-    {
-        title: "Algorithms & Data Structures",
-        detail: "- Ms. Hallisey is out today. She wants the students to practice Strings on CodingBat."
-    },
-    {
         title: "Algorithms & Data Structures",
         detail: "- The 1.15 Not-a-Quiz will be in class on 2026-10-06."
     },
