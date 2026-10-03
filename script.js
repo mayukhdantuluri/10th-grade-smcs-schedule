@@ -5,11 +5,11 @@
 const ANNOUNCEMENTS = [
     {
         title: "",
-        detail: "Permission forms for Seneca Creek have been given out. Fill them out & return them by 2026-10-09, and pay the 38.25 USD cost on SchoolCash Online OR cash."
+        detail: "Permission forms for Seneca Creek have been given out. Fill them out & return them by THIS FRIDAY, and pay the 38.25 USD cost on SchoolCash Online OR cash."
     },
     {
         title: "Algorithms & Data Structures",
-        detail: "- The 1.15 Not-a-Quiz will be in class on 2026-10-06."
+        detail: "- The 1.15 Not-a-Quiz will be in class on Tuesday."
     },
     {
         title: "Algorithms & Data Structures",
@@ -17,15 +17,11 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Foundations of Technology",
-        detail: "- The Discover Engineering assignment is due by start of class on 2026-10-05."
+        detail: "- The Discover Engineering assignment is due by end of day on Monday."
     },
     {
         title: "Foundations of Technology",
         detail: "- Once you get a working Roomba, have ONE group member upload the code to the Canvas assignment & submit."
-    },
-    {
-        title: "Foundations of Technology",
-        detail: "- Finish the photoresistor research in your notebook and answer the two questions to be answered. Then, show to Mr. Lees for credit."
     },
 ];
 
