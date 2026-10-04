@@ -82,10 +82,9 @@ body {
 .xbox-banner-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Aligned to top so height changes directly shift cards below */
     width: 100%;
     margin-bottom: 25px;
-    min-height: 70px;
 }
 
 .xbox-banner {
@@ -99,7 +98,6 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 18px rgba(184, 13, 25, 0.7);
     box-sizing: border-box;
-    /* GPU Hardware Acceleration & Smooth Compositing */
     will-change: width, height, border-radius;
     transform: translateZ(0);
     backface-visibility: hidden;
@@ -133,7 +131,7 @@ body {
     text-align: center;
     white-space: nowrap;
     opacity: 0;
-    transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.3s ease;
     padding: 6px 25px 6px 15px;
     color: #ffffff;
     flex: 1;
@@ -169,7 +167,7 @@ body {
    =========================================================================== */
 .content-grid {
     display: grid;
-    grid-template-columns: 420px 1fr 420px; 
+    grid-template-columns: 340px 1fr 340px; 
     gap: 20px;
     align-items: stretch;
     width: 100%;
