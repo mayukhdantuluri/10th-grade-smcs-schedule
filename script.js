@@ -83,7 +83,7 @@ function updateDate() {
     if (now.getDay() === 0 || now.getDay() === 6) {
         if (scheduleContainer) scheduleContainer.style.display = "none";
         if (noSchoolBanner) noSchoolBanner.style.display = "block";
-        if (noSchoolReason) noSchoolReason.textContent = "Weekend - No School Today!";
+        if (noSchoolReason) noSchoolReason.textContent = "Enjoy the weekend!";
     } else {
         if (scheduleContainer) scheduleContainer.style.display = "block";
         if (noSchoolBanner) noSchoolBanner.style.display = "none";
@@ -137,7 +137,7 @@ function cycleXboxBanner() {
 
         }, 300);
 
-    }, 5500);
+    }, 7500);
 }
 
 // ===========================================================================
