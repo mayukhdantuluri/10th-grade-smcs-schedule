@@ -90,7 +90,7 @@ function updateDate() {
 }
 
 // ===========================================================================
-// 4. ULTRA-SMOOTH TWO-PHASE BANNER ANIMATION
+// 4. CONTROLLED TWO-PHASE BANNER ANIMATION
 // ===========================================================================
 
 let currentAnnouncementIndex = 0;
@@ -108,7 +108,7 @@ function cycleXboxBanner() {
         <div class="xbox-detail">${currentItem.detail}</div>
     `;
 
-    // 2. Measure dimensions
+    // 2. Measure required dimensions
     banner.style.transition = 'none';
     banner.style.width = 'max-content';
     banner.style.height = 'auto';
@@ -119,64 +119,62 @@ function cycleXboxBanner() {
     const targetWidth = Math.min(measuredWidth, window.innerWidth * 0.96);
     const targetHeight = Math.max(measuredHeight, 62);
 
-    // 3. Reset to collapsed state
+    // 3. Reset to collapsed 50x50 circle
     banner.style.width = '50px';
     banner.style.height = '50px';
     banner.style.borderRadius = '25px';
     banner.classList.remove("show-text");
-    void banner.offsetWidth; // Force synchronous reflow
+    void banner.offsetWidth; // Force layout recalculation
 
-    // --- EXPANSION PHASE ---
-    // Smooth custom fluid deceleration curve
-    banner.style.transition = 'width 0.42s cubic-bezier(0.16, 1, 0.3, 1), height 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-radius 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
+    // --- EXPANSION STEP 1: HORIZONTAL ONLY (Cards stay still) ---
+    banner.style.transition = 'width 0.75s cubic-bezier(0.25, 1, 0.5, 1), border-radius 0.75s cubic-bezier(0.25, 1, 0.5, 1)';
 
-    // Step 1: Expand horizontally first
     requestAnimationFrame(() => {
         banner.style.width = `${targetWidth}px`;
-        banner.style.height = '50px';
+        banner.style.height = '50px'; // Strictly fixed height (0 card movement)
         banner.style.borderRadius = '25px';
     });
 
-    // Step 2: Expand vertically smoothly at horizontal completion
+    // --- EXPANSION STEP 2: VERTICAL ONLY (Cards move down smoothly) ---
     setTimeout(() => {
+        banner.style.transition = 'height 0.55s cubic-bezier(0.25, 1, 0.5, 1), border-radius 0.55s cubic-bezier(0.25, 1, 0.5, 1)';
         banner.style.height = `${targetHeight}px`;
         banner.style.borderRadius = `${targetHeight / 2}px`;
 
-        // Smoothly fade in text during vertical opening
+        // Fade in text as vertical opening finishes
         setTimeout(() => {
             banner.classList.add("show-text");
-        }, 100);
+        }, 200);
 
-    }, 400);
+    }, 750);
 
-    // --- HOLD & SHRINK PHASE ---
+    // --- HOLD DISPLAY & SHRINK SEQUENCE ---
     setTimeout(() => {
-        // Step A: Fade out text
+        // Step A: Fade out text content
         banner.classList.remove("show-text");
 
         setTimeout(() => {
-            // Easing for shrinking back down
-            banner.style.transition = 'height 0.32s cubic-bezier(0.4, 0, 0.2, 1), width 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.32s cubic-bezier(0.4, 0, 0.2, 1)';
-
-            // Step B: Shrink vertically first
+            // Step B: VERTICAL SHRINK ONLY (Cards move back up here)
+            banner.style.transition = 'height 0.55s cubic-bezier(0.25, 1, 0.5, 1), border-radius 0.55s cubic-bezier(0.25, 1, 0.5, 1)';
             banner.style.height = '50px';
             banner.style.borderRadius = '25px';
 
             setTimeout(() => {
-                // Step C: Shrink horizontally back to circle
+                // Step C: HORIZONTAL SHRINK ONLY (Cards stay still)
+                banner.style.transition = 'width 0.75s cubic-bezier(0.25, 1, 0.5, 1)';
                 banner.style.width = '50px';
 
-                // Step D: Trigger next item cycle
+                // Step D: PAUSE IN CIRCLE STATE (3-second rest before next announcement)
                 setTimeout(() => {
                     currentAnnouncementIndex = (currentAnnouncementIndex + 1) % ANNOUNCEMENTS.length;
                     cycleXboxBanner();
-                }, 420);
+                }, 3000);
 
-            }, 300);
+            }, 550); // Wait for vertical shrink to complete
 
-        }, 180);
+        }, 300); // Wait for text fade-out
 
-    }, 6000);
+    }, 7300); // Display hold duration
 }
 
 // ===========================================================================
