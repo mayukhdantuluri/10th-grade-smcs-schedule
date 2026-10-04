@@ -15,7 +15,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Background Video Layer at full opacity */
+/* Background Video Layer at 0.4 opacity */
 .bg-video {
     position: fixed;
     top: 0;
@@ -23,7 +23,7 @@ body {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    opacity: 0.8;
+    opacity: 0.4;
     z-index: -1;
     pointer-events: none;
 }
@@ -52,6 +52,7 @@ body {
         0 0 30px #bf0000,
         0 0 40px #990000;
     letter-spacing: 1px;
+    word-break: break-word;
 }
 
 .glow-subtitle {
@@ -64,6 +65,7 @@ body {
         0 0 10px #ff0000,
         0 0 20px #e60000,
         0 0 30px #bf0000;
+    word-break: break-word;
 }
 
 /* ===========================================================================
@@ -139,10 +141,9 @@ body {
    =========================================================================== */
 .content-grid {
     display: grid;
-    grid-template-columns: 330px 1fr 330px; 
+    grid-template-columns: 420px 1fr 420px; 
     gap: 20px;
     align-items: stretch; 
-    opacity: 0.85;
 }
 
 /* Shared Card Styling */
@@ -203,7 +204,7 @@ body {
 /* Date in Roboto Mono */
 .date-mono {
     font-family: 'Roboto Mono', monospace;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: -1px;
 }
@@ -211,7 +212,7 @@ body {
 /* Day of Week in standard Roboto */
 .day-roboto {
     font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
+    font-size: 1.3rem;
     color: #cccccc;
     margin-top: 4px;
 }
@@ -255,9 +256,9 @@ body {
 /* 24-Hour Live Clock */
 .time-mono {
     font-family: 'Roboto Mono', monospace;
-    font-size: 7rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    color: #ffffff;
+    color: #ff3333;
     margin-top: 25px;
     letter-spacing: -0.5px;
     text-shadow: 0 0 10px rgba(255, 51, 51, 0.4);
@@ -279,7 +280,11 @@ body {
     color: #dddddd;
 }
 
-/* Responsive adjustments */
+/* ===========================================================================
+   Responsive Media Queries (Tablets & Mobile Phones)
+   =========================================================================== */
+
+/* Desktop / Tablet Breakpoint (1200px) */
 @media (max-width: 1200px) {
     .content-grid {
         grid-template-columns: 1fr;
@@ -291,5 +296,103 @@ body {
     
     .glow-subtitle {
         font-size: 1.8rem;
+    }
+}
+
+/* Mobile Breakpoint (768px) */
+@media (max-width: 768px) {
+    .page-container {
+        padding: 10px 8px 30px;
+    }
+
+    .main-header {
+        margin-bottom: 15px;
+    }
+
+    .glow-title {
+        font-size: 2.2rem;
+    }
+
+    .glow-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .card {
+        padding: 15px 10px;
+        border-radius: 15px;
+    }
+
+    .date-mono {
+        font-size: 1.8rem;
+    }
+
+    .day-roboto {
+        font-size: 1.1rem;
+    }
+
+    .schedule-grid {
+        grid-template-columns: 1fr 45px 1fr;
+        gap: 14px 6px;
+    }
+
+    .col-header {
+        font-size: 1rem;
+    }
+
+    .period-num {
+        font-size: 1.4rem;
+    }
+
+    .class-title {
+        font-size: 0.85rem;
+    }
+
+    .class-room {
+        font-size: 0.75rem;
+    }
+
+    .time-mono {
+        font-size: 1.8rem;
+        margin-top: 18px;
+    }
+}
+
+/* Extra Small Mobile Phones (420px and below) */
+@media (max-width: 420px) {
+    .glow-title {
+        font-size: 1.8rem;
+    }
+
+    .glow-subtitle {
+        font-size: 1.05rem;
+    }
+
+    .date-mono {
+        font-size: 1.5rem;
+    }
+
+    .schedule-grid {
+        grid-template-columns: 1fr 35px 1fr;
+        gap: 12px 4px;
+    }
+
+    .col-header {
+        font-size: 0.9rem;
+    }
+
+    .period-num {
+        font-size: 1.2rem;
+    }
+
+    .class-title {
+        font-size: 0.78rem;
+    }
+
+    .class-room {
+        font-size: 0.7rem;
+    }
+
+    .members-list {
+        font-size: 0.85rem;
     }
 }
