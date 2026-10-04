@@ -85,6 +85,7 @@ body {
     align-items: center;
     width: 100%;
     margin-bottom: 25px;
+    min-height: 70px; /* Reserves space so layout shift is smooth */
 }
 
 .xbox-banner {
@@ -97,10 +98,6 @@ body {
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 4px 18px rgba(184, 13, 25, 0.7);
-    /* Smooth width & height animation pushes content below down seamlessly */
-    transition: width 0.75s cubic-bezier(0.25, 1, 0.5, 1), 
-                height 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
-                border-radius 0.5s ease;
     box-sizing: border-box;
 }
 
@@ -123,17 +120,17 @@ body {
     object-fit: contain;
 }
 
-/* Text box container holding middle-aligned line 1 and line 2 */
+/* Centered Text Box Container */
 .xbox-text-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Horizontally center contents */
-    text-align: center;  /* Center text lines */
+    align-items: center;
+    text-align: center;
     white-space: nowrap;
     opacity: 0;
-    transition: opacity 0.35s ease;
-    padding: 6px 25px 6px 15px; /* Balanced padding for centered text */
+    transition: opacity 0.25s ease;
+    padding: 6px 25px 6px 15px;
     color: #ffffff;
     flex: 1;
     min-width: 0;
@@ -143,7 +140,7 @@ body {
     opacity: 1;
 }
 
-/* Line 1: Bold class title (Middle Aligned) */
+/* Line 1: Bold title (Middle Aligned) */
 .xbox-title {
     font-weight: 700;
     font-size: 1.05rem;
@@ -152,7 +149,7 @@ body {
     text-align: center;
 }
 
-/* Line 2: Unbolded message (Middle Aligned) */
+/* Line 2: Regular detail (Middle Aligned) */
 .xbox-detail {
     font-weight: 400;
     font-size: 0.95rem;
