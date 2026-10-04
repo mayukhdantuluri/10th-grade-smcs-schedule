@@ -5,6 +5,12 @@
     padding: 0;
 }
 
+html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
 /* Default Font: Roboto */
 body {
     background-color: #000000;
@@ -12,7 +18,6 @@ body {
     font-family: 'Roboto', sans-serif;
     min-height: 100vh;
     position: relative;
-    overflow-x: hidden;
 }
 
 /* Background Video Layer at 0.8 opacity */
@@ -28,17 +33,20 @@ body {
     pointer-events: none;
 }
 
-/* Container */
+/* Page Container */
 .page-container {
+    width: 100%;
     max-width: 1550px;
     margin: 0 auto;
     padding: 20px 15px 40px;
+    box-sizing: border-box;
 }
 
 /* Glowing Neon Header */
 .main-header {
     text-align: center;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .glow-title {
@@ -76,7 +84,10 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 54px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .xbox-banner {
@@ -85,10 +96,12 @@ body {
     background-color: #b80d19; /* Xbox Red */
     height: 50px;
     width: 50px;
+    max-width: 90vw;
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 4px 18px rgba(184, 13, 25, 0.7);
     transition: width 0.75s cubic-bezier(0.25, 1, 0.5, 1);
+    box-sizing: border-box;
 }
 
 .xbox-icon-box {
@@ -116,11 +129,13 @@ body {
     opacity: 0;
     transition: opacity 0.35s ease;
     padding-left: 10px;
-    padding-right: 22px;
+    padding-right: 18px;
     font-size: 1.05rem;
     color: #ffffff;
     display: flex;
     align-items: center;
+    flex: 1;
+    min-width: 0;
 }
 
 .xbox-banner.show-text .xbox-text-box {
@@ -130,10 +145,14 @@ body {
 .xbox-title {
     font-weight: 700;
     margin-right: 5px;
+    white-space: nowrap;
 }
 
 .xbox-detail {
     font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* ===========================================================================
@@ -143,7 +162,9 @@ body {
     display: grid;
     grid-template-columns: 420px 1fr 420px; 
     gap: 20px;
-    align-items: stretch; 
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
 }
 
 /* Shared Card Styling */
@@ -152,8 +173,11 @@ body {
     border: 2px solid #ffffff;
     border-radius: 20px;
     padding: 20px;
-    opacity: 0.85rem;
+    opacity: 0.85;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /* Student Members Columns Header */
@@ -181,7 +205,6 @@ body {
     margin-bottom: 2px;
 }
 
-/* Fixed alignment box for list numbers */
 .members-list li::before {
     content: counter(member-counter) ".";
     width: 28px;
@@ -259,7 +282,7 @@ body {
     font-family: 'Roboto Mono', monospace;
     font-size: 5rem;
     font-weight: 700;
-    color: #ffffff;
+    color: #ff3333;
     margin-top: 25px;
     letter-spacing: -0.5px;
     text-shadow: 0 0 10px rgba(255, 51, 51, 0.4);
@@ -285,7 +308,6 @@ body {
    Responsive Media Queries (Tablets & Mobile Phones)
    =========================================================================== */
 
-/* Desktop / Tablet Breakpoint (1200px) */
 @media (max-width: 1200px) {
     .content-grid {
         grid-template-columns: 1fr;
@@ -300,10 +322,9 @@ body {
     }
 }
 
-/* Mobile Breakpoint (768px) */
 @media (max-width: 768px) {
     .page-container {
-        padding: 10px 8px 30px;
+        padding: 12px 10px 30px;
     }
 
     .main-header {
@@ -315,12 +336,12 @@ body {
     }
 
     .glow-subtitle {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
     }
 
     .card {
-        padding: 15px 10px;
-        border-radius: 15px;
+        padding: 16px 12px;
+        border-radius: 16px;
     }
 
     .date-mono {
@@ -332,7 +353,7 @@ body {
     }
 
     .schedule-grid {
-        grid-template-columns: 1fr 45px 1fr;
+        grid-template-columns: 1fr 42px 1fr;
         gap: 14px 6px;
     }
 
@@ -341,7 +362,7 @@ body {
     }
 
     .period-num {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 
     .class-title {
@@ -358,31 +379,34 @@ body {
     }
 }
 
-/* Extra Small Mobile Phones (420px and below) */
 @media (max-width: 420px) {
     .glow-title {
-        font-size: 1.8rem;
+        font-size: 1.75rem;
     }
 
     .glow-subtitle {
-        font-size: 1.05rem;
+        font-size: 1rem;
+    }
+
+    .xbox-text-box {
+        font-size: 0.9rem;
     }
 
     .date-mono {
-        font-size: 1.5rem;
+        font-size: 1.45rem;
     }
 
     .schedule-grid {
-        grid-template-columns: 1fr 35px 1fr;
+        grid-template-columns: 1fr 32px 1fr;
         gap: 12px 4px;
     }
 
     .col-header {
-        font-size: 0.9rem;
+        font-size: 0.88rem;
     }
 
     .period-num {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
     }
 
     .class-title {
@@ -390,7 +414,7 @@ body {
     }
 
     .class-room {
-        font-size: 0.7rem;
+        font-size: 0.68rem;
     }
 
     .members-list {
