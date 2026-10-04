@@ -147,7 +147,7 @@ function cycleXboxBanner() {
             banner.classList.add("show-text");
         }, 150);
 
-    }, 400);
+    }, 1000);
 
     // --- HOLD & SHRINK SEQUENCE ---
     setTimeout(() => {
@@ -173,7 +173,7 @@ function cycleXboxBanner() {
 
         }, 250); // Wait for text fade-out to finish
 
-    }, 6000); // Banner display time
+    }, 7000); // Banner display time
 }
 
 // ===========================================================================
