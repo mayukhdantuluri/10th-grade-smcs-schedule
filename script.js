@@ -90,7 +90,7 @@ function updateDate() {
 }
 
 // ===========================================================================
-// 4. CONTROLLED TWO-PHASE BANNER ANIMATION
+// 4. PRECISION TIMED BANNER ANIMATION
 // ===========================================================================
 
 let currentAnnouncementIndex = 0;
@@ -108,7 +108,7 @@ function cycleXboxBanner() {
         <div class="xbox-detail">${currentItem.detail}</div>
     `;
 
-    // 2. Measure required dimensions
+    // 2. Measure required target dimensions
     banner.style.transition = 'none';
     banner.style.width = 'max-content';
     banner.style.height = 'auto';
@@ -124,57 +124,55 @@ function cycleXboxBanner() {
     banner.style.height = '50px';
     banner.style.borderRadius = '25px';
     banner.classList.remove("show-text");
-    void banner.offsetWidth; // Force layout recalculation
+    void banner.offsetWidth; // Force synchronous layout reflow
 
-    // --- EXPANSION STEP 1: HORIZONTAL ONLY (Cards stay still) ---
-    banner.style.transition = 'width 0.75s cubic-bezier(0.25, 1, 0.5, 1), border-radius 0.75s cubic-bezier(0.25, 1, 0.5, 1)';
+    // --- EXPANSION TRANSITIONS ---
+    banner.style.transition = 'width 0.55s cubic-bezier(0.25, 1, 0.5, 1), height 0.45s cubic-bezier(0.25, 1, 0.5, 1), border-radius 0.45s cubic-bezier(0.25, 1, 0.5, 1)';
 
+    // Step 1: Horizontal expansion begins immediately (t = 0s)
     requestAnimationFrame(() => {
         banner.style.width = `${targetWidth}px`;
-        banner.style.height = '50px'; // Strictly fixed height (0 card movement)
-        banner.style.borderRadius = '25px';
     });
 
-    // --- EXPANSION STEP 2: VERTICAL ONLY (Cards move down smoothly) ---
+    // Step 2: Vertical expansion begins 0.1s (100ms) after horizontal expansion
     setTimeout(() => {
-        banner.style.transition = 'height 0.55s cubic-bezier(0.25, 1, 0.5, 1), border-radius 0.55s cubic-bezier(0.25, 1, 0.5, 1)';
         banner.style.height = `${targetHeight}px`;
         banner.style.borderRadius = `${targetHeight / 2}px`;
 
-        // Fade in text as vertical opening finishes
+        // Fade in text as vertical opening completes
         setTimeout(() => {
             banner.classList.add("show-text");
         }, 200);
 
-    }, 750);
+    }, 100); // Max 0.1s time difference
 
-    // --- HOLD DISPLAY & SHRINK SEQUENCE ---
+    // --- HOLD & SHRINK PHASE ---
     setTimeout(() => {
-        // Step A: Fade out text content
+        // Step A: Fade out text
         banner.classList.remove("show-text");
 
         setTimeout(() => {
-            // Step B: VERTICAL SHRINK ONLY (Cards move back up here)
-            banner.style.transition = 'height 0.55s cubic-bezier(0.25, 1, 0.5, 1), border-radius 0.55s cubic-bezier(0.25, 1, 0.5, 1)';
+            banner.style.transition = 'height 0.45s cubic-bezier(0.25, 1, 0.5, 1), width 0.55s cubic-bezier(0.25, 1, 0.5, 1), border-radius 0.45s cubic-bezier(0.25, 1, 0.5, 1)';
+
+            // Step B: Vertical shrink starts first
             banner.style.height = '50px';
             banner.style.borderRadius = '25px';
 
+            // Step C: Horizontal shrink starts 0.1s (100ms) after vertical shrink
             setTimeout(() => {
-                // Step C: HORIZONTAL SHRINK ONLY (Cards stay still)
-                banner.style.transition = 'width 0.75s cubic-bezier(0.25, 1, 0.5, 1)';
                 banner.style.width = '50px';
 
-                // Step D: PAUSE IN CIRCLE STATE (3-second rest before next announcement)
+                // Step D: Pause for ~0.4s in circle state (under 0.5s max limit)
                 setTimeout(() => {
                     currentAnnouncementIndex = (currentAnnouncementIndex + 1) % ANNOUNCEMENTS.length;
                     cycleXboxBanner();
-                }, 3000);
+                }, 950); // 100ms start + 550ms width transition finishes at 650ms. 650ms + 300ms pause = 950ms total delay.
 
-            }, 550); // Wait for vertical shrink to complete
+            }, 100); // Max 0.1s time difference
 
-        }, 300); // Wait for text fade-out
+        }, 200); // Wait for text fade-out
 
-    }, 7300); // Display hold duration
+    }, 6500); // Message display hold duration
 }
 
 // ===========================================================================
