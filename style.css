@@ -77,15 +77,14 @@ body {
 }
 
 /* ===========================================================================
-   Xbox Style Achievement Pop-up Banner Styling (Fully Responsive)
+   Xbox Style Achievement Pop-up Banner Styling
    =========================================================================== */
 .xbox-banner-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 54px;
-    margin-bottom: 25px;
     width: 100%;
+    margin-bottom: 25px;
 }
 
 .xbox-banner {
@@ -94,11 +93,14 @@ body {
     background-color: #b80d19; /* Xbox Red */
     height: 50px;
     width: 50px;
-    max-width: 100%; /* Can expand to 100% of available screen width */
+    max-width: 96vw;
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 4px 18px rgba(184, 13, 25, 0.7);
-    transition: width 0.75s cubic-bezier(0.25, 1, 0.5, 1), height 0.4s ease, border-radius 0.4s ease;
+    /* Smooth width & height animation pushes content below down seamlessly */
+    transition: width 0.75s cubic-bezier(0.25, 1, 0.5, 1), 
+                height 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+                border-radius 0.5s ease;
     box-sizing: border-box;
 }
 
@@ -112,7 +114,7 @@ body {
     border-radius: 50%;
     background-color: #b80d19;
     flex-shrink: 0;
-    align-self: flex-start;
+    align-self: center;
 }
 
 .xbox-logo-img {
@@ -121,15 +123,17 @@ body {
     object-fit: contain;
 }
 
+/* Text box container holding line 1 and line 2 */
 .xbox-text-box {
-    white-space: normal; /* Allows clean multi-line wrapping on mobile screens */
-    word-break: break-word;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    white-space: nowrap;
     opacity: 0;
     transition: opacity 0.35s ease;
     padding: 6px 20px 6px 10px;
-    font-size: 1.02rem;
     color: #ffffff;
-    line-height: 1.35;
     flex: 1;
     min-width: 0;
 }
@@ -138,13 +142,21 @@ body {
     opacity: 1;
 }
 
+/* Line 1: Bold class title */
 .xbox-title {
     font-weight: 700;
-    margin-right: 6px;
+    font-size: 1.05rem;
+    white-space: nowrap;
+    line-height: 1.2;
 }
 
+/* Line 2: Unbolded message, forced on one line */
 .xbox-detail {
     font-weight: 400;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    line-height: 1.3;
+    margin-top: 2px;
 }
 
 /* ===========================================================================
@@ -152,7 +164,7 @@ body {
    =========================================================================== */
 .content-grid {
     display: grid;
-    grid-template-columns: 330px 1fr 330px; 
+    grid-template-columns: 420px 1fr 420px; 
     gap: 20px;
     align-items: stretch;
     width: 100%;
@@ -167,8 +179,8 @@ body {
     padding: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9);
     width: 100%;
-    max-width: 100%;
     opacity: 0.85;
+    max-width: 100%;
     box-sizing: border-box;
 }
 
@@ -380,8 +392,12 @@ body {
         font-size: 1rem;
     }
 
-    .xbox-text-box {
-        font-size: 0.92rem;
+    .xbox-title {
+        font-size: 0.95rem;
+    }
+
+    .xbox-detail {
+        font-size: 0.85rem;
     }
 
     .date-mono {
