@@ -107,9 +107,11 @@ function cycleXboxBanner() {
 
     banner.style.transition = 'none';
     banner.style.width = 'auto';
-    banner.style.maxWidth = '92vw';
     
-    const targetWidth = banner.getBoundingClientRect().width;
+    // Safely cap banner width to 90% of screen width so mobile layout never breaks
+    const maxAllowedWidth = Math.min(window.innerWidth * 0.90, 800);
+    const measuredWidth = banner.getBoundingClientRect().width;
+    const targetWidth = Math.min(measuredWidth, maxAllowedWidth);
 
     banner.style.width = '50px';
     void banner.offsetWidth;
