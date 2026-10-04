@@ -91,7 +91,7 @@ function updateDate() {
 }
 
 // ===========================================================================
-// 4. XBOX POP-UP BANNER ANIMATION LOOP
+// 4. XBOX POP-UP BANNER DYNAMIC ANIMATION
 // ===========================================================================
 
 let currentAnnouncementIndex = 0;
@@ -102,35 +102,54 @@ function cycleXboxBanner() {
 
     if (!banner || !textElement || ANNOUNCEMENTS.length === 0) return;
 
+    // 1. Inject announcement HTML (Stacked 2 lines: Title on Line 1, Detail on Line 2)
     const currentItem = ANNOUNCEMENTS[currentAnnouncementIndex];
-    textElement.innerHTML = `<span class="xbox-title">${currentItem.title}</span><span class="xbox-detail">${currentItem.detail}</span>`;
+    textElement.innerHTML = `
+        <div class="xbox-title">${currentItem.title}</div>
+        <div class="xbox-detail">${currentItem.detail}</div>
+    `;
 
+    // 2. Measure required width and height without wrapping
     banner.style.transition = 'none';
-    banner.style.width = 'auto';
-    
-    // Safely cap banner width to 90% of screen width so mobile layout never breaks
-    const maxAllowedWidth = Math.min(window.innerWidth * 0.90, 800);
+    banner.style.width = 'max-content';
+    banner.style.height = 'auto';
+
     const measuredWidth = banner.getBoundingClientRect().width;
-    const targetWidth = Math.min(measuredWidth, maxAllowedWidth);
+    const measuredHeight = banner.getBoundingClientRect().height;
 
+    // Target width fits the message on 1 line; target height accounts for 2 stacked lines
+    const targetWidth = Math.min(measuredWidth, window.innerWidth * 0.95);
+    const targetHeight = Math.max(measuredHeight, 62); // ~62px for 2 stacked lines
+
+    // 3. Reset back to collapsed circle
     banner.style.width = '50px';
-    void banner.offsetWidth;
+    banner.style.height = '50px';
+    banner.style.borderRadius = '25px';
+    void banner.offsetWidth; // Force reflow
 
-    banner.style.transition = 'width 0.75s cubic-bezier(0.25, 1, 0.5, 1)';
+    // 4. Re-enable smooth transition for both width and height
+    banner.style.transition = 'width 0.75s cubic-bezier(0.25, 1, 0.5, 1), height 0.5s cubic-bezier(0.25, 1, 0.5, 1), border-radius 0.5s ease';
 
+    // 5. Expand banner horizontally AND vertically (pushes content below down)
     requestAnimationFrame(() => {
         banner.style.width = `${targetWidth}px`;
+        banner.style.height = `${targetHeight}px`;
+        banner.style.borderRadius = `${targetHeight / 2}px`;
     });
 
+    // 6. Fade in text content
     setTimeout(() => {
         banner.classList.add("show-text");
     }, 400);
 
+    // 7. Hold & Collapse Loop (shrinks height & width, pulling cards below back up)
     setTimeout(() => {
         banner.classList.remove("show-text");
 
         setTimeout(() => {
             banner.style.width = '50px';
+            banner.style.height = '50px';
+            banner.style.borderRadius = '25px';
 
             setTimeout(() => {
                 currentAnnouncementIndex = (currentAnnouncementIndex + 1) % ANNOUNCEMENTS.length;
@@ -139,7 +158,7 @@ function cycleXboxBanner() {
 
         }, 300);
 
-    }, 5500);
+    }, 6000);
 }
 
 // ===========================================================================
