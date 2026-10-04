@@ -123,16 +123,17 @@ body {
     object-fit: contain;
 }
 
-/* Text box container holding line 1 and line 2 */
+/* Text box container holding middle-aligned line 1 and line 2 */
 .xbox-text-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center; /* Horizontally center contents */
+    text-align: center;  /* Center text lines */
     white-space: nowrap;
     opacity: 0;
     transition: opacity 0.35s ease;
-    padding: 6px 20px 6px 10px;
+    padding: 6px 25px 6px 15px; /* Balanced padding for centered text */
     color: #ffffff;
     flex: 1;
     min-width: 0;
@@ -142,21 +143,23 @@ body {
     opacity: 1;
 }
 
-/* Line 1: Bold class title */
+/* Line 1: Bold class title (Middle Aligned) */
 .xbox-title {
     font-weight: 700;
     font-size: 1.05rem;
     white-space: nowrap;
     line-height: 1.2;
+    text-align: center;
 }
 
-/* Line 2: Unbolded message, forced on one line */
+/* Line 2: Unbolded message (Middle Aligned) */
 .xbox-detail {
     font-weight: 400;
     font-size: 0.95rem;
     white-space: nowrap;
     line-height: 1.3;
     margin-top: 2px;
+    text-align: center;
 }
 
 /* ===========================================================================
