@@ -166,7 +166,7 @@ function cycleXboxBanner() {
                 setTimeout(() => {
                     currentAnnouncementIndex = (currentAnnouncementIndex + 1) % ANNOUNCEMENTS.length;
                     cycleXboxBanner();
-                }, 950); // 100ms start + 550ms width transition finishes at 650ms. 650ms + 300ms pause = 950ms total delay.
+                }, 800); // 100ms start + 550ms width transition finishes at 650ms. 650ms + 300ms pause = 950ms total delay.
 
             }, 100); // Max 0.1s time difference
 
