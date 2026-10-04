@@ -255,7 +255,7 @@ body {
 /* 24-Hour Live Clock */
 .time-mono {
     font-family: 'Roboto Mono', monospace;
-    font-size: 5rem;
+    font-size: 7rem;
     font-weight: 700;
     color: #ffffff;
     margin-top: 25px;
