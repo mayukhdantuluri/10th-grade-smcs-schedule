@@ -50,7 +50,7 @@ body {
 }
 
 .glow-title {
-    font-size: 4.5rem;
+    font-size: 5rem;
     font-weight: 900;
     color: #ffffff;
     text-shadow: 
@@ -64,7 +64,7 @@ body {
 }
 
 .glow-subtitle {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
     color: #ffffff;
     margin-top: 5px;
@@ -77,7 +77,7 @@ body {
 }
 
 /* ===========================================================================
-   Xbox Style Achievement Pop-up Banner Styling
+   Xbox Style Achievement Pop-up Banner Styling (Fully Responsive)
    =========================================================================== */
 .xbox-banner-wrapper {
     display: flex;
@@ -86,8 +86,6 @@ body {
     min-height: 54px;
     margin-bottom: 25px;
     width: 100%;
-    max-width: 100%;
-    overflow: hidden;
 }
 
 .xbox-banner {
@@ -96,11 +94,11 @@ body {
     background-color: #b80d19; /* Xbox Red */
     height: 50px;
     width: 50px;
-    max-width: 90vw;
+    max-width: 100%; /* Can expand to 100% of available screen width */
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 4px 18px rgba(184, 13, 25, 0.7);
-    transition: width 0.75s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: width 0.75s cubic-bezier(0.25, 1, 0.5, 1), height 0.4s ease, border-radius 0.4s ease;
     box-sizing: border-box;
 }
 
@@ -114,6 +112,7 @@ body {
     border-radius: 50%;
     background-color: #b80d19;
     flex-shrink: 0;
+    align-self: flex-start;
 }
 
 .xbox-logo-img {
@@ -123,17 +122,14 @@ body {
 }
 
 .xbox-text-box {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal; /* Allows clean multi-line wrapping on mobile screens */
+    word-break: break-word;
     opacity: 0;
     transition: opacity 0.35s ease;
-    padding-left: 10px;
-    padding-right: 18px;
-    font-size: 1.05rem;
+    padding: 6px 20px 6px 10px;
+    font-size: 1.02rem;
     color: #ffffff;
-    display: flex;
-    align-items: center;
+    line-height: 1.35;
     flex: 1;
     min-width: 0;
 }
@@ -144,15 +140,11 @@ body {
 
 .xbox-title {
     font-weight: 700;
-    margin-right: 5px;
-    white-space: nowrap;
+    margin-right: 6px;
 }
 
 .xbox-detail {
     font-weight: 400;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 /* ===========================================================================
@@ -173,10 +165,10 @@ body {
     border: 2px solid #ffffff;
     border-radius: 20px;
     padding: 20px;
-    opacity: 0.85;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9);
     width: 100%;
     max-width: 100%;
+    opacity: 0.85;
     box-sizing: border-box;
 }
 
@@ -389,7 +381,7 @@ body {
     }
 
     .xbox-text-box {
-        font-size: 0.9rem;
+        font-size: 0.92rem;
     }
 
     .date-mono {
