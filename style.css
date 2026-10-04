@@ -15,7 +15,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Background Video Layer at 0.4 opacity */
+/* Background Video Layer at 0.8 opacity */
 .bg-video {
     position: fixed;
     top: 0;
@@ -23,7 +23,7 @@ body {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    opacity: 0.4;
+    opacity: 0.8;
     z-index: -1;
     pointer-events: none;
 }
@@ -152,6 +152,7 @@ body {
     border: 2px solid #ffffff;
     border-radius: 20px;
     padding: 20px;
+    opacity: 0.85rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9);
 }
 
