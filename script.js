@@ -9,19 +9,19 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Algorithms & Data Structures",
-        detail: "- The 1.15 Not-a-Quiz will be in class on Tuesday."
+        detail: "The 1.15 Not-a-Quiz will be in class on Tuesday."
     },
     {
         title: "Algorithms & Data Structures",
-        detail: "- The Unit 1 Quiz will be in class on 2026-10-13. It might be two different days (One for MCQs, one for FRQs) or a double period to finish both."
+        detail: "The Unit 1 Quiz will be in class on 2026-10-13. It might be two different days (One for MCQs, one for FRQs) or a double period to finish both."
     },
     {
         title: "Foundations of Technology",
-        detail: "- The Discover Engineering assignment is due by end of day on Monday."
+        detail: "The Discover Engineering assignment is due by end of day on Monday."
     },
     {
         title: "Foundations of Technology",
-        detail: "- Once you get a working Roomba, have ONE group member upload the code to the Canvas assignment & submit."
+        detail: "Once you get a working Roomba, have ONE group member upload the code to the Canvas assignment & submit."
     },
 ];
 
