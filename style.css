@@ -203,7 +203,7 @@ body {
 /* Date in Roboto Mono */
 .date-mono {
     font-family: 'Roboto Mono', monospace;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 700;
     letter-spacing: -1px;
 }
@@ -211,7 +211,7 @@ body {
 /* Day of Week in standard Roboto */
 .day-roboto {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.3rem;
+    font-size: 2rem;
     color: #cccccc;
     margin-top: 4px;
 }
