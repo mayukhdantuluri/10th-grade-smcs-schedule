@@ -75,7 +75,6 @@ function updateDate() {
     if (dateDisplay) dateDisplay.textContent = formattedDateISO;
     if (dayDisplay) dayDisplay.textContent = dayOfWeekName;
 
-    // Weekend Check: hide schedule grid, show banner, keep time visible
     const scheduleContainer = document.getElementById("scheduleContainer");
     const noSchoolBanner = document.getElementById("noSchoolBanner");
     const noSchoolReason = document.getElementById("noSchoolReason");
@@ -91,7 +90,7 @@ function updateDate() {
 }
 
 // ===========================================================================
-// 4. TWO-PHASE XBOX POP-UP BANNER ANIMATION
+// 4. ULTRA-SMOOTH TWO-PHASE BANNER ANIMATION
 // ===========================================================================
 
 let currentAnnouncementIndex = 0;
@@ -102,14 +101,14 @@ function cycleXboxBanner() {
 
     if (!banner || !textElement || ANNOUNCEMENTS.length === 0) return;
 
-    // 1. Inject announcement HTML
+    // 1. Inject announcement content
     const currentItem = ANNOUNCEMENTS[currentAnnouncementIndex];
     textElement.innerHTML = `
         <div class="xbox-title">${currentItem.title}</div>
         <div class="xbox-detail">${currentItem.detail}</div>
     `;
 
-    // 2. Measure required dimensions without constraints
+    // 2. Measure dimensions
     banner.style.transition = 'none';
     banner.style.width = 'max-content';
     banner.style.height = 'auto';
@@ -120,60 +119,64 @@ function cycleXboxBanner() {
     const targetWidth = Math.min(measuredWidth, window.innerWidth * 0.96);
     const targetHeight = Math.max(measuredHeight, 62);
 
-    // 3. Reset to collapsed 50x50 circle
+    // 3. Reset to collapsed state
     banner.style.width = '50px';
     banner.style.height = '50px';
     banner.style.borderRadius = '25px';
     banner.classList.remove("show-text");
-    void banner.offsetWidth; // Force layout reflow
+    void banner.offsetWidth; // Force synchronous reflow
 
-    // 4. Set smooth transition timing for 2-stage steps
-    banner.style.transition = 'width 0.4s cubic-bezier(0.25, 1, 0.5, 1), height 0.35s cubic-bezier(0.25, 1, 0.5, 1), border-radius 0.35s ease';
+    // --- EXPANSION PHASE ---
+    // Smooth custom fluid deceleration curve
+    banner.style.transition = 'width 0.42s cubic-bezier(0.16, 1, 0.3, 1), height 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-radius 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
 
-    // --- EXPANSION STEP 1: HORIZONTAL ONLY ---
+    // Step 1: Expand horizontally first
     requestAnimationFrame(() => {
         banner.style.width = `${targetWidth}px`;
         banner.style.height = '50px';
         banner.style.borderRadius = '25px';
     });
 
-    // --- EXPANSION STEP 2: VERTICAL ONLY (after 400ms) ---
+    // Step 2: Expand vertically smoothly at horizontal completion
     setTimeout(() => {
         banner.style.height = `${targetHeight}px`;
         banner.style.borderRadius = `${targetHeight / 2}px`;
 
-        // Fade in text after vertical expansion starts
+        // Smoothly fade in text during vertical opening
         setTimeout(() => {
             banner.classList.add("show-text");
-        }, 150);
+        }, 100);
 
-    }, 1000);
+    }, 400);
 
-    // --- HOLD & SHRINK SEQUENCE ---
+    // --- HOLD & SHRINK PHASE ---
     setTimeout(() => {
         // Step A: Fade out text
         banner.classList.remove("show-text");
 
         setTimeout(() => {
-            // --- SHRINK STEP 1: VERTICAL ONLY (back to 50px height) ---
+            // Easing for shrinking back down
+            banner.style.transition = 'height 0.32s cubic-bezier(0.4, 0, 0.2, 1), width 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.32s cubic-bezier(0.4, 0, 0.2, 1)';
+
+            // Step B: Shrink vertically first
             banner.style.height = '50px';
             banner.style.borderRadius = '25px';
 
             setTimeout(() => {
-                // --- SHRINK STEP 2: HORIZONTAL ONLY (back to 50px width) ---
+                // Step C: Shrink horizontally back to circle
                 banner.style.width = '50px';
 
-                // Next cycle after horizontal shrink completes (400ms)
+                // Step D: Trigger next item cycle
                 setTimeout(() => {
                     currentAnnouncementIndex = (currentAnnouncementIndex + 1) % ANNOUNCEMENTS.length;
                     cycleXboxBanner();
-                }, 450);
+                }, 420);
 
-            }, 350); // Wait for vertical shrink to finish
+            }, 300);
 
-        }, 250); // Wait for text fade-out to finish
+        }, 180);
 
-    }, 7000); // Banner display time
+    }, 6000);
 }
 
 // ===========================================================================
