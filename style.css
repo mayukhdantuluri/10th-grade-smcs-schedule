@@ -85,7 +85,7 @@ body {
     align-items: center;
     width: 100%;
     margin-bottom: 25px;
-    min-height: 70px; /* Reserves space so layout shift is smooth */
+    min-height: 70px;
 }
 
 .xbox-banner {
@@ -99,6 +99,10 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 18px rgba(184, 13, 25, 0.7);
     box-sizing: border-box;
+    /* GPU Hardware Acceleration & Smooth Compositing */
+    will-change: width, height, border-radius;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .xbox-icon-box {
@@ -129,11 +133,12 @@ body {
     text-align: center;
     white-space: nowrap;
     opacity: 0;
-    transition: opacity 0.25s ease;
+    transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1);
     padding: 6px 25px 6px 15px;
     color: #ffffff;
     flex: 1;
     min-width: 0;
+    will-change: opacity;
 }
 
 .xbox-banner.show-text .xbox-text-box {
