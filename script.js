@@ -14,7 +14,11 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Algorithms & Data Structures",
-        detail: "The Unit 1 Quiz will be in class on 2026-10-13. It might be two different days (One for MCQs, one for FRQs) or a double period to finish both."
+        detail: "The Unit 1 Test will be in class on 2026-10-13. There will be an MCQ and FRQ section."
+    },
+    {
+        title: "Algorithms & Data Structures",
+        detail: "On the Unit 1 Test, for the FRQ section, you won't be allowed to run the code to make sure it works."
     },
     {
         title: "Foundations of Technology",
