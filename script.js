@@ -26,7 +26,7 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Foundations of Technology",
-        detail: "The Discover Engineering assignment is due by end of day today."
+        detail: "The Discover Engineering assignment is due by end of day on 2026-10-11."
     },
     {
         title: "Foundations of Technology",
