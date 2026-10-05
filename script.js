@@ -1,7 +1,4 @@
-// ===========================================================================
-// 1. ANNOUNCEMENTS CONFIGURATION (Manually managed by the website owner)
-// ===========================================================================
-
+// Annoucements to be manually changed by me
 const ANNOUNCEMENTS = [
     {
         title: "SMCS 2029 News",
@@ -43,10 +40,7 @@ const SPECIFIC_HOLIDAYS = [
     "2027-01-01"
 ];
 
-// ===========================================================================
-// 2. LIVE 24-HOUR CLOCK (hh:mm:ss)
-// ===========================================================================
-
+// Live clock in 24-hour format
 function updateClock() {
     const timeDisplay = document.getElementById("timeDisplay");
     if (!timeDisplay) return;
@@ -59,10 +53,7 @@ function updateClock() {
     timeDisplay.textContent = `${hours}:${minutes}:${seconds}`;
 }
 
-// ===========================================================================
-// 3. DATE UPDATER & WEEKEND TOGGLE
-// ===========================================================================
-
+// Date updater
 function updateDate() {
     const now = new Date();
     const year = now.getFullYear();
@@ -93,10 +84,7 @@ function updateDate() {
     }
 }
 
-// ===========================================================================
-// 4. PRECISION TIMED BANNER ANIMATION
-// ===========================================================================
-
+// News Banner animation
 let currentAnnouncementIndex = 0;
 
 function cycleXboxBanner() {
@@ -179,10 +167,7 @@ function cycleXboxBanner() {
     }, 6500); // Message display hold duration
 }
 
-// ===========================================================================
-// 5. INITIALIZATION
-// ===========================================================================
-
+// Initialization
 document.addEventListener("DOMContentLoaded", () => {
     updateClock();
     updateDate();
