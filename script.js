@@ -9,7 +9,7 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Algorithms & Data Structures",
-        detail: "The 1.15 Not-a-Quiz will be in class on Tuesday."
+        detail: "The 1.15 Not-a-Quiz will be in class TOMORROW."
     },
     {
         title: "Algorithms & Data Structures",
@@ -17,7 +17,7 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Foundations of Technology",
-        detail: "The Discover Engineering assignment is due by end of day on Monday."
+        detail: "The Discover Engineering assignment is due by end of day today."
     },
     {
         title: "Foundations of Technology",
