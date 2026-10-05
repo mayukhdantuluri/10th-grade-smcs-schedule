@@ -30,7 +30,7 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Foundations of Technology",
-        detail: "Once you get a working Roomba, have ONE group member upload the code to the Canvas assignment & submit."
+        detail: "The plan for the Survivor Island challenge is to finish it by this Friday."
     },
 ];
 
@@ -45,7 +45,25 @@ const SPECIFIC_HOLIDAYS = [
     "2026-11-27",
     "2026-12-24",
     "2026-12-25",
-    "2027-01-01"
+    "2026-12-28",
+    "2026-12-29",
+    "2026-12-30",
+    "2026-12-31",
+    "2027-01-01",
+    "2027-01-18",
+    "2027-01-25",
+    "2027-02-15",
+    "2027-03-09",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-03-30",
+    "2027-03-31",
+    "2027-04-01",
+    "2027-04-02",
+    "2027-04-12",
+    "2027-04-22",
+    "2027-05-17",
+    "2027-05-31"
 ];
 
 // Live clock in 24-hour format
