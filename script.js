@@ -5,6 +5,10 @@ const ANNOUNCEMENTS = [
         detail: "Permission forms for Seneca Creek have been given out. Fill them out & return them by THIS FRIDAY, and pay the 38.25 USD cost on SchoolCash Online OR cash."
     },
     {
+        title: "Adv. Science 3: ESS",
+        detail: "The Topography Quiz is on Thursday in class. Retakes will be on 2026-10-13 at lunch."
+    },
+    {
         title: "Adv. Science 4: Biology",
         detail: "The Carbohydrates, Lipids & Proteins Unit Test will be on 2026-10-15."
     },
