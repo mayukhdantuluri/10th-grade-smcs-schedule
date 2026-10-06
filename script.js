@@ -14,10 +14,6 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Algorithms & Data Structures",
-        detail: "The 1.15 Not-a-Quiz will be in class TODAY."
-    },
-    {
-        title: "Algorithms & Data Structures",
         detail: "The Unit 1 Test will be in class on 2026-10-13. There will be an MCQ and FRQ section."
     },
     {
