@@ -6,7 +6,7 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Adv. Science 3: ESS",
-        detail: "The Topography Quiz is on Thursday in class. Retakes will be on 2026-10-13 at lunch."
+        detail: "The Topography Quiz is tomorrow in class. Retakes will be on 2026-10-13 at lunch."
     },
     {
         title: "Adv. Science 4: Biology",
