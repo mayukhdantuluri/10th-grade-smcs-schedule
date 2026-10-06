@@ -14,7 +14,7 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Algorithms & Data Structures",
-        detail: "The 1.15 Not-a-Quiz will be in class TOMORROW."
+        detail: "The 1.15 Not-a-Quiz will be in class TODAY."
     },
     {
         title: "Algorithms & Data Structures",
