@@ -9,6 +9,10 @@ const ANNOUNCEMENTS = [
         detail: "The Topography Quiz is tomorrow in class. Retakes will be on 2026-10-13 at lunch."
     },
     {
+        title: "Adv. Science 3: ESS",
+        detail: "Mr. Kingman will be out on Friday. Finish the Groundwater Contamination Packet in class on Friday."
+    },
+    {
         title: "Adv. Science 4: Biology",
         detail: "The Carbohydrates, Lipids & Proteins Unit Test will be on 2026-10-15."
     },
