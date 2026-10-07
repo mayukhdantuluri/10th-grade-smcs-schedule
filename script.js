@@ -14,6 +14,10 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Algorithms & Data Structures",
+        detail: "The GuessBirthday code is due tomorrow by end of class."
+    },
+    {
+        title: "Algorithms & Data Structures",
         detail: "The Unit 1 Test will be in class on 2026-10-13. There will be an MCQ and FRQ section."
     },
     {
