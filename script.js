@@ -2,23 +2,31 @@
 const ANNOUNCEMENTS = [
     {
         title: "SMCS 2029 News",
-        detail: "Permission forms for Seneca Creek have been given out. Fill them out & return them by THIS FRIDAY, and pay the 38.25 USD cost on SchoolCash Online OR cash."
+        detail: "Permission forms for Seneca Creek have been given out. Fill them out & return them by TOMORROW, and pay the 38.25 USD cost on SchoolCash Online OR cash."
     },
     {
         title: "Adv. Science 3: ESS",
-        detail: "The Topography Quiz is tomorrow in class. Retakes will be on 2026-10-13 at lunch."
+        detail: "The Topography Quiz is today in class. Retakes will be on 2026-10-13 at lunch."
     },
     {
-        title: "Adv. Science 3: ESS",
-        detail: "Mr. Kingman will be out on Friday. Finish the Groundwater Contamination Packet in class on Friday."
-    },
-    {
-        title: "Adv. Science 4: Biology",
-        detail: "The Carbohydrates, Lipids & Proteins Unit Test will be on 2026-10-15."
+        title: "Foundations of Technology",
+        detail: "Mr. Lees is checking journals today, likely for TUESDAY and YESTERDAY."
     },
     {
         title: "Algorithms & Data Structures",
-        detail: "The GuessBirthday code is due tomorrow by end of class."
+        detail: "The GuessBirthday code is due today by end of class."
+    },
+    {
+        title: "Adv. Science 3: ESS",
+        detail: "Mr. Kingman will be out tomorrow. Finish the Groundwater Contamination Packet in class."
+    },
+    {
+        title: "Foundations of Technology",
+        detail: "The plan for the Survivor Island challenge is to finish it by tomorrow."
+    },
+    {
+        title: "Foundations of Technology",
+        detail: "The Discover Engineering assignment is due by end of day on 2026-10-11."
     },
     {
         title: "Algorithms & Data Structures",
@@ -29,12 +37,8 @@ const ANNOUNCEMENTS = [
         detail: "On the Unit 1 Test, for the FRQ section, you won't be allowed to run the code to make sure it works."
     },
     {
-        title: "Foundations of Technology",
-        detail: "The Discover Engineering assignment is due by end of day on 2026-10-11."
-    },
-    {
-        title: "Foundations of Technology",
-        detail: "The plan for the Survivor Island challenge is to finish it by this Friday."
+        title: "Adv. Science 4: Biology",
+        detail: "The Carbohydrates, Lipids & Proteins Unit Test will be on 2026-10-15."
     },
 ];
 
