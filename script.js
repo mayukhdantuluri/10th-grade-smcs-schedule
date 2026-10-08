@@ -2,15 +2,15 @@
 const ANNOUNCEMENTS = [
     {
         title: "SMCS 2029 News",
-        detail: "Permission forms for Seneca Creek have been given out. Fill them out & return them by TOMORROW, and pay the 38.25 USD cost on SchoolCash Online OR cash."
+        detail: "Permission forms for Seneca Creek have been given out. Fill them out & return them by TODAY, and pay the 38.25 USD cost on SchoolCash Online OR cash."
     },
     {
         title: "Foundations of Technology",
-        detail: "Mr. Lees is out tomorrow. Upload your journal entries for Survivor Island tomorrow to receive credit."
+        detail: "Mr. Lees is out today. Upload your journal entries for Survivor Island today to receive credit."
     },
     {
         title: "Adv. Science 3: ESS",
-        detail: "Mr. Kingman will be out tomorrow. Finish the Groundwater Contamination Packet in class."
+        detail: "Mr. Kingman will be out today, and ESS will happen in Ms. Hallisey's room. Finish the Groundwater Contamination Packet in class."
     },
     {
         title: "Foundations of Technology",
