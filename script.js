@@ -6,7 +6,7 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Foundations of Technology",
-        detail: "Mr. Lees is checking journals tomorrow, likely for TUESDAY and YESTERDAY."
+        detail: "Mr. Lees is out tomorrow. Upload your journal entries for Survivor Island tomorrow to receive credit."
     },
     {
         title: "Algorithms & Data Structures",
@@ -18,15 +18,15 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Foundations of Technology",
-        detail: "The plan for the Survivor Island challenge is to finish it by tomorrow."
+        detail: "The plan for the Survivor Island challenge is to finish it by next week THURSDAY."
     },
     {
         title: "Foundations of Technology",
-        detail: "The Discover Engineering assignment is due by end of day on 2026-10-11."
+        detail: "The Discover Engineering assignment is due by end of day on SUNDAY."
     },
     {
         title: "Algorithms & Data Structures",
-        detail: "The Unit 1 Test will be in class on 2026-10-13. There will be an MCQ and FRQ section."
+        detail: "The Unit 1 Test will be in class on TUESDAY. There will be an MCQ and FRQ section."
     },
     {
         title: "Algorithms & Data Structures",
@@ -34,7 +34,7 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Adv. Science 4: Biology",
-        detail: "The Carbohydrates, Lipids & Proteins Unit Test will be on 2026-10-15."
+        detail: "The Carbohydrates, Lipids & Proteins Unit Test will be next week on THURSDAY."
     },
 ];
 
