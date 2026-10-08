@@ -9,10 +9,6 @@ const ANNOUNCEMENTS = [
         detail: "Mr. Lees is out tomorrow. Upload your journal entries for Survivor Island tomorrow to receive credit."
     },
     {
-        title: "Algorithms & Data Structures",
-        detail: "The GuessBirthday code is due today by end of class."
-    },
-    {
         title: "Adv. Science 3: ESS",
         detail: "Mr. Kingman will be out tomorrow. Finish the Groundwater Contamination Packet in class."
     },
