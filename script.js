@@ -10,7 +10,7 @@ const ANNOUNCEMENTS = [
     },
     {
         title: "Foundations of Technology",
-        detail: "Mr. Lees is checking journals today, likely for TUESDAY and YESTERDAY."
+        detail: "Mr. Lees is checking journals tomorrow, likely for TUESDAY and YESTERDAY."
     },
     {
         title: "Algorithms & Data Structures",
