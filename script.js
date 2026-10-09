@@ -1,10 +1,6 @@
 // Annoucements to be manually changed by me
 const ANNOUNCEMENTS = [
     {
-        title: "SMCS 2029 News",
-        detail: "Permission forms for Seneca Creek have been given out. Fill them out & return them by TODAY, and pay the 38.25 USD cost on SchoolCash Online OR cash."
-    },
-    {
         title: "Foundations of Technology",
         detail: "Mr. Lees is out today. Upload your journal entries for Survivor Island today to receive credit."
     },
