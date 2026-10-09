@@ -2,14 +2,6 @@
 const ANNOUNCEMENTS = [
     {
         title: "Foundations of Technology",
-        detail: "Mr. Lees is out today. Upload your journal entries for Survivor Island today to receive credit."
-    },
-    {
-        title: "Adv. Science 3: ESS",
-        detail: "Mr. Kingman will be out today, and ESS will happen in Ms. Hallisey's room. Finish the Groundwater Contamination Packet in class."
-    },
-    {
-        title: "Foundations of Technology",
         detail: "The plan for the Survivor Island challenge is to finish it by next week THURSDAY."
     },
     {
