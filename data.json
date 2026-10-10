@@ -1,24 +1,19 @@
 {
   "announcements": [
     {
-        "title": "Foundations of Technology",
-        "detail": "The plan for the Survivor Island challenge is to finish it by next week THURSDAY."
+      "title": "Adv. Science 3: ESS",
+      "detail": "Mr. Kingman said our field trip might be on 2026-10-23. Permissions forms are yet to be sent out.",
+      "expiresAt": "2026-10-25 15:00:00"
     },
     {
-        "title": "Foundations of Technology",
-        "detail": "The Discover Engineering assignment is due by end of day on SUNDAY."
+      "title": "Algorithms & Data Structures",
+      "detail": "The Unit 1 Test is on TUESDAY. Prepare well.",
+      "expiresAt": "2026-10-13 07:45:00"
     },
     {
-        "title": "Algorithms & Data Structures",
-        "detail": "The Unit 1 Test will be in class on TUESDAY. There will be an MCQ and FRQ section."
-    },
-    {
-        "title": "Algorithms & Data Structures",
-        "detail": "On the Unit 1 Test, for the FRQ section, you won't be allowed to run the code to make sure it works."
-    },
-    {
-        "title": "Adv. Science 4: Biology",
-        "detail": "The Carbohydrates, Lipids & Proteins Unit Test will be next week on THURSDAY."
+      "title": "Adv. Science 4: Biology",
+      "detail": "The Carbohydrates, Lipids & Proteins Unit Test is on THURSDAY. Prepare well.",
+      "expiresAt": "2026-10-15 07:45:00"
     },
   ],
   "schedule": [
