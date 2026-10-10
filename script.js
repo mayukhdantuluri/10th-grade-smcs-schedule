@@ -1,60 +1,39 @@
-// Annoucements to be manually changed by me
-const ANNOUNCEMENTS = [
-    {
-        title: "Foundations of Technology",
-        detail: "The plan for the Survivor Island challenge is to finish it by next week THURSDAY."
-    },
-    {
-        title: "Foundations of Technology",
-        detail: "The Discover Engineering assignment is due by end of day on SUNDAY."
-    },
-    {
-        title: "Algorithms & Data Structures",
-        detail: "The Unit 1 Test will be in class on TUESDAY. There will be an MCQ and FRQ section."
-    },
-    {
-        title: "Algorithms & Data Structures",
-        detail: "On the Unit 1 Test, for the FRQ section, you won't be allowed to run the code to make sure it works."
-    },
-    {
-        title: "Adv. Science 4: Biology",
-        detail: "The Carbohydrates, Lipids & Proteins Unit Test will be next week on THURSDAY."
-    },
-];
+// ===========================================================================
+// 1. DYNAMIC DATA LOADER FROM data.json
+// ===========================================================================
 
-const IS_HOLIDAY = false; 
-const HOLIDAY_REASON = "School Holiday"; 
+let ANNOUNCEMENTS = [];
 
-const SPECIFIC_HOLIDAYS = [
-    "2026-10-16",
-    "2026-11-02",
-    "2026-11-03",
-    "2026-11-26",
-    "2026-11-27",
-    "2026-12-24",
-    "2026-12-25",
-    "2026-12-28",
-    "2026-12-29",
-    "2026-12-30",
-    "2026-12-31",
-    "2027-01-01",
-    "2027-01-18",
-    "2027-01-25",
-    "2027-02-15",
-    "2027-03-09",
-    "2027-03-26",
-    "2027-03-29",
-    "2027-03-30",
-    "2027-03-31",
-    "2027-04-01",
-    "2027-04-02",
-    "2027-04-12",
-    "2027-04-22",
-    "2027-05-17",
-    "2027-05-31"
-];
+async function loadSiteData() {
+    try {
+        let response = await fetch('data.json?v=' + Date.now());
+        let data = await response.json();
+        
+        ANNOUNCEMENTS = data.announcements;
+        
+        // Populate Block X Members
+        const blockXList = document.querySelector('.content-grid .card:nth-child(1) .members-list');
+        if (blockXList && data.blockXMembers) {
+            blockXList.innerHTML = data.blockXMembers.map(name => `<li>${name}</li>`).join('');
+        }
 
-// Live clock in 24-hour format
+        // Populate Block Y Members
+        const blockYList = document.querySelector('.content-grid .card:nth-child(3) .members-list');
+        if (blockYList && data.blockYMembers) {
+            blockYList.innerHTML = data.blockYMembers.map(name => `<li>${name}</li>`).join('');
+        }
+
+        // Trigger banner once data is loaded
+        cycleXboxBanner();
+    } catch (e) {
+        console.error("Failed to load data.json", e);
+    }
+}
+
+// ===========================================================================
+// 2. LIVE 24-HOUR CLOCK (hh:mm:ss)
+// ===========================================================================
+
 function updateClock() {
     const timeDisplay = document.getElementById("timeDisplay");
     if (!timeDisplay) return;
@@ -67,7 +46,10 @@ function updateClock() {
     timeDisplay.textContent = `${hours}:${minutes}:${seconds}`;
 }
 
-// Date updater
+// ===========================================================================
+// 3. DATE UPDATER & WEEKEND TOGGLE
+// ===========================================================================
+
 function updateDate() {
     const now = new Date();
     const year = now.getFullYear();
@@ -98,7 +80,10 @@ function updateDate() {
     }
 }
 
-// News Banner animation
+// ===========================================================================
+// 4. PRECISION TIMED BANNER ANIMATION
+// ===========================================================================
+
 let currentAnnouncementIndex = 0;
 
 function cycleXboxBanner() {
@@ -107,14 +92,12 @@ function cycleXboxBanner() {
 
     if (!banner || !textElement || ANNOUNCEMENTS.length === 0) return;
 
-    // 1. Inject announcement content
     const currentItem = ANNOUNCEMENTS[currentAnnouncementIndex];
     textElement.innerHTML = `
         <div class="xbox-title">${currentItem.title}</div>
         <div class="xbox-detail">${currentItem.detail}</div>
     `;
 
-    // 2. Measure required target dimensions
     banner.style.transition = 'none';
     banner.style.width = 'max-content';
     banner.style.height = 'auto';
@@ -125,66 +108,58 @@ function cycleXboxBanner() {
     const targetWidth = Math.min(measuredWidth, window.innerWidth * 0.96);
     const targetHeight = Math.max(measuredHeight, 62);
 
-    // 3. Reset to collapsed 50x50 circle
     banner.style.width = '50px';
     banner.style.height = '50px';
     banner.style.borderRadius = '25px';
     banner.classList.remove("show-text");
-    void banner.offsetWidth; // Force synchronous layout reflow
+    void banner.offsetWidth;
 
-    // --- EXPANSION TRANSITIONS ---
     banner.style.transition = 'width 0.55s cubic-bezier(0.25, 1, 0.5, 1), height 0.45s cubic-bezier(0.25, 1, 0.5, 1), border-radius 0.45s cubic-bezier(0.25, 1, 0.5, 1)';
 
-    // Step 1: Horizontal expansion begins immediately (t = 0s)
     requestAnimationFrame(() => {
         banner.style.width = `${targetWidth}px`;
     });
 
-    // Step 2: Vertical expansion begins 0.1s (100ms) after horizontal expansion
     setTimeout(() => {
         banner.style.height = `${targetHeight}px`;
         banner.style.borderRadius = `${targetHeight / 2}px`;
 
-        // Fade in text as vertical opening completes
         setTimeout(() => {
             banner.classList.add("show-text");
         }, 200);
 
-    }, 100); // Max 0.1s time difference
+    }, 100);
 
-    // --- HOLD & SHRINK PHASE ---
     setTimeout(() => {
-        // Step A: Fade out text
         banner.classList.remove("show-text");
 
         setTimeout(() => {
             banner.style.transition = 'height 0.45s cubic-bezier(0.25, 1, 0.5, 1), width 0.55s cubic-bezier(0.25, 1, 0.5, 1), border-radius 0.45s cubic-bezier(0.25, 1, 0.5, 1)';
-
-            // Step B: Vertical shrink starts first
             banner.style.height = '50px';
             banner.style.borderRadius = '25px';
 
-            // Step C: Horizontal shrink starts 0.1s (100ms) after vertical shrink
             setTimeout(() => {
                 banner.style.width = '50px';
 
-                // Step D: Pause for ~0.4s in circle state (under 0.5s max limit)
                 setTimeout(() => {
                     currentAnnouncementIndex = (currentAnnouncementIndex + 1) % ANNOUNCEMENTS.length;
                     cycleXboxBanner();
-                }, 800); // 100ms start + 550ms width transition finishes at 650ms. 650ms + 300ms pause = 950ms total delay.
+                }, 950);
 
-            }, 100); // Max 0.1s time difference
+            }, 100);
 
-        }, 200); // Wait for text fade-out
+        }, 200);
 
-    }, 6500); // Message display hold duration
+    }, 6500);
 }
 
-// Initialization
+// ===========================================================================
+// 5. INITIALIZATION
+// ===========================================================================
+
 document.addEventListener("DOMContentLoaded", () => {
     updateClock();
     updateDate();
     setInterval(updateClock, 1000);
-    cycleXboxBanner();
+    loadSiteData();
 });
