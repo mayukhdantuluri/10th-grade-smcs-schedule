@@ -1,5 +1,5 @@
 // ===========================================================================
-// 1. DYNAMIC DATA LOADER FROM data.json
+// 1. DYNAMIC DATA LOADER FROM data.json WITH EXPIRATION FILTERING
 // ===========================================================================
 
 let ANNOUNCEMENTS = [];
@@ -9,7 +9,14 @@ async function loadSiteData() {
         let response = await fetch('data.json?v=' + Date.now());
         let data = await response.json();
         
-        ANNOUNCEMENTS = data.announcements || [];
+        // Filter out expired announcements based on current time
+        const now = new Date();
+        ANNOUNCEMENTS = (data.announcements || []).filter(ann => {
+            if (!ann.expiresAt) return true;
+            // Convert "yyyy-mm-dd hh:mm:ss" to ISO "yyyy-mm-ddThh:mm:ss" for parsing
+            let expiryDate = new Date(ann.expiresAt.replace(' ', 'T'));
+            return isNaN(expiryDate) || now <= expiryDate;
+        });
         
         // Populate Block X Members
         const blockXList = document.querySelector('.content-grid .card:nth-child(1) .members-list');
