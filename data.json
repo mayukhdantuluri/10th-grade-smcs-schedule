@@ -20,7 +20,38 @@
         "title": "Adv. Science 4: Biology",
         "detail": "The Carbohydrates, Lipids & Proteins Unit Test will be next week on THURSDAY."
     },
+    
   ],
+  "schedule": [
+    {
+      "period": "1",
+      "blockXTitle": "Adv. Science 4: Biology",
+      "blockXRoom": "2614 Yu",
+      "blockYTitle": "Foundations of Technology",
+      "blockYRoom": "1620 Lees"
+    },
+    {
+      "period": "2",
+      "blockXTitle": "Adv. Science 3: ESS",
+      "blockXRoom": "1708 Kingman",
+      "blockYTitle": "Algorithms & Data Structures",
+      "blockYRoom": "1702 Hallisey"
+    },
+    {
+      "period": "3",
+      "blockXTitle": "Algorithms & Data Structures",
+      "blockXRoom": "1702 Hallisey",
+      "blockYTitle": "Adv. Science 3: ESS",
+      "blockYRoom": "1708 Kingman"
+    },
+    {
+      "period": "4",
+      "blockXTitle": "Foundations of Technology",
+      "blockXRoom": "1620 Lees",
+      "blockYTitle": "Adv. Science 4: Biology",
+      "blockYRoom": "2614 Yu"
+    }
+    
   "blockXMembers": [
     "Calvin Aquino", "Vedant Arrola", "Ness Bentil", "Lin Heng Chen", "Mayukh Dantuluri",
     "Shruti Deshpande", "Arjun Devaguptapu", "Lucas Galescu", "Rian Ganesh", "Ray He",
