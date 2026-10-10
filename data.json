@@ -1,0 +1,40 @@
+{
+  "announcements": [
+    {
+        "title": "Foundations of Technology",
+        "detail": "The plan for the Survivor Island challenge is to finish it by next week THURSDAY."
+    },
+    {
+        "title": "Foundations of Technology",
+        "detail": "The Discover Engineering assignment is due by end of day on SUNDAY."
+    },
+    {
+        "title": "Algorithms & Data Structures",
+        "detail": "The Unit 1 Test will be in class on TUESDAY. There will be an MCQ and FRQ section."
+    },
+    {
+        "title": "Algorithms & Data Structures",
+        "detail": "On the Unit 1 Test, for the FRQ section, you won't be allowed to run the code to make sure it works."
+    },
+    {
+        "title": "Adv. Science 4: Biology",
+        "detail": "The Carbohydrates, Lipids & Proteins Unit Test will be next week on THURSDAY."
+    },
+  ],
+  "blockXMembers": [
+    "Calvin Aquino", "Vedant Arrola", "Ness Bentil", "Lin Heng Chen", "Mayukh Dantuluri",
+    "Shruti Deshpande", "Arjun Devaguptapu", "Lucas Galescu", "Rian Ganesh", "Ray He",
+    "Shawn Hettiarachchi", "Patrick Hyland", "Soaren Leff", "Zuhair Loya", "Rowel Mondal",
+    "Jaden Mosley", "Dez Murdock", "Mahadevan Nair", "Kidus Peter", "Divya Prabhu",
+    "Jiya Rao", "Srilaasya Samineni", "Sandeep Thimmasamudram", "Aneesh Thota", "Hoda Timaji",
+    "Maithili Uniyal", "Kaya Vallejos Duarte", "Caleb Yo"
+  ],
+  "blockYMembers": [
+    "Sanjana Amara", "Chandana Aradhya", "Eliel Arellano", "Miriam Baron", "Cynthia Biruk",
+    "Justin Cheung", "Aaruj Datar", "William Ding", "Austin Egodahewage", "Sachin Gupte",
+    "Ryan Highfill", "Edward Hou", "Charan Kamana", "Aarna Khanna", "Summit Lu",
+    "Brindha Mahadevan", "Sifali Maskey", "Ananya Mulukutla", "Pranay Panakal", "Shrika Pilli",
+    "Yeona Plotkin", "Anika Rajeev", "Emma Shi", "Keershika Suji Sudhakar Jeyasri",
+    "Riti Thakkar", "Caden Wang", "Chrystina Wang", "Arin Yeo", "Jingwei Zhao"
+  ]
+}
