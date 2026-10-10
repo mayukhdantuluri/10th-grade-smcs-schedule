@@ -1,6 +1,96 @@
 {
-  "announcements": [],
+  "announcements": [
+    {
+      "title": "Adv. Science 3: ESS",
+      "detail": "Reassessments for the Topography Quiz will be on TUESDAY at lunch.",
+      "expiresAt": "2026-10-12 00:00:00"
+    },
+    {
+      "title": "Adv. Science 3: ESS",
+      "detail": "Reassessments for the Topography Quiz will be tomorrow at lunch.",
+      "expiresAt": "2026-10-13 00:00:00"
+    },
+    {
+      "title": "Adv. Science 3: ESS",
+      "detail": "Reassessments for the Topography Quiz will be TODAY at lunch.",
+      "expiresAt": "2026-10-13 12:00:00"
+    },
+    {
+      "title": "Adv. Science 4: Biology",
+      "detail": "The Carbohydrates, Lipids, and Proteins Unit Test is on THURSDAY in class.",
+      "expiresAt": "2026-10-14 00:00:00"
+    },
+    {
+      "title": "Adv. Science 4: Biology",
+      "detail": "The Carbohydrates, Lipids, and Proteins Unit Test is TOMORROW in class.",
+      "expiresAt": "2026-10-15 00:00:00"
+    },
+    {
+      "title": "Adv. Science 4: Biology",
+      "detail": "The Carbohydrates, Lipids, and Proteins Unit Test is today in class.",
+      "expiresAt": "2026-10-15 11:05:00"
+    }
+  ],
   "schedule": [],
-  "blockXMembers": [],
-  "blockYMembers": []
+  "blockXMembers": [
+    "Calvin Aquino",
+    "Vedant Arrola",
+    "Ness Bentil",
+    "Lin Heng Chen",
+    "Mayukh Dantuluri",
+    "Shruti Deshpande",
+    "Arjun Devaguptapu",
+    "Lucas Galescu",
+    "Rian Ganesh",
+    "Ray He",
+    "Shawn Hettiarachchi",
+    "Patrick Hyland",
+    "Soaren Leff",
+    "Zuhair Loya",
+    "Rowel Mondal",
+    "Jaden Mosley",
+    "Dez Murdock",
+    "Mahadevan Nair",
+    "Kidus Peter",
+    "Divya Prabhu",
+    "Jiya Rao",
+    "Srilaasya Samineni",
+    "Sandeep Thimmasamudram",
+    "Aneesh Thota",
+    "Hoda Timaji",
+    "Maithili Uniyal",
+    "Kaya Vallejos Duarte",
+    "Caleb Yo"
+  ],
+  "blockYMembers": [
+    "Sanjana Amara",
+    "Chandana Aradhya",
+    "Eliel Arellano",
+    "Miriam Baron",
+    "Cynthia Biruk",
+    "Justin Cheung",
+    "Aaruj Datar",
+    "William Ding",
+    "Austin Egodahewage",
+    "Sachin Gupte",
+    "Ryan Highfill",
+    "Edward Hou",
+    "Charan Kamana",
+    "Aarna Khanna",
+    "Summit Lu",
+    "Brindha Mahadevan",
+    "Sifali Maskey",
+    "Ananya Mulukutla",
+    "Pranay Panakal",
+    "Shrika Pilli",
+    "Yeona Plotkin",
+    "Anika Rajeev",
+    "Emma Shi",
+    "Keershika Suji Sudhakar Jeyasri",
+    "Riti Thakkar",
+    "Caden Wang",
+    "Chrystina Wang",
+    "Arin Yeo",
+    "Jingwei Zhao"
+  ]
 }
