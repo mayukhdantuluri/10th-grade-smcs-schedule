@@ -286,7 +286,7 @@
         gatherDOMData();
 
         status.style.color = "#ffaa00";
-        status.textContent = "Saving changes to GitHub...";
+        status.textContent = "Saving changes to https://mayukhdantuluri.github.io/10th-grade-smcs-schedule/";
 
         try {
             let getRes = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {
@@ -311,7 +311,7 @@
 
             if(putRes.ok) {
                 status.style.color = "#00ff66";
-                status.textContent = "Successfully saved! Live site will update in ~30 seconds.";
+                status.textContent = "Changes successfully saved. Wait for around 30 seconds for them to show up in the website.";
             } else {
                 let err = await putRes.json();
                 throw new Error(err.message);
