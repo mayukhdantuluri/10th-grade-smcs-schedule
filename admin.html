@@ -9,12 +9,12 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { background-color: #000; color: #fff; font-family: 'Roboto', sans-serif; padding: 30px 15px; max-width: 1000px; margin: 0 auto; }
         h1 { text-align: center; font-size: 2.8rem; font-weight: 900; color: #fff; text-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff0000; margin-bottom: 25px; }
-        h2, h3 { color: #ff3333; margin-bottom: 12px; }
+        h3 { color: #ff3333; margin-bottom: 12px; }
         .card { background: rgba(20, 20, 20, 0.9); border: 2px solid #ffffff; border-radius: 16px; padding: 25px; margin-bottom: 25px; box-shadow: 0 8px 32px rgba(0,0,0,0.8); }
         label { display: block; margin-top: 12px; font-weight: 700; color: #ff9999; font-size: 0.95rem; }
-        input, textarea { width: 100%; padding: 12px; margin-top: 6px; background: #0a0a0a; color: #fff; border: 1px solid #444; border-radius: 8px; font-family: inherit; font-size: 0.95rem; }
-        input:focus, textarea:focus { border-color: #ff1a1a; outline: none; box-shadow: 0 0 8px rgba(255,26,26,0.4); }
-        textarea { height: 70px; resize: vertical; }
+        input, select, textarea { width: 100%; padding: 12px; margin-top: 6px; background: #0a0a0a; color: #fff; border: 1px solid #444; border-radius: 8px; font-family: inherit; font-size: 0.95rem; }
+        input:focus, select:focus, textarea:focus { border-color: #ff1a1a; outline: none; box-shadow: 0 0 8px rgba(255,26,26,0.4); }
+        textarea { height: 75px; resize: vertical; }
         .members-area { height: 160px; }
         .schedule-row { background: rgba(0,0,0,0.5); border: 1px solid #333; padding: 15px; border-radius: 10px; margin-bottom: 15px; }
         .schedule-row h4 { color: #fff; margin-bottom: 8px; font-size: 1.1rem; }
@@ -23,7 +23,7 @@
         .btn:hover { background: #d91422; transform: translateY(-1px); }
         .btn-secondary { background: #333; margin-top: 10px; padding: 8px 16px; font-size: 0.9rem; width: auto; }
         .btn-secondary:hover { background: #444; }
-        .announcement-box { background: rgba(0,0,0,0.4); border: 1px solid #333; padding: 15px; border-radius: 10px; margin-bottom: 15px; position: relative; }
+        .announcement-box { background: rgba(0,0,0,0.4); border: 1px solid #333; padding: 15px; border-radius: 10px; margin-bottom: 15px; }
         #status { text-align: center; font-weight: bold; margin-top: 15px; font-size: 1.1rem; }
         @media(max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
     </style>
@@ -41,7 +41,7 @@
     <div class="card">
         <h3>Announcement Banner Messages</h3>
         <div id="announcementsContainer">Loading announcements...</div>
-        <button class="btn btn-secondary" onclick="addAnnouncement()">+ Add New Announcement</button>
+        <button class="btn btn-secondary" type="button" onclick="addAnnouncement()">+ Add New Announcement</button>
     </div>
 
     <div class="card">
@@ -58,14 +58,14 @@
         <textarea id="blockYInput" class="members-area"></textarea>
     </div>
 
-    <button class="btn" onclick="saveChanges()">Save All Changes to GitHub</button>
+    <button class="btn" type="button" onclick="saveChanges()">Save All Changes to GitHub</button>
     <div id="status"></div>
 
 <script>
     const REPO = "mayukhdantuluri/10th-grade-smcs-schedule";
     const FILE_PATH = "data.json";
 
-    let siteData = {};
+    let siteData = { announcements: [], schedule: [], blockXMembers: [], blockYMembers: [] };
 
     const tokenInput = document.getElementById("patToken");
     if(localStorage.getItem("gh_token")) {
@@ -98,14 +98,26 @@
     function renderUI() {
         // Render Announcements
         let annHTML = "";
-        siteData.announcements.forEach((ann, i) => {
+        (siteData.announcements || []).forEach((ann, i) => {
+            let selectedTitle = ann.title || "SMCS 2029 News";
             annHTML += `
                 <div class="announcement-box" id="ann-${i}">
-                    <label>Announcement ${i+1} Title:</label>
-                    <input type="text" class="ann-title" value="${ann.title}">
-                    <label>Announcement ${i+1} Detail Message:</label>
-                    <textarea class="ann-detail">${ann.detail}</textarea>
-                    <button class="btn btn-secondary" style="background:#8b0000; margin-top:8px;" onclick="removeAnnouncement(${i})">Delete Announcement</button>
+                    <label>Announcement Category / Class:</label>
+                    <select class="ann-title">
+                        <option value="SMCS 2029 News" ${selectedTitle === "SMCS 2029 News" ? "selected" : ""}>General SMCS 2029 News</option>
+                        <option value="Adv. Science 4: Biology" ${selectedTitle === "Adv. Science 4: Biology" ? "selected" : ""}>Adv. Science 4: Biology</option>
+                        <option value="Adv. Science 3: ESS" ${selectedTitle === "Adv. Science 3: ESS" ? "selected" : ""}>Adv. Science 3: ESS</option>
+                        <option value="Algorithms & Data Structures" ${selectedTitle === "Algorithms & Data Structures" ? "selected" : ""}>Algorithms & Data Structures</option>
+                        <option value="Foundations of Technology" ${selectedTitle === "Foundations of Technology" ? "selected" : ""}>Foundations of Technology</option>
+                    </select>
+
+                    <label>Detail Message:</label>
+                    <textarea class="ann-detail">${ann.detail || ""}</textarea>
+
+                    <label>Stop Showing After Date & Time (yyyy-mm-dd hh:mm:ss):</label>
+                    <input type="text" class="ann-expires" value="${ann.expiresAt || "2026-12-31 23:59:59"}" placeholder="2026-10-25 15:30:00">
+
+                    <button class="btn btn-secondary" type="button" style="background:#8b0000; margin-top:10px;" onclick="removeAnnouncement(${i})">Delete Announcement</button>
                 </div>
             `;
         });
@@ -113,7 +125,7 @@
 
         // Render Schedule
         let schedHTML = "";
-        siteData.schedule.forEach((s, i) => {
+        (siteData.schedule || []).forEach((s, i) => {
             schedHTML += `
                 <div class="schedule-row">
                     <h4>Period ${s.period}</h4>
@@ -137,13 +149,19 @@
         document.getElementById("scheduleContainer").innerHTML = schedHTML;
 
         // Render Members
-        document.getElementById("blockXInput").value = siteData.blockXMembers.join("\n");
-        document.getElementById("blockYInput").value = siteData.blockYMembers.join("\n");
+        document.getElementById("blockXInput").value = (siteData.blockXMembers || []).join("\n");
+        document.getElementById("blockYInput").value = (siteData.blockYMembers || []).join("\n");
     }
 
     function addAnnouncement() {
-        siteData.announcements.push({ title: "New Announcement", detail: "Type your message here..." });
-        renderUIFromDOM();
+        gatherDOMData();
+        if(!siteData.announcements) siteData.announcements = [];
+        siteData.announcements.push({
+            title: "SMCS 2029 News",
+            detail: "Type your message here...",
+            expiresAt: "2026-12-31 23:59:59"
+        });
+        renderUI();
     }
 
     function removeAnnouncement(index) {
@@ -156,18 +174,29 @@
         // Announcements
         let titles = document.querySelectorAll(".ann-title");
         let details = document.querySelectorAll(".ann-detail");
+        let expires = document.querySelectorAll(".ann-expires");
         siteData.announcements = [];
         for(let i=0; i<titles.length; i++) {
-            siteData.announcements.push({ title: titles[i].value, detail: details[i].value });
+            siteData.announcements.push({
+                title: titles[i].value,
+                detail: details[i].value,
+                expiresAt: expires[i].value
+            });
         }
 
         // Schedule
-        siteData.schedule.forEach((s, i) => {
-            s.blockXTitle = document.querySelector(`.sch-x-title[data-index="${i}"]`).value;
-            s.blockXRoom = document.querySelector(`.sch-x-room[data-index="${i}"]`).value;
-            s.blockYTitle = document.querySelector(`.sch-y-title[data-index="${i}"]`).value;
-            s.blockYRoom = document.querySelector(`.sch-y-room[data-index="${i}"]`).value;
-        });
+        if(siteData.schedule) {
+            siteData.schedule.forEach((s, i) => {
+                let xt = document.querySelector(`.sch-x-title[data-index="${i}"]`);
+                let xr = document.querySelector(`.sch-x-room[data-index="${i}"]`);
+                let yt = document.querySelector(`.sch-y-title[data-index="${i}"]`);
+                let yr = document.querySelector(`.sch-y-room[data-index="${i}"]`);
+                if(xt) s.blockXTitle = xt.value;
+                if(xr) s.blockXRoom = xr.value;
+                if(yt) s.blockYTitle = yt.value;
+                if(yr) s.blockYRoom = yr.value;
+            });
+        }
 
         // Members
         siteData.blockXMembers = document.getElementById("blockXInput").value.split("\n").map(s => s.trim()).filter(Boolean);
@@ -217,8 +246,6 @@
             status.textContent = "Error: " + e.message;
         }
     }
-
-    if(tokenInput.value) loadData();
 </script>
 </body>
 </html>
