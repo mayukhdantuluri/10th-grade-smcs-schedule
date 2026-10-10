@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHS SMCS 2029 - Admin Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        body { background: #0b0b0b; color: #fff; font-family: 'Roboto', sans-serif; padding: 20px; max-width: 900px; margin: 0 auto; }
-        h1 { color: #ff1a1a; text-shadow: 0 0 10px rgba(255,0,0,0.5); margin-bottom: 20px; text-align: center; }
-        .card { background: #161616; border: 2px solid #333; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
-        label { display: block; margin-top: 10px; font-weight: bold; color: #ff4d4d; }
-        input, textarea { width: 100%; padding: 10px; margin-top: 5px; background: #000; color: #fff; border: 1px solid #444; border-radius: 6px; font-family: inherit; }
-        textarea { height: 80px; resize: vertical; }
-        button { background: #b80d19; color: #fff; border: none; padding: 12px 20px; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; margin-top: 15px; width: 100%; box-shadow: 0 4px 12px rgba(184,13,25,0.5); transition: background 0.2s; }
-        button:hover { background: #d91422; }
-        .announcement-box { border-bottom: 1px solid #333; padding-bottom: 15px; margin-bottom: 15px; }
-        #status { text-align: center; font-weight: bold; margin-top: 15px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: #000; color: #fff; font-family: 'Roboto', sans-serif; padding: 30px 15px; max-width: 1000px; margin: 0 auto; }
+        h1 { text-align: center; font-size: 2.8rem; font-weight: 900; color: #fff; text-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff0000; margin-bottom: 25px; }
+        h2, h3 { color: #ff3333; margin-bottom: 12px; }
+        .card { background: rgba(20, 20, 20, 0.9); border: 2px solid #ffffff; border-radius: 16px; padding: 25px; margin-bottom: 25px; box-shadow: 0 8px 32px rgba(0,0,0,0.8); }
+        label { display: block; margin-top: 12px; font-weight: 700; color: #ff9999; font-size: 0.95rem; }
+        input, textarea { width: 100%; padding: 12px; margin-top: 6px; background: #0a0a0a; color: #fff; border: 1px solid #444; border-radius: 8px; font-family: inherit; font-size: 0.95rem; }
+        input:focus, textarea:focus { border-color: #ff1a1a; outline: none; box-shadow: 0 0 8px rgba(255,26,26,0.4); }
+        textarea { height: 70px; resize: vertical; }
+        .members-area { height: 160px; }
+        .schedule-row { background: rgba(0,0,0,0.5); border: 1px solid #333; padding: 15px; border-radius: 10px; margin-bottom: 15px; }
+        .schedule-row h4 { color: #fff; margin-bottom: 8px; font-size: 1.1rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .btn { background: #b80d19; color: #fff; border: none; padding: 14px 24px; font-size: 1.1rem; font-weight: 700; border-radius: 10px; cursor: pointer; width: 100%; box-shadow: 0 4px 18px rgba(184,13,25,0.7); transition: background 0.2s, transform 0.1s; }
+        .btn:hover { background: #d91422; transform: translateY(-1px); }
+        .btn-secondary { background: #333; margin-top: 10px; padding: 8px 16px; font-size: 0.9rem; width: auto; }
+        .btn-secondary:hover { background: #444; }
+        .announcement-box { background: rgba(0,0,0,0.4); border: 1px solid #333; padding: 15px; border-radius: 10px; margin-bottom: 15px; position: relative; }
+        #status { text-align: center; font-weight: bold; margin-top: 15px; font-size: 1.1rem; }
+        @media(max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -23,29 +33,40 @@
     <h1>SMCS Admin Dashboard</h1>
 
     <div class="card">
-        <label>GitHub Personal Access Token (Saved in browser):</label>
+        <h3>GitHub Authentication</h3>
+        <label>Personal Access Token (Saved securely in your browser):</label>
         <input type="password" id="patToken" placeholder="Paste your GitHub token here...">
     </div>
 
-    <div class="card" id="editorSection">
-        <h3>Announcements</h3>
-        <div id="announcementsContainer"></div>
-
-        <h3>Block X Members (One per line)</h3>
-        <textarea id="blockXInput"></textarea>
-
-        <h3>Block Y Members (One per line)</h3>
-        <textarea id="blockYInput"></textarea>
-
-        <button onclick="saveChanges()">Save Changes to GitHub</button>
-        <div id="status"></div>
+    <div class="card">
+        <h3>Announcement Banner Messages</h3>
+        <div id="announcementsContainer">Loading announcements...</div>
+        <button class="btn btn-secondary" onclick="addAnnouncement()">+ Add New Announcement</button>
     </div>
+
+    <div class="card">
+        <h3>Block Schedule (Periods 1-4)</h3>
+        <div id="scheduleContainer">Loading schedule...</div>
+    </div>
+
+    <div class="card">
+        <h3>Student Roster</h3>
+        <label>Block X Members (One name per line):</label>
+        <textarea id="blockXInput" class="members-area"></textarea>
+
+        <label>Block Y Members (One name per line):</label>
+        <textarea id="blockYInput" class="members-area"></textarea>
+    </div>
+
+    <button class="btn" onclick="saveChanges()">Save All Changes to GitHub</button>
+    <div id="status"></div>
 
 <script>
     const REPO = "mayukhdantuluri/10th-grade-smcs-schedule";
     const FILE_PATH = "data.json";
 
-    // Load saved token on startup
+    let siteData = {};
+
     const tokenInput = document.getElementById("patToken");
     if(localStorage.getItem("gh_token")) {
         tokenInput.value = localStorage.getItem("gh_token");
@@ -53,36 +74,104 @@
     }
 
     tokenInput.addEventListener("input", () => {
-        localStorage.setItem("gh_token", tokenInput.value);
-        if(tokenInput.value.length > 10) loadData();
+        localStorage.setItem("gh_token", tokenInput.value.trim());
+        if(tokenInput.value.trim().length > 10) loadData();
     });
 
     async function loadData() {
+        let token = tokenInput.value.trim();
+        if(!token) return;
         try {
-            let res = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`);
-            let json = await res.json();
-            let content = JSON.parse(decodeURIComponent(escape(atob(json.content))));
-
-            // Populate Announcements
-            let annHTML = "";
-            content.announcements.forEach((ann, i) => {
-                annHTML += `
-                    <div class="announcement-box">
-                        <label>Title ${i+1}:</label>
-                        <input type="text" class="ann-title" value="${ann.title}">
-                        <label>Detail ${i+1}:</label>
-                        <textarea class="ann-detail">${ann.detail}</textarea>
-                    </div>
-                `;
+            let res = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {
+                headers: { "Authorization": `token ${token}` }
             });
-            document.getElementById("announcementsContainer").innerHTML = annHTML;
-
-            // Populate Members
-            document.getElementById("blockXInput").value = content.blockXMembers.join("\n");
-            document.getElementById("blockYInput").value = content.blockYMembers.join("\n");
+            if(!res.ok) throw new Error("Failed to load data. Check your token permissions.");
+            let json = await res.json();
+            siteData = JSON.parse(decodeURIComponent(escape(atob(json.content))));
+            renderUI();
         } catch (e) {
-            console.error(e);
+            document.getElementById("status").style.color = "#ff3333";
+            document.getElementById("status").textContent = "Error loading data: " + e.message;
         }
+    }
+
+    function renderUI() {
+        // Render Announcements
+        let annHTML = "";
+        siteData.announcements.forEach((ann, i) => {
+            annHTML += `
+                <div class="announcement-box" id="ann-${i}">
+                    <label>Announcement ${i+1} Title:</label>
+                    <input type="text" class="ann-title" value="${ann.title}">
+                    <label>Announcement ${i+1} Detail Message:</label>
+                    <textarea class="ann-detail">${ann.detail}</textarea>
+                    <button class="btn btn-secondary" style="background:#8b0000; margin-top:8px;" onclick="removeAnnouncement(${i})">Delete Announcement</button>
+                </div>
+            `;
+        });
+        document.getElementById("announcementsContainer").innerHTML = annHTML;
+
+        // Render Schedule
+        let schedHTML = "";
+        siteData.schedule.forEach((s, i) => {
+            schedHTML += `
+                <div class="schedule-row">
+                    <h4>Period ${s.period}</h4>
+                    <div class="grid-2">
+                        <div>
+                            <label>Block X Class Title:</label>
+                            <input type="text" class="sch-x-title" data-index="${i}" value="${s.blockXTitle}">
+                            <label>Block X Room:</label>
+                            <input type="text" class="sch-x-room" data-index="${i}" value="${s.blockXRoom}">
+                        </div>
+                        <div>
+                            <label>Block Y Class Title:</label>
+                            <input type="text" class="sch-y-title" data-index="${i}" value="${s.blockYTitle}">
+                            <label>Block Y Room:</label>
+                            <input type="text" class="sch-y-room" data-index="${i}" value="${s.blockYRoom}">
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        document.getElementById("scheduleContainer").innerHTML = schedHTML;
+
+        // Render Members
+        document.getElementById("blockXInput").value = siteData.blockXMembers.join("\n");
+        document.getElementById("blockYInput").value = siteData.blockYMembers.join("\n");
+    }
+
+    function addAnnouncement() {
+        siteData.announcements.push({ title: "New Announcement", detail: "Type your message here..." });
+        renderUIFromDOM();
+    }
+
+    function removeAnnouncement(index) {
+        gatherDOMData();
+        siteData.announcements.splice(index, 1);
+        renderUI();
+    }
+
+    function gatherDOMData() {
+        // Announcements
+        let titles = document.querySelectorAll(".ann-title");
+        let details = document.querySelectorAll(".ann-detail");
+        siteData.announcements = [];
+        for(let i=0; i<titles.length; i++) {
+            siteData.announcements.push({ title: titles[i].value, detail: details[i].value });
+        }
+
+        // Schedule
+        siteData.schedule.forEach((s, i) => {
+            s.blockXTitle = document.querySelector(`.sch-x-title[data-index="${i}"]`).value;
+            s.blockXRoom = document.querySelector(`.sch-x-room[data-index="${i}"]`).value;
+            s.blockYTitle = document.querySelector(`.sch-y-title[data-index="${i}"]`).value;
+            s.blockYRoom = document.querySelector(`.sch-y-room[data-index="${i}"]`).value;
+        });
+
+        // Members
+        siteData.blockXMembers = document.getElementById("blockXInput").value.split("\n").map(s => s.trim()).filter(Boolean);
+        siteData.blockYMembers = document.getElementById("blockYInput").value.split("\n").map(s => s.trim()).filter(Boolean);
     }
 
     async function saveChanges() {
@@ -90,32 +179,19 @@
         let status = document.getElementById("status");
         if (!token) { alert("Please enter your GitHub Token!"); return; }
 
+        gatherDOMData();
+
         status.style.color = "#ffaa00";
         status.textContent = "Saving changes to GitHub...";
 
-        // Gather data from inputs
-        let announcements = [];
-        let titles = document.querySelectorAll(".ann-title");
-        let details = document.querySelectorAll(".ann-detail");
-        for(let i=0; i<titles.length; i++) {
-            announcements.push({ title: titles[i].value, detail: details[i].value });
-        }
-
-        let blockXMembers = document.getElementById("blockXInput").value.split("\n").map(s => s.trim()).filter(Boolean);
-        let blockYMembers = document.getElementById("blockYInput").value.split("\n").map(s => s.trim()).filter(Boolean);
-
-        let newData = { announcements, blockXMembers, blockYMembers };
-
         try {
-            // 1. Get current file SHA
             let getRes = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {
                 headers: { "Authorization": `token ${token}` }
             });
             let getJson = await getRes.json();
             let sha = getJson.sha;
 
-            // 2. Push update
-            let encodedContent = btoa(unescape(encodeURIComponent(JSON.stringify(newData, null, 2))));
+            let encodedContent = btoa(unescape(encodeURIComponent(JSON.stringify(siteData, null, 2))));
             let putRes = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {
                 method: "PUT",
                 headers: {
@@ -123,7 +199,7 @@
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    message: "Update schedule data via Admin Dashboard",
+                    message: "Update schedule & announcements via Admin Dashboard",
                     content: encodedContent,
                     sha: sha
                 })
@@ -131,7 +207,7 @@
 
             if(putRes.ok) {
                 status.style.color = "#00ff66";
-                status.textContent = "Successfully saved! Changes will reflect live in 1 minute.";
+                status.textContent = "Successfully saved! Live site will update in ~30 seconds.";
             } else {
                 let err = await putRes.json();
                 throw new Error(err.message);
