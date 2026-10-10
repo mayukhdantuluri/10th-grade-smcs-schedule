@@ -43,11 +43,11 @@
 </head>
 <body>
 
-    <h1>SMCS Admin Dashboard</h1>
+    <h1>Mayukh's Admin Dashboard</h1>
 
     <div class="card">
         <h3>GitHub Authentication</h3>
-        <label>Personal Access Token (Saved securely in your browser):</label>
+        <label>Required GitHub Token:</label>
         <input type="password" id="patToken" placeholder="Paste your GitHub token here...">
     </div>
 
@@ -283,7 +283,7 @@
     async function saveChanges() {
         let token = tokenInput.value.trim();
         let status = document.getElementById("status");
-        if (!token) { alert("Please enter your GitHub Token!"); return; }
+        if (!token) { alert("You dumbfuck, don't you know you need the token to even make changes?"); return; }
 
         gatherDOMData();
 
