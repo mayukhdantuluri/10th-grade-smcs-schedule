@@ -1,18 +1,23 @@
 {
   "announcements": [
     {
+      "title": "SMCS 2029 News",
+      "detail": "If you see Mr. Lee, just bombard him with questions about the SMCS Merch",
+      "expiresAt": "2026-10-23 00:00:00"
+    },
+    {
       "title": "Algorithms & Data Structures",
-      "detail": "The Unit 1 Test is in class on October 13. There will be an MCQ and FRQ section.",
+      "detail": "The Unit 1 Test is in class on October 13. There will be an MCQ and FRQ section",
       "expiresAt": "2026-10-13 11:05:00"
     },
     {
       "title": "Adv. Science 3: ESS",
-      "detail": "Reassessments for the Topography Quiz will be on October 13 at lunch.",
+      "detail": "Reassessments for the Topography Quiz will be on October 13 at lunch",
       "expiresAt": "2026-10-13 12:00:00"
     },
     {
       "title": "Adv. Science 4: Biology",
-      "detail": "The Carbohydrates, Lipids, and Proteins Unit Test is on October 15 in class.",
+      "detail": "The Carbohydrates, Lipids, and Proteins Unit Test is on October 15 in class",
       "expiresAt": "2026-10-15 11:05:00"
     }
   ],
