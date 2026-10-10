@@ -52,7 +52,7 @@
     </div>
 
     <div class="card">
-        <h3>Announcement Banner Messages & Order</h3>
+        <h3>Announcement Banner Messages</h3>
         <div id="announcementsContainer">Loading announcements...</div>
         <button class="btn btn-secondary" type="button" style="width:100%; margin-top:10px; padding:10px;" onclick="addAnnouncement()">+ Add New Announcement</button>
     </div>
@@ -63,10 +63,10 @@
     </div>
 
     <div class="card">
-        <h3>Student Rosters (Drag/Reorder)</h3>
+        <h3>Student Rosters (Reorder Only, No Dragging)</h3>
         <div class="roster-grid">
             <div class="roster-column">
-                <label>Block X Members:</label>
+                <label>Block X Members</label>
                 <div style="display:flex; gap:6px; margin-top:8px;">
                     <input type="text" id="newBlockX" placeholder="Add student name...">
                     <button class="btn btn-secondary" type="button" onclick="addMember('X')">Add</button>
@@ -74,7 +74,7 @@
                 <div id="rosterXList" class="roster-list"></div>
             </div>
             <div class="roster-column">
-                <label>Block Y Members:</label>
+                <label>Block Y Members</label>
                 <div style="display:flex; gap:6px; margin-top:8px;">
                     <input type="text" id="newBlockY" placeholder="Add student name...">
                     <button class="btn btn-secondary" type="button" onclick="addMember('Y')">Add</button>
@@ -84,7 +84,7 @@
         </div>
     </div>
 
-    <button class="btn" type="button" onclick="saveChanges()">Save All Changes to GitHub</button>
+    <button class="btn" type="button" onclick="saveChanges()">Save All Changes to Main Website</button>
     <div id="status"></div>
 
 <script>
