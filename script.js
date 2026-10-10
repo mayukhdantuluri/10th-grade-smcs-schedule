@@ -9,7 +9,7 @@ async function loadSiteData() {
         let response = await fetch('data.json?v=' + Date.now());
         let data = await response.json();
         
-        ANNOUNCEMENTS = data.announcements;
+        ANNOUNCEMENTS = data.announcements || [];
         
         // Populate Block X Members
         const blockXList = document.querySelector('.content-grid .card:nth-child(1) .members-list');
@@ -21,6 +21,32 @@ async function loadSiteData() {
         const blockYList = document.querySelector('.content-grid .card:nth-child(3) .members-list');
         if (blockYList && data.blockYMembers) {
             blockYList.innerHTML = data.blockYMembers.map(name => `<li>${name}</li>`).join('');
+        }
+
+        // Populate Block Schedule Grid
+        if (data.schedule) {
+            const scheduleGrid = document.querySelector('.schedule-grid');
+            if (scheduleGrid) {
+                let gridHTML = `
+                    <div class="col-header">Block X</div>
+                    <div class="col-header">Period</div>
+                    <div class="col-header">Block Y</div>
+                `;
+                data.schedule.forEach(s => {
+                    gridHTML += `
+                        <div class="class-cell">
+                            <span class="class-title">${s.blockXTitle}</span>
+                            <span class="class-room">${s.blockXRoom}</span>
+                        </div>
+                        <div class="period-num">${s.period}</div>
+                        <div class="class-cell">
+                            <span class="class-title">${s.blockYTitle}</span>
+                            <span class="class-room">${s.blockYRoom}</span>
+                        </div>
+                    `;
+                });
+                scheduleGrid.innerHTML = gridHTML;
+            }
         }
 
         // Trigger banner once data is loaded
