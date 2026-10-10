@@ -2,32 +2,12 @@
   "announcements": [
     {
       "title": "Adv. Science 3: ESS",
-      "detail": "Reassessments for the Topography Quiz will be on TUESDAY at lunch.",
-      "expiresAt": "2026-10-12 00:00:00"
-    },
-    {
-      "title": "Adv. Science 3: ESS",
-      "detail": "Reassessments for the Topography Quiz will be tomorrow at lunch.",
-      "expiresAt": "2026-10-13 00:00:00"
-    },
-    {
-      "title": "Adv. Science 3: ESS",
-      "detail": "Reassessments for the Topography Quiz will be TODAY at lunch.",
-      "expiresAt": "2026-10-13 12:00:00"
+      "detail": "Reassessments for the Topography Quiz will be on October 13 at lunch.",
+      "expiresAt": "2026-10-13 11:05:00"
     },
     {
       "title": "Adv. Science 4: Biology",
-      "detail": "The Carbohydrates, Lipids, and Proteins Unit Test is on THURSDAY in class.",
-      "expiresAt": "2026-10-14 00:00:00"
-    },
-    {
-      "title": "Adv. Science 4: Biology",
-      "detail": "The Carbohydrates, Lipids, and Proteins Unit Test is TOMORROW in class.",
-      "expiresAt": "2026-10-15 00:00:00"
-    },
-    {
-      "title": "Adv. Science 4: Biology",
-      "detail": "The Carbohydrates, Lipids, and Proteins Unit Test is today in class.",
+      "detail": "The Carbohydrates, Lipids, and Proteins Unit Test is on October 15 in class.",
       "expiresAt": "2026-10-15 11:05:00"
     }
   ],
