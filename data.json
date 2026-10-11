@@ -1,11 +1,6 @@
 {
   "announcements": [
     {
-      "title": "SMCS 2029 News",
-      "detail": "If you see Mr. Lee, give a standing ovation for him, or bow down to him if you can't clap. Also just ask him about the SMCS Merch.",
-      "expiresAt": "2026-10-23 00:00:00"
-    },
-    {
       "title": "Adv. Science 3: ESS",
       "detail": "Finish the Groundwater Contamination Packet by start of class October 12.",
       "expiresAt": "2026-10-12 08:00:00"
@@ -24,6 +19,11 @@
       "title": "Adv. Science 4: Biology",
       "detail": "The Carbohydrates, Lipids, and Proteins Unit Test is on October 15 in class.",
       "expiresAt": "2026-10-15 11:05:00"
+    },
+    {
+      "title": "SMCS 2029 News",
+      "detail": "Field Trip to Seneca Creek will be on October 23. Pack the right things!",
+      "expiresAt": "2026-10-23 00:00:00"
     }
   ],
   "schedule": [
