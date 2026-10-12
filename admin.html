@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHS SMCS 2029 - Admin Dashboard</title>
-
-    <link rel="icon" type="image/png" href="admin-favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -24,13 +22,13 @@
         
         .roster-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
         .roster-column { background: rgba(0,0,0,0.5); border: 1px solid #333; padding: 15px; border-radius: 10px; }
-        .roster-list { max-height: 350px; overflow-y: auto; margin-top: 10px; border: 1px solid #333; border-radius: 6px; padding: 8px; background: #050505; }
+        .roster-list { max-height: 380px; overflow-y: auto; margin-top: 10px; border: 1px solid #333; border-radius: 6px; padding: 8px; background: #050505; }
         .roster-item { display: flex; align-items: center; justify-content: space-between; background: #151515; padding: 6px 10px; margin-bottom: 6px; border-radius: 6px; border: 1px solid #2a2a2a; }
-        .roster-item span { font-size: 0.92rem; flex: 1; margin-right: 10px; word-break: break-word; }
+        .roster-item span { font-size: 0.88rem; flex: 1; margin-right: 6px; word-break: break-word; }
         
         .btn { background: #b80d19; color: #fff; border: none; padding: 14px 24px; font-size: 1.1rem; font-weight: 700; border-radius: 10px; cursor: pointer; width: 100%; box-shadow: 0 4px 18px rgba(184,13,25,0.7); transition: background 0.2s; }
         .btn:hover { background: #d91422; }
-        .btn-secondary { background: #333; padding: 6px 12px; font-size: 0.82rem; border-radius: 6px; cursor: pointer; color: #fff; border: 1px solid #555; }
+        .btn-secondary { background: #333; padding: 6px 10px; font-size: 0.8rem; border-radius: 6px; cursor: pointer; color: #fff; border: 1px solid #555; }
         .btn-secondary:hover { background: #444; }
         .btn-danger { background: #8b0000; border: none; color: #fff; }
         .btn-danger:hover { background: #a80000; }
@@ -43,7 +41,7 @@
 </head>
 <body>
 
-    <h1>Mayukh's Admin Dashboard</h1>
+    <h1>SMCS Admin Dashboard</h1>
 
     <div class="card">
         <h3>GitHub Authentication</h3>
@@ -52,7 +50,7 @@
     </div>
 
     <div class="card">
-        <h3>Announcement Banner Messages</h3>
+        <h3>Announcement Banner Messages & Order</h3>
         <div id="announcementsContainer">Loading announcements...</div>
         <button class="btn btn-secondary" type="button" style="width:100%; margin-top:10px; padding:10px;" onclick="addAnnouncement()">+ Add New Announcement</button>
     </div>
@@ -63,7 +61,7 @@
     </div>
 
     <div class="card">
-        <h3>Student Rosters (Reorder Only, No Dragging)</h3>
+        <h3>Student Rosters (Reorder, Delete, or Move Blocks)</h3>
         <div class="roster-grid">
             <div class="roster-column">
                 <label>Block X Members</label>
@@ -111,7 +109,7 @@
             let res = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {
                 headers: { "Authorization": `token ${token}` }
             });
-            if(!res.ok) throw new Error("Failed to load data. Check your token permissions.");
+            if(!res.ok) throw new Error("Check your token again.");
             let json = await res.json();
             siteData = JSON.parse(decodeURIComponent(escape(atob(json.content))));
             renderUI();
@@ -130,199 +128,9 @@
                 <div class="announcement-box" data-index="${i}">
                     <label>Announcement Category / Class:</label>
                     <select class="ann-title">
-                        <option value="SMCS 2029 News" ${t === "SMCS 2029 News" ? "selected" : ""}>SMCS 2029 News</option>
+                        <option value="SMCS 2029 News" ${t === "SMCS 2029 News" ? "selected" : ""}>General SMCS 2029 News</option>
                         <option value="Adv. Science 4: Biology" ${t === "Adv. Science 4: Biology" ? "selected" : ""}>Adv. Science 4: Biology</option>
                         <option value="Adv. Science 3: ESS" ${t === "Adv. Science 3: ESS" ? "selected" : ""}>Adv. Science 3: ESS</option>
                         <option value="Algorithms & Data Structures" ${t === "Algorithms & Data Structures" ? "selected" : ""}>Algorithms & Data Structures</option>
                         <option value="Foundations of Technology" ${t === "Foundations of Technology" ? "selected" : ""}>Foundations of Technology</option>
-                    </select>
-
-                    <label>Detail Message:</label>
-                    <textarea class="ann-detail">${ann.detail || ""}</textarea>
-
-                    <label>Stop Showing After (yyyy-mm-dd hh:mm:ss):</label>
-                    <input type="text" class="ann-expires" value="${ann.expiresAt || "2026-12-31 23:59:59"}">
-
-                    <div class="ann-actions">
-                        <button class="btn-secondary" type="button" onclick="moveAnnouncement(${i}, -1)" ${i === 0 ? 'disabled style="opacity:0.4"' : ''}>▲ Move Up</button>
-                        <button class="btn-secondary" type="button" onclick="moveAnnouncement(${i}, 1)" ${i === (siteData.announcements.length - 1) ? 'disabled style="opacity:0.4"' : ''}>▼ Move Down</button>
-                        <button class="btn-secondary btn-danger" type="button" onclick="removeAnnouncement(${i})">Delete</button>
-                    </div>
-                </div>
-            `;
-        });
-        document.getElementById("announcementsContainer").innerHTML = annHTML || "<p>No announcements yet.</p>";
-
-        // 2. Render Schedule
-        let schedHTML = "";
-        (siteData.schedule || []).forEach((s, i) => {
-            schedHTML += `
-                <div class="schedule-row">
-                    <h4>Period ${s.period}</h4>
-                    <label>Block X Title:</label>
-                    <input type="text" class="sch-x-title" data-index="${i}" value="${s.blockXTitle || ""}">
-                    <label>Block X Room:</label>
-                    <input type="text" class="sch-x-room" data-index="${i}" value="${s.blockXRoom || ""}">
-                    
-                    <label style="margin-top:12px;">Block Y Title:</label>
-                    <input type="text" class="sch-y-title" data-index="${i}" value="${s.blockYTitle || ""}">
-                    <label>Block Y Room:</label>
-                    <input type="text" class="sch-y-room" data-index="${i}" value="${s.blockYRoom || ""}">
-                </div>
-            `;
-        });
-        document.getElementById("scheduleContainer").innerHTML = schedHTML;
-
-        // 3. Render Roster Lists
-        renderRosterList('X');
-        renderRosterList('Y');
-    }
-
-    function renderRosterList(block) {
-        let listId = block === 'X' ? 'rosterXList' : 'rosterYList';
-        let members = block === 'X' ? siteData.blockXMembers : siteData.blockYMembers;
-        let html = "";
-        members.forEach((name, i) => {
-            html += `
-                <div class="roster-item">
-                    <span>${i+1}. ${name}</span>
-                    <div style="display:flex; gap:3px;">
-                        <button class="btn-secondary" type="button" onclick="moveMember('${block}', ${i}, -1)" ${i === 0 ? 'disabled style="opacity:0.3"' : ''}>▲</button>
-                        <button class="btn-secondary" type="button" onclick="moveMember('${block}', ${i}, 1)" ${i === members.length - 1 ? 'disabled style="opacity:0.3"' : ''}>▼</button>
-                        <button class="btn-secondary btn-danger" type="button" onclick="removeMember('${block}', ${i})">✕</button>
-                    </div>
-                </div>
-            `;
-        });
-        document.getElementById(listId).innerHTML = html || "<p style='color:#777; font-size:0.85rem; padding:8px;'>No members added.</p>";
-    }
-
-    function addMember(block) {
-        gatherDOMData();
-        let inputId = block === 'X' ? 'newBlockX' : 'newBlockY';
-        let val = document.getElementById(inputId).value.trim();
-        if(!val) return;
-        if(block === 'X') siteData.blockXMembers.push(val);
-        else siteData.blockYMembers.push(val);
-        document.getElementById(inputId).value = "";
-        renderUI();
-    }
-
-    function removeMember(block, index) {
-        gatherDOMData();
-        if(block === 'X') siteData.blockXMembers.splice(index, 1);
-        else siteData.blockYMembers.splice(index, 1);
-        renderUI();
-    }
-
-    function moveMember(block, index, direction) {
-        gatherDOMData();
-        let arr = block === 'X' ? siteData.blockXMembers : siteData.blockYMembers;
-        let targetIndex = index + direction;
-        if(targetIndex < 0 || targetIndex >= arr.length) return;
-        let temp = arr[index];
-        arr[index] = arr[targetIndex];
-        arr[targetIndex] = temp;
-        renderUI();
-    }
-
-    function addAnnouncement() {
-        gatherDOMData();
-        if(!siteData.announcements) siteData.announcements = [];
-        siteData.announcements.push({
-            title: "SMCS 2029 News",
-            detail: "Type your message here...",
-            expiresAt: "2026-12-31 23:59:59"
-        });
-        renderUI();
-    }
-
-    function removeAnnouncement(index) {
-        gatherDOMData();
-        siteData.announcements.splice(index, 1);
-        renderUI();
-    }
-
-    function moveAnnouncement(index, direction) {
-        gatherDOMData();
-        let targetIndex = index + direction;
-        if(targetIndex < 0 || targetIndex >= siteData.announcements.length) return;
-        let temp = siteData.announcements[index];
-        siteData.announcements[index] = siteData.announcements[targetIndex];
-        siteData.announcements[targetIndex] = temp;
-        renderUI();
-    }
-
-    function gatherDOMData() {
-        // Announcements
-        let boxes = document.querySelectorAll(".announcement-box");
-        siteData.announcements = [];
-        boxes.forEach(box => {
-            siteData.announcements.push({
-                title: box.querySelector(".ann-title").value,
-                detail: box.querySelector(".ann-detail").value,
-                expiresAt: box.querySelector(".ann-expires").value
-            });
-        });
-
-        // Schedule
-        if(siteData.schedule) {
-            siteData.schedule.forEach((s, i) => {
-                let xt = document.querySelector(`.sch-x-title[data-index="${i}"]`);
-                let xr = document.querySelector(`.sch-x-room[data-index="${i}"]`);
-                let yt = document.querySelector(`.sch-y-title[data-index="${i}"]`);
-                let yr = document.querySelector(`.sch-y-room[data-index="${i}"]`);
-                if(xt) s.blockXTitle = xt.value;
-                if(xr) s.blockXRoom = xr.value;
-                if(yt) s.blockYTitle = yt.value;
-                if(yr) s.blockYRoom = yr.value;
-            });
-        }
-    }
-
-    async function saveChanges() {
-        let token = tokenInput.value.trim();
-        let status = document.getElementById("status");
-        if (!token) { alert("why r u tryna hack bro?? this is why i made a token"); return; }
-
-        gatherDOMData();
-
-        status.style.color = "#ffaa00";
-        status.textContent = "Saving changes to https://mayukhdantuluri.github.io/10th-grade-smcs-schedule/";
-
-        try {
-            let getRes = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {
-                headers: { "Authorization": `token ${token}` }
-            });
-            let getJson = await getRes.json();
-            let sha = getJson.sha;
-
-            let encodedContent = btoa(unescape(encodeURIComponent(JSON.stringify(siteData, null, 2))));
-            let putRes = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {
-                method: "PUT",
-                headers: {
-                    "Authorization": `token ${token}`,
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    message: "Update schedule, rosters & announcements via Admin Dashboard",
-                    content: encodedContent,
-                    sha: sha
-                })
-            });
-
-            if(putRes.ok) {
-                status.style.color = "#00ff66";
-                status.textContent = "Changes successfully saved. Wait for around 30 seconds for them to show up in the website.";
-            } else {
-                let err = await putRes.json();
-                throw new Error(err.message);
-            }
-        } catch (e) {
-            status.style.color = "#ff3333";
-            status.textContent = "Error: " + e.message;
-        }
-    }
-</script>
-</body>
-</html>
+                    </
