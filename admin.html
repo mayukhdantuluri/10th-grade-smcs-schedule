@@ -329,7 +329,7 @@
 
             if(putRes.ok) {
                 status.style.color = "#00ff66";
-                status.textContent = "Changes successfully saved. Give it around 30 seconds to update the website.";
+                status.textContent = "Changes successfully saved. Give it around a minute to update the website.";
             } else {
                 let err = await putRes.json();
                 throw new Error(err.message);
