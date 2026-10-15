@@ -2,7 +2,7 @@
   "announcements": [
     {
       "title": "Algorithms & Data Structures",
-      "detail": "The Unit 1 Test (FRQ Section) will happen in Period 1 on October 15. Block X will go to 1708, Block Y will go to 2614, and both blocks stay in the same location for Period 2.",
+      "detail": "The Unit 1 Test (FRQ Section) will happen in Period 1 on October 15. Block X will go to 1708, Block Y will go to 1702, and both blocks stay in the same location for Period 2.",
       "expiresAt": "2026-10-15 08:35:00"
     },
     {
@@ -27,7 +27,7 @@
       "blockXTitle": "Algorithms & Data Structures (Unit 1 FRQ)",
       "blockXRoom": "1708 Kingman",
       "blockYTitle": "Algorithms & Data Structures (Unit 1 FRQ)",
-      "blockYRoom": "2614 Yu"
+      "blockYRoom": "1702 Hallisey"
     },
     {
       "period": "2",
