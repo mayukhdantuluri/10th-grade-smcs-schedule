@@ -1,13 +1,17 @@
 {
-  "forceNoSchool": false,
+  "forceNoSchool": true,
   "noSchoolDates": [
     {
-      "date": "2026-12-25",
-      "reason": "Christmas Day - No School!"
+      "date": "2026-10-16",
+      "reason": "MCPS is forcing teachers to learn stuff they don't wanna learn."
     },
     {
-      "date": "2027-01-01",
-      "reason": "New Year's Day - No School!"
+      "date": "2026-11-02",
+      "reason": "MP1 Grading"
+    },
+    {
+      "date": "2026-11-03",
+      "reason": "2026 Midterm Elections"
     }
   ],
   "announcements": [
@@ -17,7 +21,7 @@
       "expiresAt": "2026-10-19 11:05:00"
     },
     {
-      "title": "SMCS 2029 News",
+      "title": "General SMCS 2029 News",
       "detail": "Field Trip to Seneca Creek will be on October 23. Pack the right things!",
       "expiresAt": "2026-10-23 00:00:00"
     }
