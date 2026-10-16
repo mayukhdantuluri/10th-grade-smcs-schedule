@@ -1,37 +1,37 @@
 // ===========================================================================
-// 1. DYNAMIC DATA LOADER FROM data.json WITH EXPIRATION FILTERING
+// 1. DYNAMIC DATA LOADER FROM data.json WITH HOLIDAY & EXPIRATION CHECKING
 // ===========================================================================
 
 let ANNOUNCEMENTS = [];
+let SITE_DATA = {};
 
 async function loadSiteData() {
     try {
         let response = await fetch('data.json?v=' + Date.now());
-        let data = await response.json();
+        SITE_DATA = await response.json();
         
         // Filter out expired announcements based on current time
         const now = new Date();
-        ANNOUNCEMENTS = (data.announcements || []).filter(ann => {
+        ANNOUNCEMENTS = (SITE_DATA.announcements || []).filter(ann => {
             if (!ann.expiresAt) return true;
-            // Convert "yyyy-mm-dd hh:mm:ss" to ISO "yyyy-mm-ddThh:mm:ss" for parsing
             let expiryDate = new Date(ann.expiresAt.replace(' ', 'T'));
             return isNaN(expiryDate) || now <= expiryDate;
         });
         
         // Populate Block X Members
         const blockXList = document.querySelector('.content-grid .card:nth-child(1) .members-list');
-        if (blockXList && data.blockXMembers) {
-            blockXList.innerHTML = data.blockXMembers.map(name => `<li>${name}</li>`).join('');
+        if (blockXList && SITE_DATA.blockXMembers) {
+            blockXList.innerHTML = SITE_DATA.blockXMembers.map(name => `<li>${name}</li>`).join('');
         }
 
         // Populate Block Y Members
         const blockYList = document.querySelector('.content-grid .card:nth-child(3) .members-list');
-        if (blockYList && data.blockYMembers) {
-            blockYList.innerHTML = data.blockYMembers.map(name => `<li>${name}</li>`).join('');
+        if (blockYList && SITE_DATA.blockYMembers) {
+            blockYList.innerHTML = SITE_DATA.blockYMembers.map(name => `<li>${name}</li>`).join('');
         }
 
         // Populate Block Schedule Grid
-        if (data.schedule) {
+        if (SITE_DATA.schedule) {
             const scheduleGrid = document.querySelector('.schedule-grid');
             if (scheduleGrid) {
                 let gridHTML = `
@@ -39,7 +39,7 @@ async function loadSiteData() {
                     <div class="col-header">Period</div>
                     <div class="col-header">Block Y</div>
                 `;
-                data.schedule.forEach(s => {
+                SITE_DATA.schedule.forEach(s => {
                     gridHTML += `
                         <div class="class-cell">
                             <span class="class-title">${s.blockXTitle}</span>
@@ -55,6 +55,9 @@ async function loadSiteData() {
                 scheduleGrid.innerHTML = gridHTML;
             }
         }
+
+        // Re-run date check now that data is loaded
+        updateDate();
 
         // Trigger banner once data is loaded
         cycleXboxBanner();
@@ -80,7 +83,7 @@ function updateClock() {
 }
 
 // ===========================================================================
-// 3. DATE UPDATER & WEEKEND TOGGLE
+// 3. DATE UPDATER, WEEKENDS & HOLIDAY OVERRIDES
 // ===========================================================================
 
 function updateDate() {
@@ -103,10 +106,25 @@ function updateDate() {
     const noSchoolBanner = document.getElementById("noSchoolBanner");
     const noSchoolReason = document.getElementById("noSchoolReason");
 
-    if (now.getDay() === 0 || now.getDay() === 6) {
+    // Determine if today has no school
+    let isNoSchool = (now.getDay() === 0 || now.getDay() === 6);
+    let reasonText = "Weekend - No School Today!";
+
+    if (SITE_DATA.forceNoSchool) {
+        isNoSchool = true;
+        reasonText = "No School Today!";
+    } else if (SITE_DATA.noSchoolDates) {
+        let matchedHoliday = SITE_DATA.noSchoolDates.find(h => h.date === formattedDateISO);
+        if (matchedHoliday) {
+            isNoSchool = true;
+            reasonText = matchedHoliday.reason || "Holiday - No School Today!";
+        }
+    }
+
+    if (isNoSchool) {
         if (scheduleContainer) scheduleContainer.style.display = "none";
         if (noSchoolBanner) noSchoolBanner.style.display = "block";
-        if (noSchoolReason) noSchoolReason.textContent = "Weekend - No School Today!";
+        if (noSchoolReason) noSchoolReason.textContent = reasonText;
     } else {
         if (scheduleContainer) scheduleContainer.style.display = "block";
         if (noSchoolBanner) noSchoolBanner.style.display = "none";
