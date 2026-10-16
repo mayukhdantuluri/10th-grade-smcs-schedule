@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHS SMCS 2029 - Admin Dashboard</title>
-    <link rel="icon" type="image/png" href="admin-favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -17,6 +16,12 @@
         input:focus, select:focus, textarea:focus { border-color: #ff1a1a; outline: none; box-shadow: 0 0 8px rgba(255,26,26,0.4); }
         textarea { height: 65px; resize: vertical; }
         
+        .toggle-group { display: flex; align-items: center; gap: 12px; margin-top: 10px; background: rgba(0,0,0,0.5); padding: 12px; border-radius: 8px; border: 1px solid #333; }
+        .toggle-group input[type="checkbox"] { width: 22px; height: 22px; accent-color: #b80d19; cursor: pointer; }
+        .toggle-group label { margin-top: 0; color: #fff; font-size: 1.05rem; cursor: pointer; }
+
+        .holiday-box { background: rgba(0,0,0,0.5); border: 1px solid #333; padding: 15px; border-radius: 10px; margin-bottom: 12px; display: grid; grid-template-columns: 180px 1fr auto; gap: 10px; align-items: center; }
+
         .schedule-grid-admin { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
         .schedule-row { background: rgba(0,0,0,0.6); border: 1px solid #444; padding: 15px; border-radius: 10px; margin-bottom: 15px; }
         .schedule-row h4 { color: #fff; margin-bottom: 10px; font-size: 1.1rem; border-bottom: 1px solid #333; padding-bottom: 5px; }
@@ -37,7 +42,7 @@
         .announcement-box { background: rgba(0,0,0,0.5); border: 1px solid #333; padding: 15px; border-radius: 10px; margin-bottom: 15px; }
         .ann-actions { display: flex; gap: 8px; margin-top: 12px; }
         #status { text-align: center; font-weight: bold; margin-top: 15px; font-size: 1.1rem; }
-        @media(max-width: 850px) { .roster-grid, .schedule-grid-admin { grid-template-columns: 1fr; } }
+        @media(max-width: 850px) { .roster-grid, .schedule-grid-admin, .holiday-box { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -48,6 +53,18 @@
         <h3>GitHub Authentication</h3>
         <label>Required Access Token:</label>
         <input type="password" id="patToken" placeholder="Paste your GitHub token here...">
+    </div>
+
+    <div class="card">
+        <h3>No School / Holiday Management</h3>
+        <div class="toggle-group">
+            <input type="checkbox" id="forceNoSchoolToggle">
+            <label for="forceNoSchoolToggle">Force "No School Today" (Emergency / Manual Override for Today)</label>
+        </div>
+
+        <label style="margin-top: 20px;">Scheduled No-School Dates (Holidays, Breaks, etc.):</label>
+        <div id="holidaysContainer" style="margin-top: 10px;">Loading dates...</div>
+        <button class="btn btn-secondary" type="button" style="margin-top: 10px; padding: 8px 16px;" onclick="addHoliday()">+ Add No-School Date</button>
     </div>
 
     <div class="card">
@@ -90,7 +107,7 @@
     const REPO = "mayukhdantuluri/10th-grade-smcs-schedule";
     const FILE_PATH = "data.json";
 
-    let siteData = { announcements: [], schedule: [], blockXMembers: [], blockYMembers: [] };
+    let siteData = { forceNoSchool: false, noSchoolDates: [], announcements: [], schedule: [], blockXMembers: [], blockYMembers: [] };
 
     const tokenInput = document.getElementById("patToken");
     if(localStorage.getItem("gh_token")) {
@@ -110,7 +127,7 @@
             let res = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {
                 headers: { "Authorization": `token ${token}` }
             });
-            if(!res.ok) throw new Error("Failed to load data. Check your token permissions.");
+            if(!res.ok) throw new Error("Failed to load data. Check again to see if your token is valid.");
             let json = await res.json();
             siteData = JSON.parse(decodeURIComponent(escape(atob(json.content))));
             renderUI();
@@ -121,6 +138,30 @@
     }
 
     function renderUI() {
+        // 0. Render Force No School Toggle
+        document.getElementById("forceNoSchoolToggle").checked = !!siteData.forceNoSchool;
+
+        // 0b. Render Holiday Dates
+        let holidayHTML = "";
+        (siteData.noSchoolDates || []).forEach((h, i) => {
+            holidayHTML += `
+                <div class="holiday-row holiday-box" data-index="${i}">
+                    <div>
+                        <label style="margin-top:0;">Date (YYYY-MM-DD):</label>
+                        <input type="text" class="hol-date" value="${h.date || ""}" placeholder="2026-12-25">
+                    </div>
+                    <div>
+                        <label style="margin-top:0;">Reason Banner Text:</label>
+                        <input type="text" class="hol-reason" value="${h.reason || ""}" placeholder="Christmas Day - No School!">
+                    </div>
+                    <div style="padding-top:18px;">
+                        <button class="btn-secondary btn-danger" type="button" onclick="removeHoliday(${i})">Delete</button>
+                    </div>
+                </div>
+            `;
+        });
+        document.getElementById("holidaysContainer").innerHTML = holidayHTML || "<p style='color:#777; font-size:0.9rem;'>No custom no-school dates added.</p>";
+
         // 1. Render Announcements
         let annHTML = "";
         (siteData.announcements || []).forEach((ann, i) => {
@@ -129,7 +170,7 @@
                 <div class="announcement-box" data-index="${i}">
                     <label>Announcement Category / Class:</label>
                     <select class="ann-title">
-                        <option value="SMCS 2029 News" ${t === "SMCS 2029 News" ? "selected" : ""}>General SMCS 2029 News</option>
+                        <option value="General SMCS 2029 News" ${t === "General SMCS 2029 News" ? "selected" : ""}>General SMCS 2029 News</option>
                         <option value="Adv. Science 4: Biology" ${t === "Adv. Science 4: Biology" ? "selected" : ""}>Adv. Science 4: Biology</option>
                         <option value="Adv. Science 3: ESS" ${t === "Adv. Science 3: ESS" ? "selected" : ""}>Adv. Science 3: ESS</option>
                         <option value="Algorithms & Data Structures" ${t === "Algorithms & Data Structures" ? "selected" : ""}>Algorithms & Data Structures</option>
@@ -175,6 +216,19 @@
         // 3. Render Roster Lists
         renderRosterList('X');
         renderRosterList('Y');
+    }
+
+    function addHoliday() {
+        gatherDOMData();
+        if(!siteData.noSchoolDates) siteData.noSchoolDates = [];
+        siteData.noSchoolDates.push({ date: "2026-10-16", reason: "Holiday - No School Today!" });
+        renderUI();
+    }
+
+    function removeHoliday(index) {
+        gatherDOMData();
+        siteData.noSchoolDates.splice(index, 1);
+        renderUI();
     }
 
     function renderRosterList(block) {
@@ -246,7 +300,7 @@
         gatherDOMData();
         if(!siteData.announcements) siteData.announcements = [];
         siteData.announcements.push({
-            title: "SMCS 2029 News",
+            title: "General SMCS 2029 News",
             detail: "Type your message here...",
             expiresAt: "2026-12-31 23:59:59"
         });
@@ -270,6 +324,18 @@
     }
 
     function gatherDOMData() {
+        // Force No School Toggle & Holidays
+        siteData.forceNoSchool = document.getElementById("forceNoSchoolToggle").checked;
+        
+        let holidayBoxes = document.querySelectorAll(".holiday-row");
+        siteData.noSchoolDates = [];
+        holidayBoxes.forEach(box => {
+            siteData.noSchoolDates.push({
+                date: box.querySelector(".hol-date").value.trim(),
+                reason: box.querySelector(".hol-reason").value.trim()
+            });
+        });
+
         // Announcements
         let boxes = document.querySelectorAll(".announcement-box");
         siteData.announcements = [];
@@ -299,12 +365,12 @@
     async function saveChanges() {
         let token = tokenInput.value.trim();
         let status = document.getElementById("status");
-        if (!token) { alert("yo have u ever heard of something called a token? without it u can't do anything."); return; }
+        if (!token) { alert("ever heard of something called authentication? CLEARLY NOT"); return; }
 
         gatherDOMData();
 
         status.style.color = "#ffaa00";
-        status.textContent = "Saving changes to mayukhdantuluri.github.io/10th-grade-smcs-schedule/";
+        status.textContent = "Saving changes to mayukhdantuluri.github.io/10th-grade-smcs-schedule/...";
 
         try {
             let getRes = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {
@@ -321,7 +387,7 @@
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    message: "Update schedule, rosters & announcements via Admin Dashboard",
+                    message: "Update holidays & schedule via Admin Dashboard",
                     content: encodedContent,
                     sha: sha
                 })
@@ -329,7 +395,7 @@
 
             if(putRes.ok) {
                 status.style.color = "#00ff66";
-                status.textContent = "Changes successfully saved. Give it around a minute to update the website.";
+                status.textContent = "Changes successfully saved. Wait for around a minute for the main website to update.";
             } else {
                 let err = await putRes.json();
                 throw new Error(err.message);
