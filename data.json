@@ -1,4 +1,15 @@
 {
+  "forceNoSchool": false,
+  "noSchoolDates": [
+    {
+      "date": "2026-12-25",
+      "reason": "Christmas Day - No School!"
+    },
+    {
+      "date": "2027-01-01",
+      "reason": "New Year's Day - No School!"
+    }
+  ],
   "announcements": [
     {
       "title": "Adv. Science 3: ESS",
