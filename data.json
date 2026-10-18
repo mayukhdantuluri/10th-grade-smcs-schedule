@@ -2,10 +2,6 @@
   "forceNoSchool": true,
   "noSchoolDates": [
     {
-      "date": "2026-10-16",
-      "reason": "MCPS is forcing teachers to learn stuff they don't wanna learn."
-    },
-    {
       "date": "2026-11-02",
       "reason": "MP1 Grading"
     },
@@ -17,7 +13,7 @@
   "announcements": [
     {
       "title": "Adv. Science 3: ESS",
-      "detail": "The Not-a-Quiz for Maui v. Hawaii Wildlife Fund will be on October 19 in class.",
+      "detail": "The Not-a-Quiz for Maui v. Hawaii Wildlife Fund will be on October 19 in class, so make sure you are done with it.",
       "expiresAt": "2026-10-19 11:05:00"
     },
     {
