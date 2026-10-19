@@ -288,15 +288,14 @@ body {
 
 /* 24-Hour Live Clock */
 .time-mono {
-    font-family: 'Share Tech Mono', monospace; /* Sharp, segmented digital structure */
+    font-family: 'DSEG7-Classic', 'Courier New', monospace;
     font-size: 5rem;
-    font-weight: 400; /* Font is naturally bold and structured */
-    color: #ffffff; /* Vibrant alarm clock LED red */
+    color: #ffffff;
     margin-top: 25px;
-    letter-spacing: 4px; /* Increases spacing between digits to mimic independent panels */
+    letter-spacing: 6px; /* Spaces out the independent digital display blocks */
     text-shadow: 
-        0 0 8px rgba(255, 42, 42, 0.6),
-        0 0 16px rgba(255, 42, 42, 0.3); /* Defined, clean LED glow */
+        0 0 10px rgba(255, 42, 42, 0.8),
+        0 0 20px rgba(255, 42, 42, 0.4);
 }
 
 /* No School Banner */
