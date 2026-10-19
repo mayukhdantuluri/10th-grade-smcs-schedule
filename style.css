@@ -288,15 +288,15 @@ body {
 
 /* 24-Hour Live Clock */
 .time-mono {
-    font-family: 'Orbitron', 'Roboto Mono', monospace; /* Uses 7-segment style */
+    font-family: 'Share Tech Mono', monospace; /* Sharp, segmented digital structure */
     font-size: 5rem;
-    font-weight: 700;
-    color: #ffeeee; /* Classic alarm clock LED Red */
+    font-weight: 400; /* Font is naturally bold and structured */
+    color: #ffffff; /* Vibrant alarm clock LED red */
     margin-top: 25px;
-    letter-spacing: 2px;
+    letter-spacing: 4px; /* Increases spacing between digits to mimic independent panels */
     text-shadow: 
-        0 0 10px rgba(255, 51, 51, 0.8),
-        0 0 20px rgba(255, 51, 51, 0.4); /* Authentic LED glow effect */
+        0 0 8px rgba(255, 42, 42, 0.6),
+        0 0 16px rgba(255, 42, 42, 0.3); /* Defined, clean LED glow */
 }
 
 /* No School Banner */
