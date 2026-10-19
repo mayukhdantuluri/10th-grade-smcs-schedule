@@ -288,11 +288,11 @@ body {
 
 /* 24-Hour Live Clock */
 .time-mono {
-    font-family: 'DSEG7-Classic', 'Digital-7', monospace;
+    font-family: 'Digital-7', 'DSEG7-Classic', monospace;
     font-size: 5rem;
-    color: #ffffff; /* Makes the core of the numbers bright neon red */
+    color: #ffffff;
     margin-top: 25px;
-    letter-spacing: 6px; /* Spaces out the independent digital display blocks */
+    letter-spacing: 6px;
     text-shadow: 
         0 0 10px rgba(255, 26, 26, 0.9),
         0 0 20px rgba(255, 26, 26, 0.7),
