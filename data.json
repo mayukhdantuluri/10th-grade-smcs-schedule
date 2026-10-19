@@ -3,6 +3,16 @@
   "noSchoolDates": [],
   "announcements": [
     {
+      "title": "Algorithms & Data Structures",
+      "detail": "The Not-a-Quiz on 2.1 & 2.2 is on October 20 in class.",
+      "expiresAt": "2026-10-20 11:05:00"
+    },
+    {
+      "title": "Foundations of Technology",
+      "detail": "This is the final week to work on the Roombas & Survivor Island, next week we move on.",
+      "expiresAt": "2026-10-22 11:05:00"
+    },
+    {
       "title": "General SMCS 2029 News",
       "detail": "Field Trip to Seneca Creek will be on October 23. Pack the right things!",
       "expiresAt": "2026-10-23 00:00:00"
@@ -11,15 +21,15 @@
   "schedule": [
     {
       "period": "1",
-      "blockXTitle": "Algorithms & Data Structures",
-      "blockXRoom": "1702 Hallisey",
-      "blockYTitle": "Adv. Science 4: Biology",
-      "blockYRoom": "2614 Yu"
+      "blockXTitle": "Adv. Science 4: Biology",
+      "blockXRoom": "2614 Yu",
+      "blockYTitle": "Foundations of Technology",
+      "blockYRoom": "1620 Lees"
     },
     {
       "period": "2",
-      "blockXTitle": "Foundations of Technology",
-      "blockXRoom": "1620 Lees",
+      "blockXTitle": "Algorithms & Data Structures",
+      "blockXRoom": "1702 Hallisey",
       "blockYTitle": "Adv. Science 3: ESS",
       "blockYRoom": "1708 Kingman"
     },
@@ -27,15 +37,15 @@
       "period": "3",
       "blockXTitle": "Adv. Science 3: ESS",
       "blockXRoom": "1708 Kingman",
-      "blockYTitle": "Foundations of Technology",
-      "blockYRoom": "1620 Lees"
+      "blockYTitle": "Algorithms & Data Structures",
+      "blockYRoom": "1702 Hallisey"
     },
     {
       "period": "4",
-      "blockXTitle": "Adv. Science 4: Biology",
-      "blockXRoom": "2614 Yu",
-      "blockYTitle": "Algorithms & Data Structures",
-      "blockYRoom": "1702 Hallisey"
+      "blockXTitle": "Foundations of Technology",
+      "blockXRoom": "1620 Lees",
+      "blockYTitle": "Adv. Science 4: Biology",
+      "blockYRoom": "2614 Yu"
     }
   ],
   "blockXMembers": [
