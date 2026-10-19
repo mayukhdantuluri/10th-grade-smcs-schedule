@@ -1,4 +1,4 @@
-@import url('https://googleapis.com');
+@import url('https://fonts.cdnfonts.com/css/digital-7');
 
 /* Reset & Universal Setup */
 * {
@@ -288,14 +288,16 @@ body {
 
 /* 24-Hour Live Clock */
 .time-mono {
-    font-family: 'DSEG7-Classic', 'Courier New', monospace;
+    font-family: 'DSEG7-Classic', 'Digital-7', monospace;
     font-size: 5rem;
-    color: #ffffff;
+    color: #ffffff; /* Makes the core of the numbers bright neon red */
     margin-top: 25px;
     letter-spacing: 6px; /* Spaces out the independent digital display blocks */
     text-shadow: 
-        0 0 10px rgba(255, 42, 42, 0.8),
-        0 0 20px rgba(255, 42, 42, 0.4);
+        0 0 10px rgba(255, 26, 26, 0.9),
+        0 0 20px rgba(255, 26, 26, 0.7),
+        0 0 30px rgba(255, 26, 26, 0.5),
+        0 0 40px rgba(255, 26, 26, 0.3);
 }
 
 /* No School Banner */
