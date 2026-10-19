@@ -1,15 +1,6 @@
 {
-  "forceNoSchool": true,
-  "noSchoolDates": [
-    {
-      "date": "2026-11-02",
-      "reason": "MP1 Grading"
-    },
-    {
-      "date": "2026-11-03",
-      "reason": "2026 Midterm Elections (Who do you think is winning?)"
-    }
-  ],
+  "forceNoSchool": false,
+  "noSchoolDates": [],
   "announcements": [
     {
       "title": "Adv. Science 3: ESS",
