@@ -1,3 +1,5 @@
+@import url('https://googleapis.com');
+
 /* Reset & Universal Setup */
 * {
     box-sizing: border-box;
@@ -286,13 +288,15 @@ body {
 
 /* 24-Hour Live Clock */
 .time-mono {
-    font-family: 'DigitalClock', monospace;
+    font-family: 'Orbitron', 'Roboto Mono', monospace; /* Uses 7-segment style */
     font-size: 5rem;
     font-weight: 700;
-    color: #ffffff;
+    color: #ffeeee; /* Classic alarm clock LED Red */
     margin-top: 25px;
-    letter-spacing: -0.5px;
-    text-shadow: 0 0 10px rgba(255, 51, 51, 0.4);
+    letter-spacing: 2px;
+    text-shadow: 
+        0 0 10px rgba(255, 51, 51, 0.8),
+        0 0 20px rgba(255, 51, 51, 0.4); /* Authentic LED glow effect */
 }
 
 /* No School Banner */
