@@ -92,7 +92,7 @@ body {
 .xbox-banner {
     display: flex;
     align-items: center;
-    background-color: #b80d19; /* Xbox Red */
+    background-color: #b80d19;
     height: 50px;
     width: 50px;
     max-width: 96vw;
@@ -124,7 +124,6 @@ body {
     object-fit: contain;
 }
 
-/* Centered Text Box Container */
 .xbox-text-box {
     display: flex;
     flex-direction: column;
@@ -145,7 +144,6 @@ body {
     opacity: 1;
 }
 
-/* Line 1: Bold title (Middle Aligned) */
 .xbox-title {
     font-weight: 700;
     font-size: 1.05rem;
@@ -154,7 +152,6 @@ body {
     text-align: center;
 }
 
-/* Line 2: Regular detail (Middle Aligned) */
 .xbox-detail {
     font-weight: 400;
     font-size: 0.95rem;
@@ -176,7 +173,6 @@ body {
     max-width: 100%;
 }
 
-/* Shared Card Styling */
 .card {
     background: rgba(0, 0, 0, 0.88);
     border: 2px solid #ffffff;
@@ -189,7 +185,6 @@ body {
     box-sizing: border-box;
 }
 
-/* Student Members Columns Header */
 .members-card h3 {
     text-align: center;
     font-size: 1.3rem;
@@ -197,7 +192,6 @@ body {
     margin-bottom: 15px;
 }
 
-/* Student Members List Formatting */
 .members-list {
     list-style: none; 
     counter-reset: member-counter; 
@@ -224,7 +218,6 @@ body {
     color: #ffffff;
 }
 
-/* Schedule Card (Center) */
 .schedule-card {
     text-align: center;
     padding: 25px 20px;
@@ -234,7 +227,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Date in Roboto Mono */
 .date-mono {
     font-family: 'Roboto Mono', monospace;
     font-size: 2.5rem;
@@ -242,7 +234,6 @@ body {
     letter-spacing: -1px;
 }
 
-/* Day of Week in standard Roboto */
 .day-roboto {
     font-family: 'Roboto', sans-serif;
     font-size: 1.3rem;
@@ -250,7 +241,6 @@ body {
     margin-top: 4px;
 }
 
-/* Schedule Grid Inside Center Card (3 Columns) */
 .schedule-grid {
     display: grid;
     grid-template-columns: 1fr 60px 1fr;
@@ -286,18 +276,11 @@ body {
     margin-top: 3px;
 }
 
-/* Bulletproof 7-Segment Digital Clock Font */
-@font-face {
-    font-family: 'SevenSegment';
-    src: url('https://cdnjs.cloudflare.com/ajax/libs/dseg/0.46.0/fonts/DSEG7-Classic/DSEG7Classic-Bold.woff2') format('woff2'),
-         url('https://cdnjs.cloudflare.com/ajax/libs/dseg/0.46.0/fonts/DSEG7-Classic/DSEG7Classic-Bold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* 24-Hour Live Clock */
+/* ===========================================================================
+   Authentic 7-Segment Digital Clock Font (Fixed)
+   =========================================================================== */
 .time-mono {
-    font-family: 'SevenSegment', sans-serif !important;
+    font-family: 'Digital-7', monospace !important;
     font-size: 5.5rem;
     color: #ff1a1a;
     margin-top: 25px;
@@ -307,7 +290,7 @@ body {
         0 0 20px rgba(255, 26, 26, 0.7),
         0 0 35px rgba(255, 26, 26, 0.5);
 }
-/* No School Banner */
+
 .no-school-banner {
     padding: 20px 10px;
 }
@@ -324,123 +307,41 @@ body {
 }
 
 /* ===========================================================================
-   Responsive Media Queries (Tablets & Mobile Phones)
+   Responsive Media Queries
    =========================================================================== */
-
 @media (max-width: 1200px) {
     .content-grid {
         grid-template-columns: 1fr;
     }
-    
-    .glow-title {
-        font-size: 3rem;
-    }
-    
-    .glow-subtitle {
-        font-size: 1.8rem;
-    }
+    .glow-title { font-size: 3rem; }
+    .glow-subtitle { font-size: 1.8rem; }
 }
 
 @media (max-width: 768px) {
-    .page-container {
-        padding: 12px 10px 30px;
-    }
-
-    .main-header {
-        margin-bottom: 15px;
-    }
-
-    .glow-title {
-        font-size: 2.2rem;
-    }
-
-    .glow-subtitle {
-        font-size: 1.25rem;
-    }
-
-    .card {
-        padding: 16px 12px;
-        border-radius: 16px;
-    }
-
-    .date-mono {
-        font-size: 1.8rem;
-    }
-
-    .day-roboto {
-        font-size: 1.1rem;
-    }
-
-    .schedule-grid {
-        grid-template-columns: 1fr 42px 1fr;
-        gap: 14px 6px;
-    }
-
-    .col-header {
-        font-size: 1rem;
-    }
-
-    .period-num {
-        font-size: 1.3rem;
-    }
-
-    .class-title {
-        font-size: 0.85rem;
-    }
-
-    .class-room {
-        font-size: 0.75rem;
-    }
-
-    .time-mono {
-        font-size: 1.8rem;
-        margin-top: 18px;
-    }
+    .page-container { padding: 12px 10px 30px; }
+    .glow-title { font-size: 2.2rem; }
+    .glow-subtitle { font-size: 1.25rem; }
+    .card { padding: 16px 12px; border-radius: 16px; }
+    .date-mono { font-size: 1.8rem; }
+    .day-roboto { font-size: 1.1rem; }
+    .schedule-grid { grid-template-columns: 1fr 42px 1fr; gap: 14px 6px; }
+    .col-header { font-size: 1rem; }
+    .period-num { font-size: 1.3rem; }
+    .class-title { font-size: 0.85rem; }
+    .class-room { font-size: 0.75rem; }
+    .time-mono { font-size: 1.8rem; margin-top: 18px; }
 }
 
 @media (max-width: 420px) {
-    .glow-title {
-        font-size: 1.75rem;
-    }
-
-    .glow-subtitle {
-        font-size: 1rem;
-    }
-
-    .xbox-title {
-        font-size: 0.95rem;
-    }
-
-    .xbox-detail {
-        font-size: 0.85rem;
-    }
-
-    .date-mono {
-        font-size: 1.45rem;
-    }
-
-    .schedule-grid {
-        grid-template-columns: 1fr 32px 1fr;
-        gap: 12px 4px;
-    }
-
-    .col-header {
-        font-size: 0.88rem;
-    }
-
-    .period-num {
-        font-size: 1.15rem;
-    }
-
-    .class-title {
-        font-size: 0.78rem;
-    }
-
-    .class-room {
-        font-size: 0.68rem;
-    }
-
-    .members-list {
-        font-size: 0.85rem;
-    }
+    .glow-title { font-size: 1.75rem; }
+    .glow-subtitle { font-size: 1rem; }
+    .xbox-title { font-size: 0.95rem; }
+    .xbox-detail { font-size: 0.85rem; }
+    .date-mono { font-size: 1.45rem; }
+    .schedule-grid { grid-template-columns: 1fr 32px 1fr; gap: 12px 4px; }
+    .col-header { font-size: 0.88rem; }
+    .period-num { font-size: 1.15rem; }
+    .class-title { font-size: 0.78rem; }
+    .class-room { font-size: 0.68rem; }
+    .members-list { font-size: 0.85rem; }
 }
