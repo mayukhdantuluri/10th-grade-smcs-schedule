@@ -286,21 +286,27 @@ body {
     margin-top: 3px;
 }
 
-/* 24-Hour Live Clock */
-.time-mono {
-    font-family: 'Digital-7', sans-serif;
-    font-size: 5rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-top: 25px;
-    letter-spacing: 8px;
-    text-shadow: 
-        0 0 8px rgba(255, 26, 26, 1),
-        0 0 15px rgba(255, 26, 26, 0.9),
-        0 0 25px rgba(255, 26, 26, 0.7),
-        0 0 35px rgba(255, 26, 26, 0.5);
+/* Bulletproof 7-Segment Digital Clock Font */
+@font-face {
+    font-family: 'SevenSegment';
+    src: url('https://cdnjs.cloudflare.com/ajax/libs/dseg/0.46.0/fonts/DSEG7-Classic/DSEG7Classic-Bold.woff2') format('woff2'),
+         url('https://cdnjs.cloudflare.com/ajax/libs/dseg/0.46.0/fonts/DSEG7-Classic/DSEG7Classic-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
+/* 24-Hour Live Clock */
+.time-mono {
+    font-family: 'SevenSegment', sans-serif !important;
+    font-size: 5.5rem;
+    color: #ff1a1a;
+    margin-top: 25px;
+    letter-spacing: 6px;
+    text-shadow: 
+        0 0 10px rgba(255, 26, 26, 0.9),
+        0 0 20px rgba(255, 26, 26, 0.7),
+        0 0 35px rgba(255, 26, 26, 0.5);
+}
 /* No School Banner */
 .no-school-banner {
     padding: 20px 10px;
