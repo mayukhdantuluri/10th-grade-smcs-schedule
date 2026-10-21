@@ -3,14 +3,9 @@
   "noSchoolDates": [],
   "announcements": [
     {
-      "title": "Algorithms & Data Structures",
-      "detail": "The Not-a-Quiz on 2.3 is on October 21 in class.",
-      "expiresAt": "2026-10-21 11:30:00"
-    },
-    {
       "title": "Adv. Science 4: Biology",
-      "detail": "We have a Common MISA task to prepare for the MISA on October 21.",
-      "expiresAt": "2026-10-21 11:30:00"
+      "detail": "Take a look at the slideshow made by Eliel Arellano on Mr. Yu's Canvas page to identify macroinvertebrates.",
+      "expiresAt": "2026-10-23 14:00:00"
     },
     {
       "title": "Adv. Science 4: Biology",
