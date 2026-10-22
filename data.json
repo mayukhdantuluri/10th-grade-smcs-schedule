@@ -3,19 +3,19 @@
   "noSchoolDates": [],
   "announcements": [
     {
+      "title": "SMCS 2029 News",
+      "detail": "Pack spare clothes, your lunch, your packet, and a pencil. Report to Mr. Lees' room at 07:45 on October 23 before we leave for Seneca Creek.",
+      "expiresAt": "2026-10-23 11:00:00"
+    },
+    {
       "title": "Adv. Science 4: Biology",
       "detail": "Take a look at the slideshow made by Eliel Arellano on Mr. Yu's Canvas page to identify macroinvertebrates. Thank you, Eliel 🫡.",
       "expiresAt": "2026-10-23 14:00:00"
     },
     {
       "title": "SMCS 2029 News",
-      "detail": "Field Trip to Seneca Creek will be on October 23. Pack spare clothes, your lunch, your packet, and a pencil.",
-      "expiresAt": "2026-10-23 00:00:00"
-    },
-    {
-      "title": "SMCS 2029 News",
       "detail": "Blocks & groups will be rearranged and take effect October 26.",
-      "expiresAt": "2026-10-30 11:05:00"
+      "expiresAt": "2026-10-27 11:05:00"
     }
   ],
   "schedule": [
