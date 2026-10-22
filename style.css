@@ -283,10 +283,10 @@ body {
 
 .time-mono {
     font-family: 'DSEG7', monospace !important;
-    font-size: 5.2rem;
+    font-size: 5rem;
     font-weight: bold;
     color: #ffffff;
-    margin-top: 25px;
+    margin-top: 45px;
     letter-spacing: 6px;
     text-shadow: 
         0 0 10px rgba(255, 26, 26, 0.9),
