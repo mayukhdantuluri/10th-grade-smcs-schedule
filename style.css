@@ -1,9 +1,7 @@
-/* Official DSEG7 Classic LED Font */
 @font-face {
-    font-family: 'DSEG7 Classic';
-    src: url('https://cdnjs.cloudflare.com/ajax/libs/dseg/0.46.0/fonts/DSEG7-Classic/DSEG7Classic-Bold.woff2') format('woff2'),
-         url('https://cdnjs.cloudflare.com/ajax/libs/dseg/0.46.0/fonts/DSEG7-Classic/DSEG7Classic-Bold.woff') format('woff');
-    font-weight: 700;
+    font-family: 'DSEG7';
+    src: url('DSEG7Classic-Bold.ttf') format('truetype');
+    font-weight: bold;
     font-style: normal;
 }
 
@@ -283,11 +281,10 @@ body {
     margin-top: 3px;
 }
 
-/* 24-Hour Live Clock */
 .time-mono {
-    font-family: 'DSEG7 Classic', monospace !important;
+    font-family: 'DSEG7', monospace !important;
     font-size: 5.2rem;
-    font-weight: 700;
+    font-weight: bold;
     color: #ffffff;
     margin-top: 25px;
     letter-spacing: 6px;
