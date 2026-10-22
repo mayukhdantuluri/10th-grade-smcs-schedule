@@ -1,9 +1,9 @@
-/* Official 7-Segment LED Clock Font via Cloudflare CDN */
+/* Official DSEG7 Classic LED Font */
 @font-face {
-    font-family: 'DSEG7';
+    font-family: 'DSEG7 Classic';
     src: url('https://cdnjs.cloudflare.com/ajax/libs/dseg/0.46.0/fonts/DSEG7-Classic/DSEG7Classic-Bold.woff2') format('woff2'),
          url('https://cdnjs.cloudflare.com/ajax/libs/dseg/0.46.0/fonts/DSEG7-Classic/DSEG7Classic-Bold.woff') format('woff');
-    font-weight: bold;
+    font-weight: 700;
     font-style: normal;
 }
 
@@ -283,12 +283,11 @@ body {
     margin-top: 3px;
 }
 
-/* ===========================================================================
-   Authentic 7-Segment LED Digital Clock Font (Cloudflare CDN)
-   =========================================================================== */
+/* 24-Hour Live Clock */
 .time-mono {
-    font-family: 'DSEG7', monospace !important;
+    font-family: 'DSEG7 Classic', monospace !important;
     font-size: 5.2rem;
+    font-weight: 700;
     color: #ffffff;
     margin-top: 25px;
     letter-spacing: 6px;
