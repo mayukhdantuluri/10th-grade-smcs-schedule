@@ -234,14 +234,14 @@ body {
 
 .date-mono {
     font-family: 'DSEG7', monospace !important;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     letter-spacing: -1px;
 }
 
 .day-roboto {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: #cccccc;
     margin-top: 4px;
 }
