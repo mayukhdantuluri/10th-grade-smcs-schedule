@@ -16,31 +16,31 @@
   "schedule": [
     {
       "period": "1",
-      "blockXTitle": "Field Trip Pre-Departure Attendance",
-      "blockXRoom": "1620 SMCS",
-      "blockYTitle": "Field Trip Pre-Departure Attendance",
-      "blockYRoom": "1620 SMCS"
+      "blockXTitle": "Adv. Science 4: Biology",
+      "blockXRoom": "2614 Yu",
+      "blockYTitle": "Foundations of Technology",
+      "blockYRoom": "1620 Lees"
     },
     {
       "period": "2",
-      "blockXTitle": "Seneca Creek",
-      "blockXRoom": "Field Trip",
-      "blockYTitle": "Seneca Creek",
-      "blockYRoom": "Field Trip"
+      "blockXTitle": "Algorithms & Data Structures",
+      "blockXRoom": "1702 Hallisey",
+      "blockYTitle": "Adv. Science 3: ESS",
+      "blockYRoom": "1708 Kingman"
     },
     {
       "period": "3",
-      "blockXTitle": "Seneca Creek",
-      "blockXRoom": "Field Trip",
-      "blockYTitle": "Seneca Creek",
-      "blockYRoom": "Field Trip"
+      "blockXTitle": "Adv. Science 3: ESS",
+      "blockXRoom": "1708 Kingman",
+      "blockYTitle": "Algorithms & Data Structures",
+      "blockYRoom": "1702 Hallisey"
     },
     {
       "period": "4",
-      "blockXTitle": "Seneca Creek",
-      "blockXRoom": "Field Trip",
-      "blockYTitle": "Seneca Creek",
-      "blockYRoom": "Field Trip"
+      "blockXTitle": "Foundations of Technology",
+      "blockXRoom": "1620 Lees",
+      "blockYTitle": "Adv. Science 4: Biology",
+      "blockYRoom": "2614 Yu"
     }
   ],
   "blockXMembers": [
