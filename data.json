@@ -17,6 +17,11 @@
       "expiresAt": "2026-10-27 11:05:00"
     },
     {
+      "title": "Algorithms & Data Structures",
+      "detail": "The 2.4 Not-a-Quiz is on October 27 in class.",
+      "expiresAt": "2026-10-27 09:00:00"
+    },
+    {
       "title": "Foundations of Technology",
       "detail": "Finish the Mechanical Research assignment on Canvas by end of class on October 27.",
       "expiresAt": "2026-10-27 11:05:00"
@@ -42,29 +47,29 @@
       "period": "1",
       "blockXTitle": "Adv. Science 4: Biology",
       "blockXRoom": "2614 Yu",
-      "blockYTitle": "Foundations of Technology",
-      "blockYRoom": "1620 Lees"
+      "blockYTitle": "Algorithms & Data Structures",
+      "blockYRoom": "1702 Hallisey"
     },
     {
       "period": "2",
       "blockXTitle": "Algorithms & Data Structures",
       "blockXRoom": "1702 Hallisey",
-      "blockYTitle": "Adv. Science 3: ESS",
-      "blockYRoom": "1708 Kingman"
+      "blockYTitle": "Adv. Science 4: Biology",
+      "blockYRoom": "2614 Yu"
     },
     {
       "period": "3",
       "blockXTitle": "Adv. Science 3: ESS",
       "blockXRoom": "1708 Kingman",
-      "blockYTitle": "Algorithms & Data Structures",
-      "blockYRoom": "1702 Hallisey"
+      "blockYTitle": "Foundations of Technology",
+      "blockYRoom": "1620 Lees"
     },
     {
       "period": "4",
       "blockXTitle": "Foundations of Technology",
       "blockXRoom": "1620 Lees",
-      "blockYTitle": "Adv. Science 4: Biology",
-      "blockYRoom": "2614 Yu"
+      "blockYTitle": "Adv. Science 3: ESS",
+      "blockYRoom": "1708 Kingman"
     }
   ],
   "blockXMembers": [
