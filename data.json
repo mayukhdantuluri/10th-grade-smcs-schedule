@@ -1,6 +1,15 @@
 {
   "forceNoSchool": false,
-  "noSchoolDates": [],
+  "noSchoolDates": [
+    {
+      "date": "2026-11-02",
+      "reason": "MP1 Grading"
+    },
+    {
+      "date": "2026-11-03",
+      "reason": "2026 Midterms (Who will win?)"
+    }
+  ],
   "announcements": [
     {
       "title": "SMCS 2029 News",
