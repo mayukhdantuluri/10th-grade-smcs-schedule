@@ -13,12 +13,17 @@
   "announcements": [
     {
       "title": "SMCS 2029 News",
-      "detail": "New groups should be revealed tomorrow according to the SMCS teachers.",
+      "detail": "New groups should be revealed on October 28 according to the SMCS teachers.",
       "expiresAt": "2026-10-28 11:30:00"
     },
     {
       "title": "Adv. Science 4: Biology",
       "detail": "Answer the 7 questions for Prosthetic Research by start of class on October 28.",
+      "expiresAt": "2026-10-28 11:30:00"
+    },
+    {
+      "title": "Algorithms & Data Structures",
+      "detail": "The Not-a-Quiz for 2.5 is in class on October 28.",
       "expiresAt": "2026-10-28 11:30:00"
     },
     {
