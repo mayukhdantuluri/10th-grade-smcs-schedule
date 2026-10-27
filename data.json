@@ -13,23 +13,8 @@
   "announcements": [
     {
       "title": "SMCS 2029 News",
-      "detail": "Blocks have been rearranged & take effect as of October 27.",
-      "expiresAt": "2026-10-27 11:05:00"
-    },
-    {
-      "title": "Algorithms & Data Structures",
-      "detail": "The 2.4 Not-a-Quiz is on October 27 in class.",
-      "expiresAt": "2026-10-27 09:00:00"
-    },
-    {
-      "title": "Foundations of Technology",
-      "detail": "Finish the Mechanical Research assignment on Canvas by end of class on October 27.",
-      "expiresAt": "2026-10-27 11:05:00"
-    },
-    {
-      "title": "Adv. Science 3: ESS",
-      "detail": "Read the New York Times article on Superfunds and Super Plants for the Not-a-Quiz in class on October 27.",
-      "expiresAt": "2026-10-27 11:05:00"
+      "detail": "New groups should be revealed tomorrow according to the SMCS teachers.",
+      "expiresAt": "2026-10-28 11:30:00"
     },
     {
       "title": "Adv. Science 4: Biology",
