@@ -12,11 +12,6 @@
   ],
   "announcements": [
     {
-      "title": "SMCS 2029 News",
-      "detail": "New groups should be revealed on October 28 according to the SMCS teachers.",
-      "expiresAt": "2026-10-28 11:30:00"
-    },
-    {
       "title": "Adv. Science 4: Biology",
       "detail": "Answer the 7 questions for Prosthetic Research by start of class on October 28.",
       "expiresAt": "2026-10-28 11:30:00"
@@ -24,7 +19,17 @@
     {
       "title": "Algorithms & Data Structures",
       "detail": "The Not-a-Quiz for 2.5 is in class on October 28.",
-      "expiresAt": "2026-10-28 11:30:00"
+      "expiresAt": "2026-10-28 10:45:00"
+    },
+    {
+      "title": "Adv. Science 3: ESS",
+      "detail": "The Groundwater Quiz is on October 29 in Period 1. Block X will go to 1620, Block Y will go to 1702, and both blocks will stay in the same room for Period 2.",
+      "expiresAt": "2026-10-29 08:35:00"
+    },
+    {
+      "title": "SMCS 2029 News",
+      "detail": "New groups should be revealed on October 29 according to the SMCS teachers.",
+      "expiresAt": "2026-10-29 11:05:00"
     },
     {
       "title": "SMCS 2029 News",
