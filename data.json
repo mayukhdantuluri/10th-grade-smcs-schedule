@@ -12,16 +12,6 @@
   ],
   "announcements": [
     {
-      "title": "Adv. Science 4: Biology",
-      "detail": "Answer the 7 questions for Prosthetic Research by start of class on October 28.",
-      "expiresAt": "2026-10-28 11:30:00"
-    },
-    {
-      "title": "Algorithms & Data Structures",
-      "detail": "The Not-a-Quiz for 2.5 is in class on October 28.",
-      "expiresAt": "2026-10-28 10:45:00"
-    },
-    {
       "title": "Adv. Science 3: ESS",
       "detail": "The Groundwater Quiz is on October 29 in Period 1. Block X will go to 1620, Block Y will go to 1702, and both blocks will stay in the same room for Period 2.",
       "expiresAt": "2026-10-29 08:35:00"
@@ -33,7 +23,7 @@
     },
     {
       "title": "SMCS 2029 News",
-      "detail": "The SMCS Halloween Potluck 2026 will happen on October 30 in Period 8. Bring food & fill out the form to be first in line for your grade level.",
+      "detail": "The SMCS Halloween Potluck 2026 will happen on October 30 in Period 8. Bring food & fill out the form by October 30 to be first in line for your grade level.",
       "expiresAt": "2026-10-30 15:25:00"
     }
   ],
