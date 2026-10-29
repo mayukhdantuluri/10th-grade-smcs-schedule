@@ -25,29 +25,29 @@
   "schedule": [
     {
       "period": "1",
-      "blockXTitle": "Adv. Science 3: ESS (Groundwater Quiz)",
-      "blockXRoom": "1620 Lees",
-      "blockYTitle": "Adv. Science 3: ESS (Groundwater Quiz)",
-      "blockYRoom": "1708 Kingman"
+      "blockXTitle": "Adv. Science 4: Biology",
+      "blockXRoom": "2614 Yu",
+      "blockYTitle": "Foundations of Technology",
+      "blockYRoom": "1620 Lees"
     },
     {
       "period": "2",
-      "blockXTitle": "Foundations of Technology",
-      "blockXRoom": "1620 Lees",
+      "blockXTitle": "Algorithms & Data Structures",
+      "blockXRoom": "1702 Hallisey",
+      "blockYTitle": "Adv. Science 3: ESS",
+      "blockYRoom": "1708 Kingman"
+    },
+    {
+      "period": "3",
+      "blockXTitle": "Adv. Science 3: ESS",
+      "blockXRoom": "1708 Kingman",
       "blockYTitle": "Algorithms & Data Structures",
       "blockYRoom": "1702 Hallisey"
     },
     {
-      "period": "3",
-      "blockXTitle": "Adv. Science 4: Biology",
-      "blockXRoom": "2614 Yu",
-      "blockYTitle": "Foundations of Technology",
-      "blockYRoom": "1602 Lees"
-    },
-    {
       "period": "4",
-      "blockXTitle": "Algorithms & Data Structures",
-      "blockXRoom": "1702 Hallisey",
+      "blockXTitle": "Foundations of Technology",
+      "blockXRoom": "1620 Lees",
       "blockYTitle": "Adv. Science 4: Biology",
       "blockYRoom": "2614 Yu"
     }
