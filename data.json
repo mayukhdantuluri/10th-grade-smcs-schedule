@@ -12,19 +12,14 @@
   ],
   "announcements": [
     {
-      "title": "Foundations of Technology",
-      "detail": "New groups will be revealed on October 29 in Mr. Lees' class.",
-      "expiresAt": "2026-10-29 11:05:00"
-    },
-    {
-      "title": "Adv. Science 3: ESS",
-      "detail": "Nice work on the Groundwater Quiz. If you didn't do well, reassessments are on November 5.",
-      "expiresAt": "2026-11-05 12:00:00"
-    },
-    {
       "title": "SMCS 2029 News",
       "detail": "The SMCS Halloween Potluck 2026 will happen on October 30 in Period 8. Bring food & fill out the form by October 30 to be first in line for your grade level.",
       "expiresAt": "2026-10-30 15:25:00"
+    },
+    {
+      "title": "Adv. Science 3: ESS",
+      "detail": "Nice work on the Groundwater Quiz. If you didn't do well, reassessments are on November 5 in lunch.",
+      "expiresAt": "2026-11-05 12:00:00"
     }
   ],
   "schedule": [
