@@ -12,14 +12,14 @@
   ],
   "announcements": [
     {
-      "title": "Adv. Science 3: ESS",
-      "detail": "The Groundwater Quiz is on October 29 in Period 1. Block X will go to 1620, Block Y will go to 1702. Reassessments are on November 5.",
-      "expiresAt": "2026-10-29 08:35:00"
-    },
-    {
       "title": "SMCS 2029 News",
       "detail": "New groups should be revealed on October 29 according to Mr. Lees.",
       "expiresAt": "2026-10-29 11:05:00"
+    },
+    {
+      "title": "Adv. Science 3: ESS",
+      "detail": "Nice work on the Groundwater Quiz. If you didn't do well, reassessments are on November 5.",
+      "expiresAt": "2026-11-05 12:00:00"
     },
     {
       "title": "SMCS 2029 News",
