@@ -8,6 +8,50 @@
     {
       "date": "2026-11-03",
       "reason": "2026 Midterm Elections"
+    },
+    {
+      "date": "2026-11-26",
+      "reason": "Happy Thanksgiving"
+    },
+    {
+      "date": "2026-11-27",
+      "reason": "Black Friday"
+    },
+    {
+      "date": "2026-12-24",
+      "reason": "Winter Break (Christmas Eve)"
+    },
+    {
+      "date": "2026-12-25",
+      "reason": "Winter Break (Merry Christmas)"
+    },
+    {
+      "date": "2026-12-28",
+      "reason": "Winter Break"
+    },
+    {
+      "date": "2026-12-29",
+      "reason": "Winter Break"
+    },
+    {
+      "date": "2026-12-30",
+      "reason": "Winter Break"
+    },
+    {
+      "date": "2026-12-31",
+      "reason": "Winter Break (New Year's Eve)"
+    },
+    {
+      "date": "2027-01-01",
+      "reason": "Winter Break (Happy New Year)"
+    },
+    {
+      "date": "2027-01-18",
+      "reason": "MLK Jr. Day"
+    },
+    {
+      "date": "2027-01-25",
+      "reason": "MP2 Grading"
     }
   ],
   "announcements": [
