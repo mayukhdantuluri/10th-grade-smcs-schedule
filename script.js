@@ -108,7 +108,7 @@ function updateDate() {
 
     // Determine if today has no school
     let isNoSchool = (now.getDay() === 0 || now.getDay() === 6);
-    let reasonText = "Weekend - No School Today!";
+    let reasonText = "Weekend";
 
     if (SITE_DATA.forceNoSchool) {
         isNoSchool = true;
