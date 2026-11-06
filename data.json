@@ -46,18 +46,7 @@
       "reason": "MP2 Grading"
     }
   ],
-  "announcements": [
-    {
-      "title": "Algorithms & Data Structures",
-      "detail": "There is a Not-a-Quiz on 2.6 in class.",
-      "expiresAt": "2026-11-06 11:05:00"
-    },
-    {
-      "title": "Foundations of Technology",
-      "detail": "Mr. Lees is out on November 6, yet you are all still expected to work on 3D modeling.",
-      "expiresAt": "2026-11-06 10:15:00"
-    }
-  ],
+  "announcements": [],
   "schedule": [
     {
       "period": "1",
