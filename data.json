@@ -46,33 +46,44 @@
       "reason": "MP2 Grading"
     }
   ],
-  "announcements": [],
+  "announcements": [
+    {
+      "title": "Algorithms & Data Structures",
+      "detail": "The FRQ Section for Progress Check 2A will be on November 10, the MCQ section will be done on November 11.",
+      "expiresAt": "2026-11-11 11:05:00"
+    },
+    {
+      "title": "Algorithms & Data Structures",
+      "detail": "Ms. Hallisey will be out on November 10 and November 12",
+      "expiresAt": "2026-11-12 11:05:00"
+    }
+  ],
   "schedule": [
     {
       "period": "1",
-      "blockXTitle": "Adv. Science 4: Biology",
-      "blockXRoom": "2614 Yu",
-      "blockYTitle": "Algorithms & Data Structures",
-      "blockYRoom": "1702 Hallisey"
+      "blockXTitle": "Algorithms & Data Structures",
+      "blockXRoom": "1702 Hallisey",
+      "blockYTitle": "Foundations of Technology",
+      "blockYRoom": "1620 Lees"
     },
     {
       "period": "2",
       "blockXTitle": "Foundations of Technology",
       "blockXRoom": "1620 Lees",
+      "blockYTitle": "Algorithms & Data Structures",
+      "blockYRoom": "1702 Hallisey"
+    },
+    {
+      "period": "3",
+      "blockXTitle": "Adv. Science 4: Biology",
+      "blockXRoom": "2614 Yu",
       "blockYTitle": "Adv. Science 3: ESS",
       "blockYRoom": "1708 Kingman"
     },
     {
-      "period": "3",
+      "period": "4",
       "blockXTitle": "Adv. Science 3: ESS",
       "blockXRoom": "1708 Kingman",
-      "blockYTitle": "Foundations of Technology",
-      "blockYRoom": "1620 Less"
-    },
-    {
-      "period": "4",
-      "blockXTitle": "Algorithms & Data Structures",
-      "blockXRoom": "1702 Hallisey",
       "blockYTitle": "Adv. Science 4: Biology",
       "blockYRoom": "2614 Yu"
     }
