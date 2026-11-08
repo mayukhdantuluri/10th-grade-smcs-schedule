@@ -48,6 +48,11 @@
   ],
   "announcements": [
     {
+      "title": "Adv. Science 4: Biology",
+      "detail": "Finish the Sarcomere packet follow-up questions by start of class on November 9.",
+      "expiresAt": "2026-11-09 11:05:00"
+    },
+    {
       "title": "Algorithms & Data Structures",
       "detail": "The FRQ Section for Progress Check 2A will be on November 10, the MCQ section will be done on November 11.",
       "expiresAt": "2026-11-11 11:05:00"
