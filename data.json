@@ -49,13 +49,8 @@
   "announcements": [
     {
       "title": "Algorithms & Data Structures",
-      "detail": "The FRQ Section for Progress Check 2A will be on November 10, the MCQ section will be November 11.",
-      "expiresAt": "2026-11-11 11:05:00"
-    },
-    {
-      "title": "Algorithms & Data Structures",
-      "detail": "Ms. Hallisey will be out on November 10 & 11. The SMCS Class of 2030 apparently gets a field trip to some Computer Museum 🥀.",
-      "expiresAt": "2026-11-11 11:30:00"
+      "detail": "There is a Not-a-Quiz on Unit 2A in class on November 12.",
+      "expiresAt": "2026-11-12 11:05:00"
     }
   ],
   "schedule": [
