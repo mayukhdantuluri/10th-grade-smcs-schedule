@@ -48,6 +48,11 @@
   ],
   "announcements": [
     {
+      "title": "Adv. Science 3: ESS",
+      "detail": "Finish coloring in the Mercalli Intensity Map you drew yesterday and be ready by start of class.",
+      "expiresAt": "2026-11-12 10:15:00"
+    },
+    {
       "title": "Algorithms & Data Structures",
       "detail": "There is a Not-a-Quiz on Unit 2A in class on November 12.",
       "expiresAt": "2026-11-12 11:05:00"
