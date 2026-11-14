@@ -48,6 +48,16 @@
   ],
   "announcements": [
     {
+      "title": "SMCS 2029 News",
+      "detail": "There is no Period 8 on November 16.",
+      "expiresAt": "2026-11-16 15:00:00"
+    },
+    {
+      "title": "Algorithms & Data Structures",
+      "detail": "The 2.7 Not-a-Quiz is on November 16 in class.",
+      "expiresAt": "2026-11-16 11:05:00"
+    },
+    {
       "title": "Adv. Science 3: ESS",
       "detail": "There is a Groundwater & Mass Wasting Test on November 19. It is not reassessable.",
       "expiresAt": "2026-11-19 11:05:00"
