@@ -48,11 +48,6 @@
   ],
   "announcements": [
     {
-      "title": "SMCS 2029 News",
-      "detail": "There is no Period 8 on November 16.",
-      "expiresAt": "2026-11-16 15:00:00"
-    },
-    {
       "title": "Adv. Science 3: ESS",
       "detail": "Use the Build an Atom PhET Simulation to practice for the Not-a-Quiz on November 18.",
       "expiresAt": "2026-11-18 11:30:00"
@@ -71,10 +66,10 @@
   "schedule": [
     {
       "period": "1",
-      "blockXTitle": "Adv. Science 4: Biology",
-      "blockXRoom": "2614 Yu",
-      "blockYTitle": "Foundations of Technology",
-      "blockYRoom": "1620 Lees"
+      "blockXTitle": "Adv. Science 3: ESS",
+      "blockXRoom": "1708 Kingman",
+      "blockYTitle": "Algorithms & Data Structures",
+      "blockYRoom": "1702 Hallisey"
     },
     {
       "period": "2",
@@ -85,17 +80,17 @@
     },
     {
       "period": "3",
-      "blockXTitle": "Adv. Science 3: ESS",
-      "blockXRoom": "1708 Kingman",
-      "blockYTitle": "Algorithms & Data Structures",
-      "blockYRoom": "1702 Hallisey"
-    },
-    {
-      "period": "4",
       "blockXTitle": "Foundations of Technology",
       "blockXRoom": "1620 Lees",
       "blockYTitle": "Adv. Science 4: Biology",
       "blockYRoom": "2614 Yu"
+    },
+    {
+      "period": "4",
+      "blockXTitle": "Adv. Science 4: Biology",
+      "blockXRoom": "2614 Yu",
+      "blockYTitle": "Foundations of Technology",
+      "blockYRoom": "1620 Lees"
     }
   ],
   "blockXMembers": [
