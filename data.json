@@ -48,19 +48,14 @@
   ],
   "announcements": [
     {
-      "title": "Adv. Science 4: Biology",
-      "detail": "Finish the Neurons packet by start of class on November 18.",
-      "expiresAt": "2026-11-18 11:30:00"
-    },
-    {
-      "title": "Adv. Science 3: ESS",
-      "detail": "Use the Build an Atom PhET Simulation to practice for the Not-a-Quiz on November 18.",
-      "expiresAt": "2026-11-18 11:30:00"
-    },
-    {
       "title": "Adv. Science 3: ESS",
       "detail": "There is a Groundwater & Mass Wasting Test on November 19. It is not reassessable.",
-      "expiresAt": "2026-11-19 11:05:00"
+      "expiresAt": "2026-11-19 08:35:00"
+    },
+    {
+      "title": "Foundations of Technology",
+      "detail": "Finish the MyoWare research in your engineering notebooks by end of day November 20.",
+      "expiresAt": "2026-11-20 23:59:59"
     },
     {
       "title": "Foundations of Technology",
@@ -71,31 +66,31 @@
   "schedule": [
     {
       "period": "1",
-      "blockXTitle": "Adv. Science 4: Biology",
-      "blockXRoom": "2614 Yu",
-      "blockYTitle": "Foundations of Technology",
-      "blockYRoom": "1620 Lees"
+      "blockXTitle": "Adv. Science 3: ESS (Test)",
+      "blockXRoom": "1702 Hallisey",
+      "blockYTitle": "Adv. Science 3: ESS (Test)",
+      "blockYRoom": "1708 Kingman"
     },
     {
       "period": "2",
       "blockXTitle": "Algorithms & Data Structures",
       "blockXRoom": "1702 Hallisey",
-      "blockYTitle": "Adv. Science 3: ESS",
-      "blockYRoom": "1708 Kingman"
+      "blockYTitle": "Foundations of Technology",
+      "blockYRoom": "1620 Lees"
     },
     {
       "period": "3",
       "blockXTitle": "Foundations of Technology",
       "blockXRoom": "1620 Lees",
-      "blockYTitle": "Algorithms & Data Structures",
-      "blockYRoom": "1702 Hallisey"
+      "blockYTitle": "Adv. Science 4: Biology",
+      "blockYRoom": "2614 Yu"
     },
     {
       "period": "4",
-      "blockXTitle": "Adv. Science 3: ESS",
-      "blockXRoom": "1708 Kingman",
-      "blockYTitle": "Adv. Science 4: Biology",
-      "blockYRoom": "2614 Yu"
+      "blockXTitle": "Adv. Science 4: Biology",
+      "blockXRoom": "2614 Yu",
+      "blockYTitle": "Algorithms & Data Structures",
+      "blockYRoom": "1702 Hallisey"
     }
   ],
   "blockXMembers": [
