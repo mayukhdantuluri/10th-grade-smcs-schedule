@@ -49,6 +49,11 @@
   "announcements": [
     {
       "title": "Adv. Science 3: ESS",
+      "detail": "\"Remember, they're not called quizzes, they're called TESTS\" - Mr. Kingman probably",
+      "expiresAt": "2026-11-19 08:35:00"
+    },
+    {
+      "title": "Adv. Science 3: ESS",
       "detail": "There is a Groundwater & Mass Wasting Test on November 19. It is not reassessable.",
       "expiresAt": "2026-11-19 08:35:00"
     },
