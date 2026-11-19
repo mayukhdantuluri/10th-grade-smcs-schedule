@@ -48,11 +48,6 @@
   ],
   "announcements": [
     {
-      "title": "Algorithms & Data Structures",
-      "detail": "Ms. Hallisey is out. Finish the Credit Card program.",
-      "expiresAt": "2026-11-19 11:05:00"
-    },
-    {
       "title": "Foundations of Technology",
       "detail": "Mr. Lees is out November 20. Finish the MyoWare research in your engineering notebooks by end of day.",
       "expiresAt": "2026-11-20 23:59:59"
@@ -66,9 +61,9 @@
   "schedule": [
     {
       "period": "1",
-      "blockXTitle": "Adv. Science 3: ESS (Test)",
-      "blockXRoom": "1702 Yu",
-      "blockYTitle": "Adv. Science 3: ESS (Test)",
+      "blockXTitle": "Adv. Science 3: ESS",
+      "blockXRoom": "1708 Kingman",
+      "blockYTitle": "Adv. Science 3: ESS",
       "blockYRoom": "1708 Kingman"
     },
     {
