@@ -48,6 +48,11 @@
   ],
   "announcements": [
     {
+      "title": "Adv. Science 4: Biology",
+      "detail": "There is a CFU on Neurons & Action Potentials worth 7 AT points.",
+      "expiresAt": "2026-11-20 11:05:00"
+    },
+    {
       "title": "Foundations of Technology",
       "detail": "Mr. Lees is out November 20. Finish the MyoWare research in your engineering notebooks by end of day.",
       "expiresAt": "2026-11-20 23:59:59"
