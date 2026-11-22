@@ -50,7 +50,7 @@
     {
       "title": "Adv. Science 4: Biology",
       "detail": "The Drug Neuron Poster is due in class on November 24.",
-      "expiresAt": "2026-11-24 10:00"
+      "expiresAt": "2026-11-24 10:00:00"
     },
     {
       "title": "SMCS 2029 News",
@@ -66,31 +66,31 @@
   "schedule": [
     {
       "period": "1",
-      "blockXTitle": "Adv. Science 3: ESS",
-      "blockXRoom": "SMCS Hub",
-      "blockYTitle": "Adv. Science 3: ESS",
-      "blockYRoom": "SMCS Hub"
+      "blockXTitle": "Foundations of Technology",
+      "blockXRoom": "1620 Lees",
+      "blockYTitle": "Algorithms & Data Structures",
+      "blockYRoom": "1702 Hallisey"
     },
     {
       "period": "2",
-      "blockXTitle": "Algorithms & Data Structures",
-      "blockXRoom": "1702 Hallisey",
-      "blockYTitle": "Foundations of Technology",
-      "blockYRoom": "1620 Lees"
+      "blockXTitle": "Adv. Science 4: Biology",
+      "blockXRoom": "2614 Yu",
+      "blockYTitle": "Adv. Science 3: ESS",
+      "blockYRoom": "1708 Kingman"
     },
     {
       "period": "3",
-      "blockXTitle": "Foundations of Technology",
-      "blockXRoom": "1620 Lees",
+      "blockXTitle": "Algorithms & Data Structures",
+      "blockXRoom": "1702 Hallisey",
       "blockYTitle": "Adv. Science 4: Biology",
       "blockYRoom": "2614 Yu"
     },
     {
       "period": "4",
-      "blockXTitle": "Adv. Science 4: Biology",
-      "blockXRoom": "2614 Yu",
-      "blockYTitle": "Algorithms & Data Structures",
-      "blockYRoom": "1702 Hallisey"
+      "blockXTitle": "Adv. Science 3: ESS",
+      "blockXRoom": "1708 Kingman",
+      "blockYTitle": "Foundations of Technology",
+      "blockYRoom": "1620 Lees"
     }
   ],
   "blockXMembers": [
