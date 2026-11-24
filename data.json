@@ -48,16 +48,6 @@
   ],
   "announcements": [
     {
-      "title": "Adv. Science 4: Biology",
-      "detail": "The Drug Neuron Poster is due in class on November 24.",
-      "expiresAt": "2026-11-24 10:00:00"
-    },
-    {
-      "title": "Foundations of Technology",
-      "detail": "The video for showing the Falcon Wing works is due by end of day on November 24",
-      "expiresAt": "2026-11-24 23:59:59"
-    },
-    {
       "title": "SMCS 2029 News",
       "detail": "There is no SMCS Block for 10th graders on November 25. November 25 is Periods 5, 6, Advisory, 7, and then that's it.",
       "expiresAt": "2026-11-25 12:00:00"
@@ -66,31 +56,31 @@
   "schedule": [
     {
       "period": "1",
-      "blockXTitle": "Foundations of Technology",
-      "blockXRoom": "1620 Lees",
-      "blockYTitle": "Adv. Science 4: Biology",
-      "blockYRoom": "2614 Yu"
+      "blockXTitle": "No SMCS Block",
+      "blockXRoom": "",
+      "blockYTitle": "No SMCS Block",
+      "blockYRoom": ""
     },
     {
       "period": "2",
-      "blockXTitle": "Adv. Science 3: ESS",
-      "blockXRoom": "1708 Kingman",
-      "blockYTitle": "Algorithms & Data Structures",
-      "blockYRoom": "1702 Hallisey"
+      "blockXTitle": "No SMCS Block",
+      "blockXRoom": "",
+      "blockYTitle": "No SMCS Block",
+      "blockYRoom": ""
     },
     {
       "period": "3",
-      "blockXTitle": "Algorithms & Data Structures",
-      "blockXRoom": "1702 Hallisey",
-      "blockYTitle": "Adv. Science 3: ESS",
-      "blockYRoom": "1708 Kingman"
+      "blockXTitle": "No SMCS Block",
+      "blockXRoom": "",
+      "blockYTitle": "No SMCS Block",
+      "blockYRoom": ""
     },
     {
       "period": "4",
-      "blockXTitle": "Adv. Science 4: Biology",
-      "blockXRoom": "2614 Yu",
-      "blockYTitle": "Foundations of Technology",
-      "blockYRoom": "1620 Lees"
+      "blockXTitle": "No SMCS Block",
+      "blockXRoom": "",
+      "blockYTitle": "No SMCS Block",
+      "blockYRoom": ""
     }
   ],
   "blockXMembers": [
