@@ -48,9 +48,24 @@
   ],
   "announcements": [
     {
-      "title": "SMCS 2029 News",
-      "detail": "There is no SMCS Block for 10th graders on November 25. November 25 is Periods 5, 6, Advisory, 7, and then that's it.",
-      "expiresAt": "2026-11-25 12:00:00"
+      "title": "Adv. Science 3: ESS",
+      "detail": "Mr. Kingman is out all week in Kuala Lumpur.",
+      "expiresAt": "2026-12-04 12:00:00"
+    },
+    {
+      "title": "Algorithms & Data Structures",
+      "detail": "There is a Not-a-Quiz on 2.9 in class on December 1.",
+      "expiresAt": "2026-12-01 11:05:00"
+    },
+    {
+      "title": "Algorithms & Data Structures",
+      "detail": "There is a Not-a-Quiz on 2.10 in class on December 2.",
+      "expiresAt": "2026-12-02 11:30:00"
+    },
+    {
+      "title": "Algorithms & Data Structures",
+      "detail": "There is a Not-a-Quiz on 2.11 in class on December 3.",
+      "expiresAt": "2026-12-01 11:05:00"
     }
   ],
   "schedule": [
